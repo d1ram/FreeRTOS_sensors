@@ -26,14 +26,15 @@
 #include "task.h"
 #include "queue.h"
 
-#include "ssd1306.h"
-#include "fonts.h"
+#include "monitor_service.h"
+#include "watchdog_service.h"
 
 #include "watchdog_task.h"
-#include "watchdog_service.h"
 #include "example_task.h"
+#include "gatekeeper_task.h"
 
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 /* USER CODE END Includes */
 
@@ -80,7 +81,6 @@ void StartDefaultTask(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 /* USER CODE END 0 */
 
 /**
@@ -114,11 +114,20 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  static example_t data1 = {.taskId = 0};
+  static example_t data2 = {.taskId = 1};
 
+  static gatekeeperTaskConfig_t gdata = {
+      .taskNames = {"Temp", "Pres"}};
+
+  monitor_init(&hi2c1);
   watchdog_init();
-
   xTaskCreate(watchdog_task, "watchdogTASK", 256, NULL, 10, NULL);
-  xTaskCreate(example_task, "exampleTASK", 128, NULL, 1, NULL);
+
+  xTaskCreate(example_task, "exampleTASK", 256, &data1, 1, NULL);
+  xTaskCreate(example_task, "exampleTASK", 256, &data2, 1, NULL);
+
+  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 512, &gdata, 1, NULL);
 
   /* USER CODE END 2 */
 
@@ -139,6 +148,7 @@ int main(void)
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
+  gatekeeper_init_queue();
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 

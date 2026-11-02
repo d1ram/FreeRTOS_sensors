@@ -1,0 +1,323 @@
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"example_task.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/tasks/example_task.c"
+  20              		.section	.rodata.example_task.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 3200     		.ascii	"2\000"
+  24 0002 0000     		.align	2
+  25              	.LC1:
+  26 0004 3700     		.ascii	"7\000"
+  27 0006 0000     		.align	2
+  28              	.LC2:
+  29 0008 4E554C4C 		.ascii	"NULL\000"
+  29      00
+  30 000d 000000   		.align	2
+  31              	.LC3:
+  32 0010 25732564 		.ascii	"%s%d C\000"
+  32      204300
+  33              		.section	.text.example_task,"ax",%progbits
+  34              		.align	1
+  35              		.global	example_task
+  36              		.syntax unified
+  37              		.thumb
+  38              		.thumb_func
+  40              	example_task:
+  41              	.LVL0:
+  42              	.LFB141:
+   1:Core/Src/tasks/example_task.c **** #include "example_task.h"
+   2:Core/Src/tasks/example_task.c **** 
+   3:Core/Src/tasks/example_task.c **** #include "watchdog_service.h"
+   4:Core/Src/tasks/example_task.c **** #include "FreeRTOS.h"
+   5:Core/Src/tasks/example_task.c **** #include "task.h"
+   6:Core/Src/tasks/example_task.c **** #include "stm32f4xx_hal.h"
+   7:Core/Src/tasks/example_task.c **** #include "monitor_service.h"
+   8:Core/Src/tasks/example_task.c **** #include <stdio.h>
+   9:Core/Src/tasks/example_task.c **** #include "queue.h"
+  10:Core/Src/tasks/example_task.c **** #include "gatekeeper_task.h"
+  11:Core/Src/tasks/example_task.c **** 
+  12:Core/Src/tasks/example_task.c **** #include <stdbool.h>
+  13:Core/Src/tasks/example_task.c **** 
+  14:Core/Src/tasks/example_task.c **** void example_task(void *pvParameters)
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s 			page 2
+
+
+  15:Core/Src/tasks/example_task.c **** {
+  43              		.loc 1 15 1 view -0
+  44              		.cfi_startproc
+  45              		@ args = 0, pretend = 0, frame = 40
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		.loc 1 15 1 is_stmt 0 view .LVU1
+  48 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  49              	.LCFI0:
+  50              		.cfi_def_cfa_offset 24
+  51              		.cfi_offset 4, -24
+  52              		.cfi_offset 5, -20
+  53              		.cfi_offset 6, -16
+  54              		.cfi_offset 7, -12
+  55              		.cfi_offset 8, -8
+  56              		.cfi_offset 14, -4
+  57 0004 8CB0     		sub	sp, sp, #48
+  58              	.LCFI1:
+  59              		.cfi_def_cfa_offset 72
+  60 0006 0446     		mov	r4, r0
+  16:Core/Src/tasks/example_task.c ****     uint32_t minTime = pdMS_TO_TICKS(900);
+  61              		.loc 1 16 5 is_stmt 1 view .LVU2
+  62              	.LVL1:
+  17:Core/Src/tasks/example_task.c ****     uint32_t maxTime = pdMS_TO_TICKS(1150);
+  63              		.loc 1 17 5 view .LVU3
+  18:Core/Src/tasks/example_task.c **** 
+  19:Core/Src/tasks/example_task.c ****     uint32_t watchdog_task_id = watchdog_add_task(minTime, maxTime);
+  64              		.loc 1 19 5 view .LVU4
+  65              		.loc 1 19 33 is_stmt 0 view .LVU5
+  66 0008 40F27E41 		movw	r1, #1150
+  67 000c 4FF46170 		mov	r0, #900
+  68              	.LVL2:
+  69              		.loc 1 19 33 view .LVU6
+  70 0010 FFF7FEFF 		bl	watchdog_add_task
+  71              	.LVL3:
+  72 0014 0646     		mov	r6, r0
+  73              	.LVL4:
+  20:Core/Src/tasks/example_task.c **** 
+  21:Core/Src/tasks/example_task.c ****     if (watchdog_task_id == -1)
+  74              		.loc 1 21 5 is_stmt 1 view .LVU7
+  75              		.loc 1 21 8 is_stmt 0 view .LVU8
+  76 0016 B0F1FF3F 		cmp	r0, #-1
+  77 001a 2BD0     		beq	.L9
+  78              	.LVL5:
+  79              	.L2:
+  22:Core/Src/tasks/example_task.c ****     {
+  23:Core/Src/tasks/example_task.c ****         vTaskDelete(NULL);
+  24:Core/Src/tasks/example_task.c ****     }
+  25:Core/Src/tasks/example_task.c ****     // for (;;)
+  26:Core/Src/tasks/example_task.c ****     // {
+  27:Core/Src/tasks/example_task.c ****     //     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+  28:Core/Src/tasks/example_task.c **** 
+  29:Core/Src/tasks/example_task.c ****     //     watchdog_ping(watchdog_task_id, xTaskGetTickCount());
+  30:Core/Src/tasks/example_task.c ****     //     vTaskDelay(pdMS_TO_TICKS(500));
+  31:Core/Src/tasks/example_task.c ****     // }
+  32:Core/Src/tasks/example_task.c **** 
+  33:Core/Src/tasks/example_task.c ****     // int j = 0;
+  34:Core/Src/tasks/example_task.c ****     // for (;;)
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s 			page 3
+
+
+  35:Core/Src/tasks/example_task.c ****     // {
+  36:Core/Src/tasks/example_task.c ****     //     for (int i = 0; i < 6; i++)
+  37:Core/Src/tasks/example_task.c ****     //     {
+  38:Core/Src/tasks/example_task.c ****     //         const char *str = "popa: ";
+  39:Core/Src/tasks/example_task.c ****     //         char buf[12];
+  40:Core/Src/tasks/example_task.c ****     //         snprintf(buf, sizeof(buf), "%s%d", str, j++);
+  41:Core/Src/tasks/example_task.c ****     //         monitor_write_line(i, buf);
+  42:Core/Src/tasks/example_task.c ****     //         vTaskDelay(pdMS_TO_TICKS(100));
+  43:Core/Src/tasks/example_task.c ****     //     }
+  44:Core/Src/tasks/example_task.c ****     // }
+  45:Core/Src/tasks/example_task.c **** 
+  46:Core/Src/tasks/example_task.c ****     const example_t *example = pvParameters;
+  80              		.loc 1 46 5 is_stmt 1 view .LVU9
+  47:Core/Src/tasks/example_task.c **** 
+  48:Core/Src/tasks/example_task.c ****     if (example == NULL ||
+  81              		.loc 1 48 5 view .LVU10
+  82              		.loc 1 48 8 is_stmt 0 view .LVU11
+  83 001c 74B3     		cbz	r4, .L3
+  49:Core/Src/tasks/example_task.c ****         gatekeeper_queueHandle == NULL)
+  84              		.loc 1 49 32 view .LVU12
+  85 001e 1D4B     		ldr	r3, .L10
+  86 0020 1B68     		ldr	r3, [r3]
+  48:Core/Src/tasks/example_task.c ****         gatekeeper_queueHandle == NULL)
+  87              		.loc 1 48 25 discriminator 1 view .LVU13
+  88 0022 5BB3     		cbz	r3, .L3
+  89              	.L4:
+  50:Core/Src/tasks/example_task.c ****     {
+  51:Core/Src/tasks/example_task.c ****         monitor_write_line(4, "NULL");
+  52:Core/Src/tasks/example_task.c ****         vTaskDelete(NULL);
+  53:Core/Src/tasks/example_task.c ****     }
+  54:Core/Src/tasks/example_task.c **** 
+  55:Core/Src/tasks/example_task.c ****     const int testId = example->taskId;
+  90              		.loc 1 55 5 is_stmt 1 view .LVU14
+  91              		.loc 1 55 15 is_stmt 0 view .LVU15
+  92 0024 2768     		ldr	r7, [r4]
+  93              	.LVL6:
+  56:Core/Src/tasks/example_task.c ****     int testNum = 1 - testId;
+  94              		.loc 1 56 5 is_stmt 1 view .LVU16
+  95              		.loc 1 56 9 is_stmt 0 view .LVU17
+  96 0026 C7F10104 		rsb	r4, r7, #1
+  97              	.LVL7:
+  57:Core/Src/tasks/example_task.c **** 
+  58:Core/Src/tasks/example_task.c ****     char *testData;
+  98              		.loc 1 58 5 is_stmt 1 view .LVU18
+  59:Core/Src/tasks/example_task.c ****     if (testId == 0)
+  99              		.loc 1 59 5 view .LVU19
+ 100              		.loc 1 59 8 is_stmt 0 view .LVU20
+ 101 002a 7FBB     		cbnz	r7, .L7
+  60:Core/Src/tasks/example_task.c ****     {
+  61:Core/Src/tasks/example_task.c ****         testData = "2";
+ 102              		.loc 1 61 18 view .LVU21
+ 103 002c DFF87080 		ldr	r8, .L10+12
+ 104              	.L6:
+ 105              	.LVL8:
+  62:Core/Src/tasks/example_task.c ****     }
+  63:Core/Src/tasks/example_task.c ****     else
+  64:Core/Src/tasks/example_task.c ****     {
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s 			page 4
+
+
+  65:Core/Src/tasks/example_task.c ****         testData = "7";
+  66:Core/Src/tasks/example_task.c ****     }
+  67:Core/Src/tasks/example_task.c ****     for (;;)
+ 106              		.loc 1 67 5 is_stmt 1 view .LVU22
+ 107              	.LBB2:
+  68:Core/Src/tasks/example_task.c ****     {
+  69:Core/Src/tasks/example_task.c ****         gatekeeperQueueData_t data;
+ 108              		.loc 1 69 9 view .LVU23
+  70:Core/Src/tasks/example_task.c ****         data.taskId = testId;
+ 109              		.loc 1 70 9 view .LVU24
+ 110              		.loc 1 70 21 is_stmt 0 view .LVU25
+ 111 0030 0397     		str	r7, [sp, #12]
+  71:Core/Src/tasks/example_task.c ****         snprintf(data.data, sizeof(data.data), "%s%d C", testData, testNum++);
+ 112              		.loc 1 71 9 is_stmt 1 view .LVU26
+ 113 0032 651C     		adds	r5, r4, #1
+ 114              	.LVL9:
+ 115              		.loc 1 71 9 is_stmt 0 view .LVU27
+ 116 0034 0094     		str	r4, [sp]
+ 117 0036 4346     		mov	r3, r8
+ 118 0038 174A     		ldr	r2, .L10+4
+ 119 003a 2021     		movs	r1, #32
+ 120 003c 04A8     		add	r0, sp, #16
+ 121 003e FFF7FEFF 		bl	snprintf
+ 122              	.LVL10:
+  72:Core/Src/tasks/example_task.c ****         xQueueSendToBack(gatekeeper_queueHandle, &data, 100);
+ 123              		.loc 1 72 9 is_stmt 1 view .LVU28
+ 124 0042 0023     		movs	r3, #0
+ 125 0044 6422     		movs	r2, #100
+ 126 0046 03A9     		add	r1, sp, #12
+ 127 0048 1248     		ldr	r0, .L10
+ 128 004a 0068     		ldr	r0, [r0]
+ 129 004c FFF7FEFF 		bl	xQueueGenericSend
+ 130              	.LVL11:
+  73:Core/Src/tasks/example_task.c ****         testNum = testNum % 8;
+ 131              		.loc 1 73 9 view .LVU29
+ 132              		.loc 1 73 17 is_stmt 0 view .LVU30
+ 133 0050 6B42     		rsbs	r3, r5, #0
+ 134 0052 05F00704 		and	r4, r5, #7
+ 135 0056 03F00703 		and	r3, r3, #7
+ 136 005a 58BF     		it	pl
+ 137 005c 5C42     		rsbpl	r4, r3, #0
+ 138              	.LVL12:
+  74:Core/Src/tasks/example_task.c ****         watchdog_ping(watchdog_task_id, xTaskGetTickCount());
+ 139              		.loc 1 74 9 is_stmt 1 view .LVU31
+ 140              		.loc 1 74 41 is_stmt 0 view .LVU32
+ 141 005e FFF7FEFF 		bl	xTaskGetTickCount
+ 142              	.LVL13:
+ 143 0062 0146     		mov	r1, r0
+ 144              		.loc 1 74 9 discriminator 1 view .LVU33
+ 145 0064 3046     		mov	r0, r6
+ 146 0066 FFF7FEFF 		bl	watchdog_ping
+ 147              	.LVL14:
+  75:Core/Src/tasks/example_task.c ****         vTaskDelay(pdMS_TO_TICKS(1000));
+ 148              		.loc 1 75 9 is_stmt 1 view .LVU34
+ 149 006a 4FF47A70 		mov	r0, #1000
+ 150 006e FFF7FEFF 		bl	vTaskDelay
+ 151              	.LVL15:
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s 			page 5
+
+
+ 152              	.LBE2:
+  67:Core/Src/tasks/example_task.c ****     {
+ 153              		.loc 1 67 5 view .LVU35
+ 154 0072 DDE7     		b	.L6
+ 155              	.LVL16:
+ 156              	.L9:
+  23:Core/Src/tasks/example_task.c ****     }
+ 157              		.loc 1 23 9 view .LVU36
+ 158 0074 0020     		movs	r0, #0
+ 159              	.LVL17:
+  23:Core/Src/tasks/example_task.c ****     }
+ 160              		.loc 1 23 9 is_stmt 0 view .LVU37
+ 161 0076 FFF7FEFF 		bl	vTaskDelete
+ 162              	.LVL18:
+ 163 007a CFE7     		b	.L2
+ 164              	.LVL19:
+ 165              	.L3:
+  51:Core/Src/tasks/example_task.c ****         vTaskDelete(NULL);
+ 166              		.loc 1 51 9 is_stmt 1 view .LVU38
+ 167 007c 0749     		ldr	r1, .L10+8
+ 168 007e 0420     		movs	r0, #4
+ 169 0080 FFF7FEFF 		bl	monitor_write_line
+ 170              	.LVL20:
+  52:Core/Src/tasks/example_task.c ****     }
+ 171              		.loc 1 52 9 view .LVU39
+ 172 0084 0020     		movs	r0, #0
+ 173 0086 FFF7FEFF 		bl	vTaskDelete
+ 174              	.LVL21:
+ 175 008a CBE7     		b	.L4
+ 176              	.LVL22:
+ 177              	.L7:
+  65:Core/Src/tasks/example_task.c ****     }
+ 178              		.loc 1 65 18 is_stmt 0 view .LVU40
+ 179 008c DFF81480 		ldr	r8, .L10+16
+ 180 0090 CEE7     		b	.L6
+ 181              	.L11:
+ 182 0092 00BF     		.align	2
+ 183              	.L10:
+ 184 0094 00000000 		.word	gatekeeper_queueHandle
+ 185 0098 10000000 		.word	.LC3
+ 186 009c 08000000 		.word	.LC2
+ 187 00a0 00000000 		.word	.LC0
+ 188 00a4 04000000 		.word	.LC1
+ 189              		.cfi_endproc
+ 190              	.LFE141:
+ 192              		.text
+ 193              	.Letext0:
+ 194              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
+ 195              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
+ 196              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 197              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 198              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 199              		.file 7 "Core/Inc/tasks/example_task.h"
+ 200              		.file 8 "Core/Inc/tasks/gatekeeper_task.h"
+ 201              		.file 9 "Core/Inc/services/watchdog_service.h"
+ 202              		.file 10 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/stdio.h"
+ 203              		.file 11 "Core/Inc/services/monitor_service.h"
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s 			page 6
+
+
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 example_task.c
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s:21     .rodata.example_task.str1.4:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s:34     .text.example_task:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s:40     .text.example_task:00000000 example_task
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccVVMjYx.s:184    .text.example_task:00000094 $d
+
+UNDEFINED SYMBOLS
+watchdog_add_task
+snprintf
+xQueueGenericSend
+xTaskGetTickCount
+watchdog_ping
+vTaskDelay
+vTaskDelete
+monitor_write_line
+gatekeeper_queueHandle

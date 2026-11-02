@@ -20,7 +20,7 @@ void watchdog_task(void *pvParameters)
 
         for (uint32_t task_id = 0; task_id < task_count; task_id++)
         {
-            const WatchdogTaskType *task = watchdog_get_task(task_id);
+            const WatchdogTask_t *task = watchdog_get_task(task_id);
 
             if (task != NULL)
             {
