@@ -72,8 +72,11 @@ Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c \
-Core/Inc/ssd1306/ssd1306.c \
-Core/Inc/ssd1306/fonts.c
+Drivers/SSD1306/Src/ssd1306.c \
+Drivers/SSD1306/Src/fonts.c \
+Core/Src/services/watchdog_service.c \
+Core/Src/tasks/example_task.c \
+Core/Src/tasks/watchdog_task.c 
 
 # ASM sources
 ASM_SOURCES =  \
@@ -153,7 +156,9 @@ C_INCLUDES =  \
 -IDrivers/BSP/STM32F4xx-Nucleo \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IDrivers/CMSIS/Include \
--ICore/Inc/ssd1306
+-IDrivers/SSD1306/Inc/ssd1306 \
+-ICore/Inc/tasks \
+-ICore/Inc/services
 
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections

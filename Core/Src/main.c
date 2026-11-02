@@ -28,6 +28,11 @@
 
 #include "ssd1306.h"
 #include "fonts.h"
+
+#include "watchdog_task.h"
+#include "watchdog_service.h"
+#include "example_task.h"
+
 #include <stdio.h>
 #include <string.h>
 /* USER CODE END Includes */
@@ -109,6 +114,11 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+
+  watchdog_init();
+
+  xTaskCreate(watchdog_task, "watchdogTASK", 256, NULL, 10, NULL);
+  xTaskCreate(example_task, "exampleTASK", 128, NULL, 1, NULL);
 
   /* USER CODE END 2 */
 

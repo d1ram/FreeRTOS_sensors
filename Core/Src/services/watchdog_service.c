@@ -1,20 +1,22 @@
 #include "watchdog_service.h"
-#include "stm32f410tx.h"
+#include "stm32f4xx.h"
 #include <stddef.h>
 
-static WatchdogTaskType g_tasks[watchdogMAX_TASKS];
+static WatchdogTask_t g_tasks[watchdogMAX_TASKS];
 static uint32_t g_task_counter = 0;
 
-void watchdog_init(void)
+void watchdog_init(void) // Initialization of watchdog registers.
 {
-    IWDG->KR = watchdogKEY_PR_RLP_ACCESS; // access to PR and RLP
-    IWDG->PR = IWDG_PR_PR_1;              // divider for LSI
-    IWDG->RLR = 1249;                     // timeout
+    IWDG->KR = watchdogKEY_START;         // 0xCCCC: start LSI
+    IWDG->KR = watchdogKEY_PR_RLP_ACCESS; // 0x5555: allow write for PR RLP
+    IWDG->PR = IWDG_PR_PR_1;              // divider
+    IWDG->RLR = 1249;
     while (IWDG->SR != 0)
-        ;
-    IWDG->KR = watchdogKEY_START;
+    {
+    }
 }
-uint32_t watchdog_add(uint32_t minTime, uint32_t maxTime) // add to g_tasks
+uint32_t watchdog_add_task(uint32_t minTime, uint32_t maxTime) // Returns task_id of watchdog structure of task, otherwise -1.
+
 {
     if (g_task_counter >= watchdogMAX_TASKS)
     {
@@ -26,19 +28,21 @@ uint32_t watchdog_add(uint32_t minTime, uint32_t maxTime) // add to g_tasks
     g_tasks[id].lastPing = 0;
     g_tasks[id].minTime = minTime;
     g_tasks[id].maxTime = maxTime;
+    g_tasks[id].hasPinged = false;
     g_tasks[id].is_active = true;
 
     return id;
 }
-void watchdog_ping(uint32_t task_id, uint32_t pingTime) // update pingtime
+void watchdog_ping(uint32_t task_id, uint32_t pingTime) // Ping watchdog that task is alive.
 {
     if (task_id < watchdogMAX_TASKS && // in bounds of maxTasks and active.
         g_tasks[task_id].is_active)
     {
-        if (g_tasks[task_id].lastPing == 0 || // either first ping or ping > minTime
+        if (!g_tasks[task_id].hasPinged || // either first ping or ping > minTime.
             pingTime - g_tasks[task_id].lastPing >= g_tasks[task_id].minTime)
         {
-            g_tasks[task_id].lastPing = pingTime; // refresh pingTime
+            g_tasks[task_id].lastPing = pingTime; // refresh pingTime.
+            g_tasks[task_id].hasPinged = true;
         }
         else
         { // fatal crash (spam)
@@ -46,20 +50,20 @@ void watchdog_ping(uint32_t task_id, uint32_t pingTime) // update pingtime
         }
     }
 }
-const WatchdogTaskType *watchdog_get_task(uint32_t task_id) // get task from g_tasks
+const WatchdogTask_t *watchdog_get_task(uint32_t task_id) // Get task with task_id from g_tasks.
 {
-    if (task_id > watchdogMAX_TASKS)
+    if (task_id >= watchdogMAX_TASKS)
     {
         return NULL;
     }
 
     return &g_tasks[task_id];
 }
-uint32_t watchdog_get_counter(void)
+uint32_t watchdog_get_counter(void) // Get counter of watchdog g_tasks.
 {
     return g_task_counter;
 }
-void watchdog_refresh_timer(void)
+void watchdog_refresh_timer(void) // Refresh bytes in IWDG CSMIS.
 {
     IWDG->KR = watchdogKEY_REFRESH;
 }

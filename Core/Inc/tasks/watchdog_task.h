@@ -6,5 +6,5 @@
 
 #define watchdogTIMER_MS 100
 
-void task_watchdog_check(void *pvParameters);
+void watchdog_task(void *pvParameters);
 #endif

@@ -4,13 +4,16 @@
 #include "task.h"
 #include <stdbool.h>
 
-void task_watchdog_check(void *pvParameters)
+void watchdog_task(void *pvParameters)
 {
     const uint32_t timer = pdMS_TO_TICKS(watchdogTIMER_MS);
 
+    static bool fault_occured = false;
     uint32_t task_count;
     for (;;)
     {
+        vTaskDelay(timer);
+
         task_count = watchdog_get_counter();
         bool all_tasks_alive = true;
         uint32_t currentTime = xTaskGetTickCount();
@@ -30,14 +33,14 @@ void task_watchdog_check(void *pvParameters)
             }
         }
 
-        if (all_tasks_alive)
+        if (!all_tasks_alive)
+        {
+            fault_occured = true;
+        }
+
+        if (!fault_occured)
         {
             watchdog_refresh_timer();
         }
-        else
-        {
-        }
-
-        vTaskDelay(timer);
     }
 }

@@ -15,15 +15,16 @@ struct
     uint32_t task_id;
     uint32_t minTime;
     uint32_t maxTime;
-    uint32_t lastPing;
-    bool is_active;
-} typedef WatchdogTaskType;
+    volatile uint32_t lastPing;
+    volatile bool hasPinged;
+    volatile bool is_active;
+} typedef WatchdogTask_t;
 
 void watchdog_init(void);
-uint32_t watchdog_add(uint32_t minTime, uint32_t maxTime);
+uint32_t watchdog_add_task(uint32_t minTime, uint32_t maxTime);
 void watchdog_ping(uint32_t task_id, uint32_t pingTime);
 
-const WatchdogTaskType *watchdog_get_task(uint32_t task_id);
+const WatchdogTask_t *watchdog_get_task(uint32_t task_id);
 uint32_t watchdog_get_counter(void);
 
 void watchdog_refresh_timer(void);
