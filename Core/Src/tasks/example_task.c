@@ -1,6 +1,7 @@
 #include "example_task.h"
 
 #include "watchdog_service.h"
+#include "bmp280_service.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "stm32f4xx_hal.h"
@@ -13,8 +14,8 @@
 
 void example_task(void *pvParameters)
 {
-    uint32_t minTime = pdMS_TO_TICKS(900);
-    uint32_t maxTime = pdMS_TO_TICKS(1150);
+    uint32_t minTime = pdMS_TO_TICKS(200);
+    uint32_t maxTime = pdMS_TO_TICKS(600);
 
     uint32_t watchdog_task_id = watchdog_add_task(minTime, maxTime);
 
@@ -53,25 +54,15 @@ void example_task(void *pvParameters)
     }
 
     const int testId = example->taskId;
-    int testNum = 1 - testId;
 
-    char *testData;
-    if (testId == 0)
-    {
-        testData = "2";
-    }
-    else
-    {
-        testData = "7";
-    }
     for (;;)
     {
+        float temperature = bmp_service_get_temperature();
         gatekeeperQueueData_t data;
         data.taskId = testId;
-        snprintf(data.data, sizeof(data.data), "%s%d C", testData, testNum++);
+        snprintf(data.data, sizeof(data.data), "%.1d C", (int)temperature);
         xQueueSendToBack(gatekeeper_queueHandle, &data, 100);
-        testNum = testNum % 8;
         watchdog_ping(watchdog_task_id, xTaskGetTickCount());
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(300));
     }
 }

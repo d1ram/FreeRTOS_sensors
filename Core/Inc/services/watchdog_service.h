@@ -1,3 +1,4 @@
+// Watchdog service that provides task with every needed.
 #include <stdint.h>
 #include <stdbool.h>
 

@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 1
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 1
   40 0002 0022     		movs	r2, #0
   41 0004 2421     		movs	r1, #36
   42 0006 0A20     		movs	r0, #10
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 2
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s 			page 2
 
 
   43 0008 FFF7FEFF 		bl	xQueueGenericCreate
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 1
   92 0006 4FF4FA71 		mov	r1, #500
   93 000a 1420     		movs	r0, #20
   94              	.LVL2:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 3
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s 			page 3
 
 
   95              		.loc 1 21 39 view .LVU9
@@ -130,7 +130,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 1
  100              		.loc 1 22 5 is_stmt 1 view .LVU10
  101              		.loc 1 22 8 is_stmt 0 view .LVU11
  102 0012 B0F1FF3F 		cmp	r0, #-1
- 103 0016 0CD0     		beq	.L13
+ 103 0016 0BD0     		beq	.L13
  104              	.LVL5:
  105              	.L6:
   23:Core/Src/tasks/gatekeeper_task.c ****     {
@@ -140,53 +140,51 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 1
   27:Core/Src/tasks/gatekeeper_task.c ****     const gatekeeperTaskConfig_t *config = (gatekeeperTaskConfig_t *)pvParameters;
  106              		.loc 1 27 5 is_stmt 1 view .LVU12
   28:Core/Src/tasks/gatekeeper_task.c **** 
-  29:Core/Src/tasks/gatekeeper_task.c ****     if (config == NULL || gatekeeper_queueHandle == NULL || config->taskNames == NULL)
+  29:Core/Src/tasks/gatekeeper_task.c ****     if (config == NULL || gatekeeper_queueHandle == NULL)
  107              		.loc 1 29 5 view .LVU13
  108              		.loc 1 29 8 is_stmt 0 view .LVU14
- 109 0018 1EB1     		cbz	r6, .L7
+ 109 0018 16B1     		cbz	r6, .L7
  110              		.loc 1 29 50 discriminator 1 view .LVU15
  111 001a 184B     		ldr	r3, .L14
  112 001c 1B68     		ldr	r3, [r3]
  113              		.loc 1 29 24 discriminator 1 view .LVU16
- 114 001e 03B1     		cbz	r3, .L7
- 115              		.loc 1 29 58 discriminator 2 view .LVU17
- 116 0020 8EB9     		cbnz	r6, .L11
- 117              	.L7:
+ 114 001e 8BB9     		cbnz	r3, .L11
+ 115              	.L7:
   30:Core/Src/tasks/gatekeeper_task.c ****     {
   31:Core/Src/tasks/gatekeeper_task.c ****         monitor_write_line(2, "DELETED");
- 118              		.loc 1 31 9 is_stmt 1 view .LVU18
- 119 0022 1749     		ldr	r1, .L14+4
- 120 0024 0220     		movs	r0, #2
- 121 0026 FFF7FEFF 		bl	monitor_write_line
- 122              	.LVL6:
+ 116              		.loc 1 31 9 is_stmt 1 view .LVU17
+ 117 0020 1749     		ldr	r1, .L14+4
+ 118 0022 0220     		movs	r0, #2
+ 119 0024 FFF7FEFF 		bl	monitor_write_line
+ 120              	.LVL6:
   32:Core/Src/tasks/gatekeeper_task.c ****         vTaskDelete(NULL);
- 123              		.loc 1 32 9 view .LVU19
- 124 002a 0020     		movs	r0, #0
- 125 002c FFF7FEFF 		bl	vTaskDelete
- 126              	.LVL7:
+ 121              		.loc 1 32 9 view .LVU18
+ 122 0028 0020     		movs	r0, #0
+ 123 002a FFF7FEFF 		bl	vTaskDelete
+ 124              	.LVL7:
   33:Core/Src/tasks/gatekeeper_task.c ****     }
   34:Core/Src/tasks/gatekeeper_task.c **** 
   35:Core/Src/tasks/gatekeeper_task.c ****     const char (*taskNames)[gatekeeperTASK_NAME_MAX_LENGHT] = config->taskNames;
- 127              		.loc 1 35 5 view .LVU20
- 128              		.loc 1 35 5 is_stmt 0 view .LVU21
- 129 0030 09E0     		b	.L11
- 130              	.LVL8:
- 131              	.L13:
+ 125              		.loc 1 35 5 view .LVU19
+ 126              		.loc 1 35 5 is_stmt 0 view .LVU20
+ 127 002e 09E0     		b	.L11
+ 128              	.LVL8:
+ 129              	.L13:
   24:Core/Src/tasks/gatekeeper_task.c ****     }
- 132              		.loc 1 24 9 is_stmt 1 view .LVU22
- 133 0032 0020     		movs	r0, #0
- 134              	.LVL9:
+ 130              		.loc 1 24 9 is_stmt 1 view .LVU21
+ 131 0030 0020     		movs	r0, #0
+ 132              	.LVL9:
   24:Core/Src/tasks/gatekeeper_task.c ****     }
- 135              		.loc 1 24 9 is_stmt 0 view .LVU23
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 4
+ 133              		.loc 1 24 9 is_stmt 0 view .LVU22
+ 134 0032 FFF7FEFF 		bl	vTaskDelete
+ 135              	.LVL10:
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s 			page 4
 
 
- 136 0034 FFF7FEFF 		bl	vTaskDelete
- 137              	.LVL10:
- 138 0038 EEE7     		b	.L6
- 139              	.LVL11:
- 140              	.L9:
- 141              	.LBB2:
+ 136 0036 EFE7     		b	.L6
+ 137              	.LVL11:
+ 138              	.L9:
+ 139              	.LBB2:
   36:Core/Src/tasks/gatekeeper_task.c **** 
   37:Core/Src/tasks/gatekeeper_task.c ****     for (;;)
   38:Core/Src/tasks/gatekeeper_task.c ****     {
@@ -204,111 +202,111 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 1
   50:Core/Src/tasks/gatekeeper_task.c ****         }
   51:Core/Src/tasks/gatekeeper_task.c **** 
   52:Core/Src/tasks/gatekeeper_task.c ****         watchdog_ping(watchdog_task_id, xTaskGetTickCount()); // Ping for watchdog
- 142              		.loc 1 52 9 is_stmt 1 view .LVU24
- 143              		.loc 1 52 41 is_stmt 0 view .LVU25
- 144 003a FFF7FEFF 		bl	xTaskGetTickCount
- 145              	.LVL12:
- 146 003e 0146     		mov	r1, r0
- 147              		.loc 1 52 9 discriminator 1 view .LVU26
- 148 0040 2046     		mov	r0, r4
- 149 0042 FFF7FEFF 		bl	watchdog_ping
- 150              	.LVL13:
- 151              	.LBE2:
+ 140              		.loc 1 52 9 is_stmt 1 view .LVU23
+ 141              		.loc 1 52 41 is_stmt 0 view .LVU24
+ 142 0038 FFF7FEFF 		bl	xTaskGetTickCount
+ 143              	.LVL12:
+ 144 003c 0146     		mov	r1, r0
+ 145              		.loc 1 52 9 discriminator 1 view .LVU25
+ 146 003e 2046     		mov	r0, r4
+ 147 0040 FFF7FEFF 		bl	watchdog_ping
+ 148              	.LVL13:
+ 149              	.LBE2:
   37:Core/Src/tasks/gatekeeper_task.c ****     {
- 152              		.loc 1 37 5 is_stmt 1 view .LVU27
- 153              	.L11:
+ 150              		.loc 1 37 5 is_stmt 1 view .LVU26
+ 151              	.L11:
   37:Core/Src/tasks/gatekeeper_task.c ****     {
- 154              		.loc 1 37 5 view .LVU28
- 155              	.LBB4:
+ 152              		.loc 1 37 5 view .LVU27
+ 153              	.LBB4:
   40:Core/Src/tasks/gatekeeper_task.c ****         if (xQueueReceive(gatekeeper_queueHandle, &data, pdMS_TO_TICKS(gatekeeperQUEUE_MAX_WAIT_MS)
- 156              		.loc 1 40 9 view .LVU29
+ 154              		.loc 1 40 9 view .LVU28
   41:Core/Src/tasks/gatekeeper_task.c ****         {
- 157              		.loc 1 41 9 view .LVU30
+ 155              		.loc 1 41 9 view .LVU29
   41:Core/Src/tasks/gatekeeper_task.c ****         {
- 158              		.loc 1 41 13 is_stmt 0 view .LVU31
- 159 0046 6422     		movs	r2, #100
- 160 0048 02A9     		add	r1, sp, #8
- 161 004a 0C4B     		ldr	r3, .L14
- 162 004c 1868     		ldr	r0, [r3]
- 163 004e FFF7FEFF 		bl	xQueueReceive
- 164              	.LVL14:
+ 156              		.loc 1 41 13 is_stmt 0 view .LVU30
+ 157 0044 6422     		movs	r2, #100
+ 158 0046 02A9     		add	r1, sp, #8
+ 159 0048 0C4B     		ldr	r3, .L14
+ 160 004a 1868     		ldr	r0, [r3]
+ 161 004c FFF7FEFF 		bl	xQueueReceive
+ 162              	.LVL14:
   41:Core/Src/tasks/gatekeeper_task.c ****         {
- 165              		.loc 1 41 12 discriminator 1 view .LVU32
- 166 0052 0128     		cmp	r0, #1
- 167 0054 F1D1     		bne	.L9
- 168              	.LBB3:
+ 163              		.loc 1 41 12 discriminator 1 view .LVU31
+ 164 0050 0128     		cmp	r0, #1
+ 165 0052 F1D1     		bne	.L9
+ 166              	.LBB3:
   44:Core/Src/tasks/gatekeeper_task.c ****             if (data.taskId >= 0 && data.taskId < gatekeeperMAX_TASK)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 5
+ 167              		.loc 1 44 13 is_stmt 1 view .LVU32
+  45:Core/Src/tasks/gatekeeper_task.c ****             {
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s 			page 5
 
 
- 169              		.loc 1 44 13 is_stmt 1 view .LVU33
+ 168              		.loc 1 45 13 view .LVU33
   45:Core/Src/tasks/gatekeeper_task.c ****             {
- 170              		.loc 1 45 13 view .LVU34
+ 169              		.loc 1 45 21 is_stmt 0 view .LVU34
+ 170 0054 029B     		ldr	r3, [sp, #8]
   45:Core/Src/tasks/gatekeeper_task.c ****             {
- 171              		.loc 1 45 21 is_stmt 0 view .LVU35
- 172 0056 029B     		ldr	r3, [sp, #8]
-  45:Core/Src/tasks/gatekeeper_task.c ****             {
- 173              		.loc 1 45 16 view .LVU36
- 174 0058 072B     		cmp	r3, #7
- 175 005a EED8     		bhi	.L9
+ 171              		.loc 1 45 16 view .LVU35
+ 172 0056 072B     		cmp	r3, #7
+ 173 0058 EED8     		bhi	.L9
   47:Core/Src/tasks/gatekeeper_task.c ****                 monitor_write_line(data.taskId, buf);
- 176              		.loc 1 47 17 is_stmt 1 view .LVU37
- 177 005c 0BAD     		add	r5, sp, #44
- 178 005e 03AA     		add	r2, sp, #12
- 179 0060 0092     		str	r2, [sp]
- 180 0062 06EBC303 		add	r3, r6, r3, lsl #3
- 181 0066 074A     		ldr	r2, .L14+8
- 182 0068 2A21     		movs	r1, #42
- 183 006a 2846     		mov	r0, r5
- 184 006c FFF7FEFF 		bl	snprintf
- 185              	.LVL15:
+ 174              		.loc 1 47 17 is_stmt 1 view .LVU36
+ 175 005a 0BAD     		add	r5, sp, #44
+ 176 005c 03AA     		add	r2, sp, #12
+ 177 005e 0092     		str	r2, [sp]
+ 178 0060 06EBC303 		add	r3, r6, r3, lsl #3
+ 179 0064 074A     		ldr	r2, .L14+8
+ 180 0066 2A21     		movs	r1, #42
+ 181 0068 2846     		mov	r0, r5
+ 182 006a FFF7FEFF 		bl	snprintf
+ 183              	.LVL15:
   48:Core/Src/tasks/gatekeeper_task.c ****             }
- 186              		.loc 1 48 17 view .LVU38
- 187 0070 2946     		mov	r1, r5
- 188 0072 9DF80800 		ldrb	r0, [sp, #8]	@ zero_extendqisi2
- 189 0076 FFF7FEFF 		bl	monitor_write_line
- 190              	.LVL16:
- 191 007a DEE7     		b	.L9
- 192              	.L15:
- 193              		.align	2
- 194              	.L14:
- 195 007c 00000000 		.word	gatekeeper_queueHandle
- 196 0080 00000000 		.word	.LC0
- 197 0084 08000000 		.word	.LC1
- 198              	.LBE3:
- 199              	.LBE4:
- 200              		.cfi_endproc
- 201              	.LFE142:
- 203              		.global	gatekeeper_queueHandle
- 204              		.section	.bss.gatekeeper_queueHandle,"aw",%nobits
- 205              		.align	2
- 208              	gatekeeper_queueHandle:
- 209 0000 00000000 		.space	4
- 210              		.text
- 211              	.Letext0:
- 212              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
- 213              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
- 214              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 215              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 216              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 217              		.file 7 "Core/Inc/tasks/gatekeeper_task.h"
- 218              		.file 8 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/stdio.h"
- 219              		.file 9 "Core/Inc/services/watchdog_service.h"
- 220              		.file 10 "Core/Inc/services/monitor_service.h"
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s 			page 6
+ 184              		.loc 1 48 17 view .LVU37
+ 185 006e 2946     		mov	r1, r5
+ 186 0070 9DF80800 		ldrb	r0, [sp, #8]	@ zero_extendqisi2
+ 187 0074 FFF7FEFF 		bl	monitor_write_line
+ 188              	.LVL16:
+ 189 0078 DEE7     		b	.L9
+ 190              	.L15:
+ 191 007a 00BF     		.align	2
+ 192              	.L14:
+ 193 007c 00000000 		.word	gatekeeper_queueHandle
+ 194 0080 00000000 		.word	.LC0
+ 195 0084 08000000 		.word	.LC1
+ 196              	.LBE3:
+ 197              	.LBE4:
+ 198              		.cfi_endproc
+ 199              	.LFE142:
+ 201              		.global	gatekeeper_queueHandle
+ 202              		.section	.bss.gatekeeper_queueHandle,"aw",%nobits
+ 203              		.align	2
+ 206              	gatekeeper_queueHandle:
+ 207 0000 00000000 		.space	4
+ 208              		.text
+ 209              	.Letext0:
+ 210              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
+ 211              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
+ 212              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 213              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 214              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 215              		.file 7 "Core/Inc/tasks/gatekeeper_task.h"
+ 216              		.file 8 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/stdio.h"
+ 217              		.file 9 "Core/Inc/services/watchdog_service.h"
+ 218              		.file 10 "Core/Inc/services/monitor_service.h"
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gatekeeper_task.c
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:21     .text.gatekeeper_init_queue:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:27     .text.gatekeeper_init_queue:00000000 gatekeeper_init_queue
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:53     .text.gatekeeper_init_queue:00000014 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:208    .bss.gatekeeper_queueHandle:00000000 gatekeeper_queueHandle
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:58     .rodata.gatekeeper_task.str1.4:00000000 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:65     .text.gatekeeper_task:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:71     .text.gatekeeper_task:00000000 gatekeeper_task
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:195    .text.gatekeeper_task:0000007c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccsyDJZy.s:205    .bss.gatekeeper_queueHandle:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:21     .text.gatekeeper_init_queue:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:27     .text.gatekeeper_init_queue:00000000 gatekeeper_init_queue
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:53     .text.gatekeeper_init_queue:00000014 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:206    .bss.gatekeeper_queueHandle:00000000 gatekeeper_queueHandle
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:58     .rodata.gatekeeper_task.str1.4:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:65     .text.gatekeeper_task:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:71     .text.gatekeeper_task:00000000 gatekeeper_task
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:193    .text.gatekeeper_task:0000007c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cczFQFDJ.s:203    .bss.gatekeeper_queueHandle:00000000 $d
 
 UNDEFINED SYMBOLS
 xQueueGenericCreate

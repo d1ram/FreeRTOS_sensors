@@ -1,10 +1,9 @@
+// Gatekeeper task for writing into OLED-display
 #define __GATEKEEPER_TASK_H
 #ifdef __GATEKEEPER_TASK_H
 
 #include "FreeRTOS.h"
 #include "queue.h"
-#include <stdio.h>
-#include <stdint.h>
 
 #define gatekeeper_watchdogMIN_TIME 20
 #define gatekeeper_watchdogMAX_TIME 500

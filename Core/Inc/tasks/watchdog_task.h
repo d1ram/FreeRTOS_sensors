@@ -1,3 +1,4 @@
+// Watchdog task that controls the work of registered tasks.
 #include <stdint.h>
 #include "watchdog_service.h"
 

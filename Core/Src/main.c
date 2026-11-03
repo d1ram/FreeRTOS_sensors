@@ -25,13 +25,17 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "semphr.h"
 
 #include "monitor_service.h"
 #include "watchdog_service.h"
+#include "i2c_bus.h"
+#include "bmp280_service.h"
 
 #include "watchdog_task.h"
 #include "example_task.h"
 #include "gatekeeper_task.h"
+#include "bmp_task.h"
 
 #include <stdio.h>
 #include <stdint.h>
@@ -66,6 +70,7 @@ const osThreadAttr_t defaultTask_attributes = {
     .priority = (osPriority_t)osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
+SemaphoreHandle_t hi2c_mutex;
 
 /* USER CODE END PV */
 
@@ -120,14 +125,16 @@ int main(void)
   static gatekeeperTaskConfig_t gdata = {
       .taskNames = {"Temp", "Pres"}};
 
-  monitor_init(&hi2c1);
   watchdog_init();
+  monitor_init(&hi2c1);
+  bmp_service_init(&hi2c1);
+
   xTaskCreate(watchdog_task, "watchdogTASK", 256, NULL, 10, NULL);
+  xTaskCreate(bmp_task, "bmpTASK", 256, NULL, 6, NULL);
+  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 512, &gdata, 2, NULL);
 
   xTaskCreate(example_task, "exampleTASK", 256, &data1, 1, NULL);
-  xTaskCreate(example_task, "exampleTASK", 256, &data2, 1, NULL);
-
-  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 512, &gdata, 1, NULL);
+  // xTaskCreate(example_task, "exampleTASK", 256, &data2, 1, NULL);
 
   /* USER CODE END 2 */
 
@@ -139,7 +146,7 @@ int main(void)
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
-
+  i2c_mutex_init();
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 

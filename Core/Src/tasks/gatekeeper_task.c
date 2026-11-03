@@ -26,7 +26,7 @@ void gatekeeper_task(void *pvParameters)
 
     const gatekeeperTaskConfig_t *config = (gatekeeperTaskConfig_t *)pvParameters;
 
-    if (config == NULL || gatekeeper_queueHandle == NULL || config->taskNames == NULL)
+    if (config == NULL || gatekeeper_queueHandle == NULL)
     {
         monitor_write_line(2, "DELETED");
         vTaskDelete(NULL);

@@ -1,3 +1,4 @@
+// Abstract layer for independence of gatekeeper task-writing into the monitor
 #include "ssd1306.h"
 #include "fonts.h"
 #include <stdio.h>
@@ -12,6 +13,8 @@
 #define monitorCOLS 128 / monitorCHAR_W
 #define monitorROWS 64 / monitorCHAR_H
 #define monitorDEFAULT_COLOR White
+
+#define monitorMAX_MUTEX_TIMEOUT_MS 80
 
 void monitor_init(I2C_HandleTypeDef *bus);
 void monitor_write_line(uint8_t line, const char *str);
