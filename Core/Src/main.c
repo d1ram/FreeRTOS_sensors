@@ -27,15 +27,20 @@
 #include "queue.h"
 #include "semphr.h"
 
+#include "btn_handler.h"
+
 #include "monitor_service.h"
 #include "watchdog_service.h"
 #include "i2c_bus.h"
 #include "bmp280_service.h"
+#include "ui_state.h"
 
 #include "watchdog_task.h"
 #include "example_task.h"
 #include "gatekeeper_task.h"
 #include "bmp_task.h"
+#include "page_task.h"
+#include "bmp_print_task.h"
 
 #include <stdio.h>
 #include <stdint.h>
@@ -119,21 +124,36 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  static example_t data1 = {.taskId = 0};
-  static example_t data2 = {.taskId = 1};
+  static BmpPrintTaskConfig_t data1 = {
+      .task_id = 0,
+      .function = bmp_service_get_temperature,
+      "C"};
+  static BmpPrintTaskConfig_t data2 = {
+      .task_id = 1,
+      .function = bmp_service_get_pressure,
+      "hPa"};
+  static BmpPrintTaskConfig_t data3 = {
+      .task_id = 6,
+      .function = bmp_service_get_altitude,
+      "m"};
 
-  static gatekeeperTaskConfig_t gdata = {
-      .taskNames = {"Temp", "Pres"}};
+  static GatekeeperTaskConfig_t gdata = {
+      .task_names = {"Temp", "Pres", "\0", "\0", "\0", "\0", "Alti"}};
 
   watchdog_init();
   monitor_init(&hi2c1);
   bmp_service_init(&hi2c1);
 
-  xTaskCreate(watchdog_task, "watchdogTASK", 256, NULL, 10, NULL);
-  xTaskCreate(bmp_task, "bmpTASK", 256, NULL, 6, NULL);
-  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 512, &gdata, 2, NULL);
+  xTaskCreate(watchdog_task, "watchdogTASK", 256, NULL, 10, NULL);      // Watchdog task
+  xTaskCreate(bmp_task, "bmpTASK", 256, NULL, 6, NULL);                 // Refresh bmp-data
+  xTaskCreate(page_task, "pagehandlerTASK", 256, NULL, 1, NULL);        // Task-Handler for button
+  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 512, &gdata, 2, NULL); // Display gatekeeper
 
-  xTaskCreate(example_task, "exampleTASK", 256, &data1, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask", 256, &data1, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask", 256, &data2, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask", 256, &data3, 1, NULL);
+
+  // xTaskCreate(example_task, "exampleTASK", 256, &data1, 1, NULL);
   // xTaskCreate(example_task, "exampleTASK", 256, &data2, 1, NULL);
 
   /* USER CODE END 2 */

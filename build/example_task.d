@@ -42,7 +42,7 @@ build/example_task.o: Core/Src/tasks/example_task.c \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Core/Inc/services/monitor_service.h Drivers/SSD1306/Inc/ssd1306.h \
  Drivers/SSD1306/Inc/fonts.h Drivers/SSD1306/Inc/fonts.h \
- Core/Inc/tasks/gatekeeper_task.h
+ Core/Inc/tasks/gatekeeper_task.h Core/Inc/services/ui_state.h
 Core/Inc/tasks/example_task.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 Core/Inc/FreeRTOSConfig.h:
@@ -92,3 +92,4 @@ Drivers/SSD1306/Inc/ssd1306.h:
 Drivers/SSD1306/Inc/fonts.h:
 Drivers/SSD1306/Inc/fonts.h:
 Core/Inc/tasks/gatekeeper_task.h:
+Core/Inc/services/ui_state.h:

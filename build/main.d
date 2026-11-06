@@ -42,12 +42,14 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- Core/Inc/services/monitor_service.h Drivers/SSD1306/Inc/ssd1306.h \
- Drivers/SSD1306/Inc/fonts.h Drivers/SSD1306/Inc/fonts.h \
- Core/Inc/services/watchdog_service.h Core/Inc/services/i2c_bus.h \
- Core/Inc/services/bmp280_service.h Drivers/BMP280/Inc/BMP280.h \
+ Core/Inc/handlers/btn_handler.h Core/Inc/services/monitor_service.h \
+ Drivers/SSD1306/Inc/ssd1306.h Drivers/SSD1306/Inc/fonts.h \
+ Drivers/SSD1306/Inc/fonts.h Core/Inc/services/watchdog_service.h \
+ Core/Inc/services/i2c_bus.h Core/Inc/services/bmp280_service.h \
+ Drivers/BMP280/Inc/BMP280.h Core/Inc/services/ui_state.h \
  Core/Inc/tasks/watchdog_task.h Core/Inc/tasks/example_task.h \
- Core/Inc/tasks/gatekeeper_task.h Core/Inc/tasks/bmp_task.h
+ Core/Inc/tasks/gatekeeper_task.h Core/Inc/tasks/bmp_task.h \
+ Core/Inc/tasks/page_task.h Core/Inc/tasks/bmp_print_task.h
 Core/Inc/main.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 Core/Inc/stm32f4xx_hal_conf.h:
@@ -94,6 +96,7 @@ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+Core/Inc/handlers/btn_handler.h:
 Core/Inc/services/monitor_service.h:
 Drivers/SSD1306/Inc/ssd1306.h:
 Drivers/SSD1306/Inc/fonts.h:
@@ -102,7 +105,10 @@ Core/Inc/services/watchdog_service.h:
 Core/Inc/services/i2c_bus.h:
 Core/Inc/services/bmp280_service.h:
 Drivers/BMP280/Inc/BMP280.h:
+Core/Inc/services/ui_state.h:
 Core/Inc/tasks/watchdog_task.h:
 Core/Inc/tasks/example_task.h:
 Core/Inc/tasks/gatekeeper_task.h:
 Core/Inc/tasks/bmp_task.h:
+Core/Inc/tasks/page_task.h:
+Core/Inc/tasks/bmp_print_task.h:

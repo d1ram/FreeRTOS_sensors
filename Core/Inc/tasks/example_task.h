@@ -6,8 +6,8 @@
 
 typedef struct
 {
-    int taskId;
-} example_t;
+    int task_id;
+} Example_t;
 
 void example_task(void *pvParameters);
 #endif

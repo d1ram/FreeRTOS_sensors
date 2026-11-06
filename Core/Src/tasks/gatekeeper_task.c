@@ -1,4 +1,5 @@
 #include "gatekeeper_task.h"
+#include "page_task.h"
 
 #include "watchdog_service.h"
 #include "monitor_service.h"
@@ -9,11 +10,12 @@
 #include "task.h"
 
 #include <stdio.h>
+#include <string.h>
 
 QueueHandle_t gatekeeper_queueHandle = NULL;
 void gatekeeper_init_queue()
 {
-    gatekeeper_queueHandle = xQueueCreate(gatekeeperQUEUE_LENGHT, sizeof(gatekeeperQueueData_t));
+    gatekeeper_queueHandle = xQueueCreate(gatekeeperQUEUE_LENGHT, sizeof(GatekeeperQueueData_t));
 }
 
 void gatekeeper_task(void *pvParameters)
@@ -24,7 +26,7 @@ void gatekeeper_task(void *pvParameters)
         vTaskDelete(NULL);
     }
 
-    const gatekeeperTaskConfig_t *config = (gatekeeperTaskConfig_t *)pvParameters;
+    const GatekeeperTaskConfig_t *config = (GatekeeperTaskConfig_t *)pvParameters;
 
     if (config == NULL || gatekeeper_queueHandle == NULL)
     {
@@ -32,20 +34,56 @@ void gatekeeper_task(void *pvParameters)
         vTaskDelete(NULL);
     }
 
-    const char (*taskNames)[gatekeeperTASK_NAME_MAX_LENGHT] = config->taskNames;
+    const char (*task_names)[gatekeeperTASK_NAME_MAX_LENGHT] = config->task_names;
+    char task_data[gatekeeperMAX_TASK][gatekeeperTASK_DATA_MAX_LENGHT] = {0}; // '\0'
+    int last_page = 0;
 
     for (;;)
     {
-        // Write type: "<taskName>: <taskData>"
-        gatekeeperQueueData_t data;
-        if (xQueueReceive(gatekeeper_queueHandle, &data, pdMS_TO_TICKS(gatekeeperQUEUE_MAX_WAIT_MS)) == pdPASS)
+        if (current_page_g != last_page)
         {
-            // Function for writing into monitor.
-            char buf[gatekeeperTASK_NAME_MAX_LENGHT + gatekeeperTASK_DATA_MAX_LENGHT + 2]; // buf for "<taskName>: <taskData>"
-            if (data.taskId >= 0 && data.taskId < gatekeeperMAX_TASK)
+            last_page = current_page_g;
+
+            int first_element = current_page_g * gatekeeperMAX_TASK_PER_PAGE;
+            int current_line = 0;
+            char buf[gatekeeperTASK_NAME_MAX_LENGHT + gatekeeperTASK_DATA_MAX_LENGHT + 2];
+            for (int i = first_element; i < first_element + gatekeeperMAX_TASK_PER_PAGE; i++)
             {
-                snprintf(buf, sizeof(buf), "%s: %s", taskNames[data.taskId], data.data);
-                monitor_write_line(data.taskId, buf);
+                if (task_data[i][0] != '\0')
+                {
+                    snprintf(buf, sizeof(buf), "%s: %s", task_names[i], task_data[i]);
+                }
+                else
+                {
+                    snprintf(buf, sizeof(buf), "%s: ---", task_names[i]);
+                }
+                monitor_write_line(current_line, buf);
+                current_line++;
+            }
+        }
+        /* Why else? Because if in the same iteration we will update whole monitor and also read from queue, watchdog
+        might think that task died. Otherwise we could make max_time for watchdog bigger.  */
+        else
+        {
+            // Write type: "<taskName>: <taskData>"
+            GatekeeperQueueData_t data;
+            if (xQueueReceive(gatekeeper_queueHandle, &data, pdMS_TO_TICKS(gatekeeperQUEUE_MAX_WAIT_MS)) == pdPASS)
+            {
+                // Function for writing into monitor.
+                char buf[gatekeeperTASK_NAME_MAX_LENGHT + gatekeeperTASK_DATA_MAX_LENGHT + 2]; // buf for "<taskName>: <taskData>"
+                if (data.task_id >= 0 && data.task_id < gatekeeperMAX_TASK)
+                {
+                    strncpy(task_data[data.task_id], data.data, gatekeeperTASK_DATA_MAX_LENGHT);
+                    task_data[data.task_id][gatekeeperTASK_DATA_MAX_LENGHT - 1] = '\0';
+
+                    int task_page = data.task_id / gatekeeperMAX_TASK_PER_PAGE;
+                    if ((data.task_id / gatekeeperMAX_TASK_PER_PAGE) == current_page_g) // If on exact page of it
+                    {
+                        int task_page_id = data.task_id - (task_page * gatekeeperMAX_TASK_PER_PAGE);
+                        snprintf(buf, sizeof(buf), "%s: %s", task_names[data.task_id], data.data);
+                        monitor_write_line(task_page_id, buf);
+                    }
+                }
             }
         }
 

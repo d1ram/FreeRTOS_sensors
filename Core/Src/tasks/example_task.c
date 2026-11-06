@@ -44,7 +44,7 @@ void example_task(void *pvParameters)
     //     }
     // }
 
-    const example_t *example = pvParameters;
+    const Example_t *example = pvParameters;
 
     if (example == NULL ||
         gatekeeper_queueHandle == NULL)
@@ -53,13 +53,13 @@ void example_task(void *pvParameters)
         vTaskDelete(NULL);
     }
 
-    const int testId = example->taskId;
+    const int testId = example->task_id;
 
     for (;;)
     {
         float temperature = bmp_service_get_temperature();
-        gatekeeperQueueData_t data;
-        data.taskId = testId;
+        GatekeeperQueueData_t data;
+        data.task_id = testId;
         snprintf(data.data, sizeof(data.data), "%.1d C", (int)temperature);
         xQueueSendToBack(gatekeeper_queueHandle, &data, 100);
         watchdog_ping(watchdog_task_id, xTaskGetTickCount());

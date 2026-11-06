@@ -32,11 +32,8 @@
 
 static HAL_StatusTypeDef bmp280_write_register(bmp280_t *bmp, uint8_t reg, uint8_t value)
 {
-    if (bmp->comm_mode == BMP280_MODE_I2C)
-    {
-        uint8_t data[2] = {reg, value};
-        return HAL_I2C_Master_Transmit(bmp->hi2c, bmp->address << 1, data, 2, HAL_MAX_DELAY);
-    }
+    uint8_t data[2] = {reg, value};
+    return HAL_I2C_Master_Transmit(bmp->hi2c, bmp->address << 1, data, 2, HAL_MAX_DELAY);
 }
 
 static HAL_StatusTypeDef bmp280_read_registers(bmp280_t *bmp, uint8_t reg, uint8_t *buffer, uint16_t length)

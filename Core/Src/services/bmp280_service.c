@@ -41,7 +41,7 @@ float bmp_service_get_pressure(void)
 {
     return pressure;
 }
-float bmp_service_get_attitude(void)
+float bmp_service_get_altitude(void)
 {
     return altitude;
 }

@@ -25,10 +25,10 @@ uint32_t watchdog_add_task(uint32_t minTime, uint32_t maxTime) // Returns task_i
 
     uint32_t id = g_task_counter++;
     g_tasks[id].task_id = id;
-    g_tasks[id].lastPing = 0;
-    g_tasks[id].minTime = minTime;
-    g_tasks[id].maxTime = maxTime;
-    g_tasks[id].hasPinged = false;
+    g_tasks[id].last_ping = 0;
+    g_tasks[id].min_time = minTime;
+    g_tasks[id].max_time = maxTime;
+    g_tasks[id].has_pinged = false;
     g_tasks[id].is_active = true;
 
     return id;
@@ -38,11 +38,11 @@ void watchdog_ping(uint32_t task_id, uint32_t pingTime) // Ping watchdog that ta
     if (task_id < watchdogMAX_TASKS && // in bounds of maxTasks and active.
         g_tasks[task_id].is_active)
     {
-        if (!g_tasks[task_id].hasPinged || // either first ping or ping > minTime.
-            pingTime - g_tasks[task_id].lastPing >= g_tasks[task_id].minTime)
+        if (!g_tasks[task_id].has_pinged || // either first ping or ping > minTime.
+            pingTime - g_tasks[task_id].last_ping >= g_tasks[task_id].min_time)
         {
-            g_tasks[task_id].lastPing = pingTime; // refresh pingTime.
-            g_tasks[task_id].hasPinged = true;
+            g_tasks[task_id].last_ping = pingTime; // refresh pingTime.
+            g_tasks[task_id].has_pinged = true;
         }
         else
         { // fatal crash (spam)

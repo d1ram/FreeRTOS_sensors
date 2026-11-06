@@ -13,6 +13,6 @@ void bmp_service_read_data(void);
 
 float bmp_service_get_temperature(void);
 float bmp_service_get_pressure(void);
-float bmp_service_get_attitude(void);
+float bmp_service_get_altitude(void);
 
 #endif

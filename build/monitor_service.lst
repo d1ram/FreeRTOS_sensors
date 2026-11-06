@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 1
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 1
   44              		.loc 1 12 5 is_stmt 1 view .LVU4
   45 0006 FFF7FEFF 		bl	ssd1306_Init
   46              	.LVL1:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 2
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s 			page 2
 
 
   13:Core/Src/services/monitor_service.c **** }
@@ -94,10 +94,10 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 1
   17:Core/Src/services/monitor_service.c ****     if (i2c_mutex == NULL || s_hi2c == NULL)
   74              		.loc 1 17 5 view .LVU7
   75              		.loc 1 17 19 is_stmt 0 view .LVU8
-  76 0000 154B     		ldr	r3, .L13
+  76 0000 164B     		ldr	r3, .L15
   77 0002 1B68     		ldr	r3, [r3]
   78              		.loc 1 17 8 view .LVU9
-  79 0004 33B3     		cbz	r3, .L10
+  79 0004 4BB3     		cbz	r3, .L11
   16:Core/Src/services/monitor_service.c ****     if (i2c_mutex == NULL || s_hi2c == NULL)
   80              		.loc 1 16 1 view .LVU10
   81 0006 10B5     		push	{r4, lr}
@@ -110,15 +110,15 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 1
   88              		.cfi_def_cfa_offset 40
   89 000a 0446     		mov	r4, r0
   90              		.loc 1 17 37 discriminator 1 view .LVU11
-  91 000c 134B     		ldr	r3, .L13+4
+  91 000c 144B     		ldr	r3, .L15+4
   92 000e 1B68     		ldr	r3, [r3]
   93              		.loc 1 17 27 discriminator 1 view .LVU12
-  94 0010 F3B1     		cbz	r3, .L5
+  94 0010 D3B1     		cbz	r3, .L5
   18:Core/Src/services/monitor_service.c ****         return;
   19:Core/Src/services/monitor_service.c **** 
   20:Core/Src/services/monitor_service.c ****     char buf[monitorCOLS + 1];
   95              		.loc 1 20 5 is_stmt 1 view .LVU13
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 3
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s 			page 3
 
 
   21:Core/Src/services/monitor_service.c ****     snprintf(buf, sizeof(buf), "%-*.*s", monitorCOLS, monitorCOLS, str);
@@ -126,7 +126,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 1
   97 0012 0191     		str	r1, [sp, #4]
   98 0014 1223     		movs	r3, #18
   99 0016 0093     		str	r3, [sp]
- 100 0018 114A     		ldr	r2, .L13+8
+ 100 0018 124A     		ldr	r2, .L15+8
  101 001a 1321     		movs	r1, #19
  102              	.LVL3:
  103              		.loc 1 21 5 is_stmt 0 view .LVU15
@@ -146,89 +146,104 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 1
  115              	.LVL6:
   24:Core/Src/services/monitor_service.c ****     ssd1306_WriteString(buf, monitorDEFAULT_FONT, monitorDEFAULT_COLOR);
  116              		.loc 1 24 5 view .LVU18
- 117 0032 0C4A     		ldr	r2, .L13+12
+ 117 0032 0D4A     		ldr	r2, .L15+12
  118 0034 0123     		movs	r3, #1
  119 0036 06CA     		ldm	r2, {r1, r2}
  120 0038 03A8     		add	r0, sp, #12
  121 003a FFF7FEFF 		bl	ssd1306_WriteString
  122              	.LVL7:
   25:Core/Src/services/monitor_service.c **** 
-  26:Core/Src/services/monitor_service.c ****     i2c_mutex_take(pdMS_TO_TICKS(monitorMAX_MUTEX_TIMEOUT_MS)); // Mutex for i2c bus
+  26:Core/Src/services/monitor_service.c ****     if (i2c_mutex_take(pdMS_TO_TICKS(monitorMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
  123              		.loc 1 26 5 view .LVU19
- 124 003e 5020     		movs	r0, #80
- 125 0040 FFF7FEFF 		bl	i2c_mutex_take
- 126              	.LVL8:
-  27:Core/Src/services/monitor_service.c ****     ssd1306_UpdateScreen(s_hi2c);
- 127              		.loc 1 27 5 view .LVU20
- 128 0044 054B     		ldr	r3, .L13+4
- 129 0046 1868     		ldr	r0, [r3]
- 130 0048 FFF7FEFF 		bl	ssd1306_UpdateScreen
- 131              	.LVL9:
-  28:Core/Src/services/monitor_service.c ****     i2c_mutex_give();
- 132              		.loc 1 28 5 view .LVU21
- 133 004c FFF7FEFF 		bl	i2c_mutex_give
- 134              	.LVL10:
- 135              	.L5:
-  29:Core/Src/services/monitor_service.c **** }...
- 136              		.loc 1 29 1 is_stmt 0 view .LVU22
- 137 0050 08B0     		add	sp, sp, #32
- 138              	.LCFI3:
- 139              		.cfi_def_cfa_offset 8
- 140              		@ sp needed
- 141 0052 10BD     		pop	{r4, pc}
- 142              	.LVL11:
- 143              	.L10:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 4
+ 124              		.loc 1 26 9 is_stmt 0 view .LVU20
+ 125 003e 5020     		movs	r0, #80
+ 126 0040 FFF7FEFF 		bl	i2c_mutex_take
+ 127              	.LVL8:
+ 128              		.loc 1 26 8 discriminator 1 view .LVU21
+ 129 0044 0128     		cmp	r0, #1
+ 130 0046 01D0     		beq	.L14
+ 131              	.L5:
+  27:Core/Src/services/monitor_service.c ****     { // Mutex for i2c bus
+  28:Core/Src/services/monitor_service.c ****         ssd1306_UpdateScreen(s_hi2c);
+  29:Core/Src/services/monitor_service.c ****         i2c_mutex_give();
+  30:Core/Src/services/monitor_service.c ****     }
+  31:Core/Src/services/monitor_service.c **** }
+ 132              		.loc 1 31 1 view .LVU22
+ 133 0048 08B0     		add	sp, sp, #32
+ 134              	.LCFI3:
+ 135              		.cfi_remember_state
+ 136              		.cfi_def_cfa_offset 8
+ 137              		@ sp needed
+ 138 004a 10BD     		pop	{r4, pc}
+ 139              	.LVL9:
+ 140              	.L14:
+ 141              	.LCFI4:
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s 			page 4
 
 
- 144              	.LCFI4:
- 145              		.cfi_def_cfa_offset 0
- 146              		.cfi_restore 4
- 147              		.cfi_restore 14
- 148              		.loc 1 29 1 view .LVU23
- 149 0054 7047     		bx	lr
- 150              	.L14:
- 151 0056 00BF     		.align	2
- 152              	.L13:
- 153 0058 00000000 		.word	i2c_mutex
- 154 005c 00000000 		.word	s_hi2c
- 155 0060 00000000 		.word	.LC0
- 156 0064 00000000 		.word	Font_7x10
- 157              		.cfi_endproc
- 158              	.LFE142:
- 160              		.section	.bss.s_hi2c,"aw",%nobits
+ 142              		.cfi_restore_state
+  28:Core/Src/services/monitor_service.c ****         i2c_mutex_give();
+ 143              		.loc 1 28 9 is_stmt 1 view .LVU23
+ 144 004c 044B     		ldr	r3, .L15+4
+ 145 004e 1868     		ldr	r0, [r3]
+ 146 0050 FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 147              	.LVL10:
+  29:Core/Src/services/monitor_service.c ****     }
+ 148              		.loc 1 29 9 view .LVU24
+ 149 0054 FFF7FEFF 		bl	i2c_mutex_give
+ 150              	.LVL11:
+ 151 0058 F6E7     		b	.L5
+ 152              	.LVL12:
+ 153              	.L11:
+ 154              	.LCFI5:
+ 155              		.cfi_def_cfa_offset 0
+ 156              		.cfi_restore 4
+ 157              		.cfi_restore 14
+  29:Core/Src/services/monitor_service.c ****     }
+ 158              		.loc 1 29 9 is_stmt 0 view .LVU25
+ 159 005a 7047     		bx	lr
+ 160              	.L16:
  161              		.align	2
- 164              	s_hi2c:
- 165 0000 00000000 		.space	4
- 166              		.text
- 167              	.Letext0:
- 168              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
- 169              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
- 170              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 171              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
- 172              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 173              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 174              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 175              		.file 9 "Drivers/SSD1306/Inc/fonts.h"
- 176              		.file 10 "Drivers/SSD1306/Inc/ssd1306.h"
- 177              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 178              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
- 179              		.file 13 "Core/Inc/services/i2c_bus.h"
- 180              		.file 14 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/stdio.h"
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s 			page 5
+ 162              	.L15:
+ 163 005c 00000000 		.word	i2c_mutex
+ 164 0060 00000000 		.word	s_hi2c
+ 165 0064 00000000 		.word	.LC0
+ 166 0068 00000000 		.word	Font_7x10
+ 167              		.cfi_endproc
+ 168              	.LFE142:
+ 170              		.section	.bss.s_hi2c,"aw",%nobits
+ 171              		.align	2
+ 174              	s_hi2c:
+ 175 0000 00000000 		.space	4
+ 176              		.text
+ 177              	.Letext0:
+ 178              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
+ 179              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
+ 180              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 181              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 182              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 183              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 184              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 185              		.file 9 "Drivers/SSD1306/Inc/fonts.h"
+ 186              		.file 10 "Drivers/SSD1306/Inc/ssd1306.h"
+ 187              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 188              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 189              		.file 13 "Core/Inc/services/i2c_bus.h"
+ 190              		.file 14 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/stdio.h"
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 monitor_service.c
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:21     .text.monitor_init:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:27     .text.monitor_init:00000000 monitor_init
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:52     .text.monitor_init:0000000c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:164    .bss.s_hi2c:00000000 s_hi2c
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:57     .rodata.monitor_write_line.str1.4:00000000 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:61     .text.monitor_write_line:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:67     .text.monitor_write_line:00000000 monitor_write_line
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:153    .text.monitor_write_line:00000058 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc01YgFM.s:161    .bss.s_hi2c:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:21     .text.monitor_init:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:27     .text.monitor_init:00000000 monitor_init
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:52     .text.monitor_init:0000000c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:174    .bss.s_hi2c:00000000 s_hi2c
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:57     .rodata.monitor_write_line.str1.4:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:61     .text.monitor_write_line:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:67     .text.monitor_write_line:00000000 monitor_write_line
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:163    .text.monitor_write_line:0000005c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccOmDIAU.s:171    .bss.s_hi2c:00000000 $d
 
 UNDEFINED SYMBOLS
 ssd1306_Init

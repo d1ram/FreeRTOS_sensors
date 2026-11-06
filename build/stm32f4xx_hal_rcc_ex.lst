@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
   27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   */
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** /** @defgroup RCCEx RCCEx
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 2
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 2
 
 
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @brief RCCEx HAL module driver
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
   84:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @retval HAL status
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 3
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 3
 
 
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** HAL_StatusTypeDef HAL_RCCEx_PeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit)
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
   64              		.loc 1 106 5 is_stmt 1 view .LVU15
  107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  108:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Configure I2S Clock source */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 4
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 4
 
 
  109:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_I2S_APB1_CONFIG(PeriphClkInit->I2sApb1ClockSelection);
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
   99 0042 03B9     		cbnz	r3, .L3
  128:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       plli2sused = 1U;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 5
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 5
 
 
  100              		.loc 1 129 18 view .LVU29
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  134              	.L4:
  135              	.LVL5:
  149:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 6
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 6
 
 
  150:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       pllsaiused = 1U;
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  174:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
  175:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*--------------------------------------------------------------------------*/
  176:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 7
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 7
 
 
  177:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*----------------------------- RTC configuration --------------------------*/
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  223:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  224:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
  225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 8
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 8
 
 
  226:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  202              		.loc 1 251 22 is_stmt 0 view .LVU66
  203 00ce 2368     		ldr	r3, [r4]
  204              		.loc 1 251 6 view .LVU67
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 9
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 9
 
 
  205 00d0 13F0400F 		tst	r3, #64
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       pllsaiused = 1U;
  274:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
  275:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 10
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 10
 
 
  276:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*--------------------------------------------------------------------------*/
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  269 0140 236D     		ldr	r3, [r4, #80]
  270              		.loc 1 298 8 view .LVU90
  271 0142 B3F1005F 		cmp	r3, #536870912
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 11
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 11
 
 
  272 0146 7ED0     		beq	.L23
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* PLLI2S_VCO = f(VCO clock) = f(PLLI2S clock input) * (PLLI2SN/PLLI2SM) */
  341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* I2SCLK = f(PLLI2S clock output) = f(VCO clock) / PLLI2SR */
  342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       __HAL_RCC_PLLI2S_CONFIG(PeriphClkInit->PLLI2S.PLLI2SM, PeriphClkInit->PLLI2S.PLLI2SN, plli2sp
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 12
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 12
 
 
  343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****                               PeriphClkInit->PLLI2S.PLLI2SR);
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****                               PeriphClkInit->PLLI2S.PLLI2SQ, PeriphClkInit->PLLI2S.PLLI2SR);
  398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
  399:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 13
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 13
 
 
  400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Enable the PLLI2S */
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* PLLSAI_VCO Input  = PLL_SOURCE/PLLM */
  451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* PLLSAI_VCO Output = PLLSAI_VCO Input * PLLSAIN */
  452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* SAI_CLK(first level) = PLLSAI_VCO Output/PLLSAIQ */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 14
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 14
 
 
  453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       __HAL_RCC_PLLSAI_CONFIG(PeriphClkInit->PLLSAI.PLLSAIM, PeriphClkInit->PLLSAI.PLLSAIN, pllsaip
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
  304              		.loc 1 145 18 view .LVU99
  305 0160 0125     		movs	r5, #1
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 15
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 15
 
 
  306              	.LVL13:
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  347              		.loc 1 187 13 view .LVU113
  348 018a 43F48073 		orr	r3, r3, #256
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 16
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 16
 
 
  349 018e 1360     		str	r3, [r2]
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  387              	.LVL22:
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  388              		.loc 1 201 8 view .LVU130
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 17
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 17
 
 
  389 01b6 14D0     		beq	.L12
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  427 01e4 03F44072 		and	r2, r3, #768
  428 01e8 B2F5407F 		cmp	r2, #768
  429 01ec 1DD0     		beq	.L66
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 18
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 18
 
 
  227:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  471 0224 F3D9     		bls	.L13
  222:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  472              		.loc 1 222 20 view .LVU160
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 19
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 19
 
 
  473 0226 0320     		movs	r0, #3
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
  516              		.loc 1 317 12 is_stmt 0 view .LVU172
  517 025c FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 20
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 20
 
 
  518              	.LVL36:
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  557              		.loc 1 337 7 view .LVU187
  337:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       plli2sq = ((RCC->PLLI2SCFGR & RCC_PLLI2SCFGR_PLLI2SQ) >> RCC_PLLI2SCFGR_PLLI2SQ_Pos);
  558              		.loc 1 337 24 is_stmt 0 view .LVU188
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 21
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 21
 
 
  559 0292 774A     		ldr	r2, .L74
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  600              		.loc 1 349 112 view .LVU201
  601 02d0 636B     		ldr	r3, [r4, #52]
  349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 22
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 22
 
 
  602              		.loc 1 349 95 view .LVU202
@@ -1318,7 +1318,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         && (PeriphClkInit->SpdifClockSelection == RCC_SPDIFRXCLKSOURCE_PLLI2SP))
  644              		.loc 1 371 8 view .LVU215
  645 0314 13F4806F 		tst	r3, #1024
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 23
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 23
 
 
  646 0318 03D0     		beq	.L33
@@ -1378,7 +1378,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  687              		.loc 1 405 5 is_stmt 1 view .LVU228
  688              	.L35:
  405:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 24
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 24
 
 
  689              		.loc 1 405 52 view .LVU229
@@ -1438,7 +1438,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  728 038c E168     		ldr	r1, [r4, #12]
  729 038e 4908     		lsrs	r1, r1, #1
  730 0390 0139     		subs	r1, r1, #1
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 25
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 25
 
 
  731 0392 43EA0143 		orr	r3, r3, r1, lsl #16
@@ -1498,7 +1498,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  772              	.L69:
  435:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_PLLSAIN_VALUE(PeriphClkInit->PLLSAI.PLLSAIN));
  773              		.loc 1 435 5 is_stmt 1 view .LVU258
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 26
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 26
 
 
  436:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -1558,7 +1558,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  812              		.loc 1 457 7 is_stmt 1 view .LVU274
  813 03fe D2F88C30 		ldr	r3, [r2, #140]
  814 0402 23F4F853 		bic	r3, r3, #7936
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 27
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 27
 
 
  815 0406 E16A     		ldr	r1, [r4, #44]
@@ -1618,7 +1618,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  855 0438 FFF7FEFF 		bl	HAL_GetTick
  856              	.LVL65:
  483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 28
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 28
 
 
  857              		.loc 1 483 26 discriminator 1 view .LVU289
@@ -1678,7 +1678,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  906              	.LVL69:
  907              	.LFB135:
  492:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 29
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 29
 
 
  493:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** /**
@@ -1738,7 +1738,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  939 0024 0132     		adds	r2, r2, #1
  940              		.loc 1 515 35 view .LVU313
  941 0026 5200     		lsls	r2, r2, #1
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 30
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 30
 
 
  942              		.loc 1 515 33 view .LVU314
@@ -1798,7 +1798,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  989 0068 4262     		str	r2, [r0, #36]
  523:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the PLLSAI/PLLI2S division factors ----------------------------------*/
  524:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->PLLI2SDivQ = (uint32_t)((RCC->DCKCFGR & RCC_DCKCFGR_PLLI2SDIVQ) >> RCC_DCKCFGR_PLL
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 31
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 31
 
 
  990              		.loc 1 524 3 is_stmt 1 view .LVU341
@@ -1858,7 +1858,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1028              		.loc 1 540 3 is_stmt 1 view .LVU361
  1029              		.loc 1 540 17 is_stmt 0 view .LVU362
  1030 00a6 9968     		ldr	r1, [r3, #8]
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 32
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 32
 
 
  1031              		.loc 1 540 11 view .LVU363
@@ -1918,7 +1918,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1069 00de D3F89420 		ldr	r2, [r3, #148]
  1070 00e2 02F00052 		and	r2, r2, #536870912
  1071              		.loc 1 556 38 view .LVU383
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 33
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 33
 
 
  1072 00e6 0265     		str	r2, [r0, #80]
@@ -1978,7 +1978,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  577:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *            @arg RCC_PERIPHCLK_I2S_APB2: I2S APB2 peripheral clock
  578:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @retval Frequency in KHz
  579:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 34
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 34
 
 
  580:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
@@ -2038,7 +2038,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  617:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           tmpreg1 = (RCC->PLLSAICFGR & RCC_PLLSAICFGR_PLLSAIQ) >> 24U;
  618:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           frequency = (vcoinput * ((RCC->PLLSAICFGR & RCC_PLLSAICFGR_PLLSAIN) >> 6U)) / (tmpreg1);
  619:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 35
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 35
 
 
  620:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           /* SAI_CLK_x = SAI_CLK(first level)/PLLSAIDIVQ */
@@ -2098,7 +2098,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  674:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
  675:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           frequency = EXTERNAL_CLOCK_VALUE;
  676:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           break;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 36
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 36
 
 
  677:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
@@ -2158,7 +2158,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1150 0036 7047     		bx	lr
  1151              	.LVL76:
  1152              	.L83:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 37
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 37
 
 
  592:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   switch (PeriphClk)
@@ -2218,7 +2218,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  605:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
  1196              		.loc 1 605 14 view .LVU418
  1197 0080 13F4800F 		tst	r3, #4194304
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 38
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 38
 
 
  1198 0084 1ED1     		bne	.L92
@@ -2278,7 +2278,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  622:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           break;
  1236              		.loc 1 622 11 is_stmt 1 view .LVU435
  622:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           break;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 39
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 39
 
 
  1237              		.loc 1 622 21 is_stmt 0 view .LVU436
@@ -2338,7 +2338,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1277 00e6 03F03F03 		and	r3, r3, #63
  633:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  1278              		.loc 1 633 22 view .LVU451
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 40
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 40
 
 
  1279 00ea 7A49     		ldr	r1, .L126+8
@@ -2398,7 +2398,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1317              		.loc 1 638 13 view .LVU467
  638:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  1318              		.loc 1 638 52 is_stmt 0 view .LVU468
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 41
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 41
 
 
  1319 011a 6C4B     		ldr	r3, .L126
@@ -2458,7 +2458,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1358 014c 4868     		ldr	r0, [r1, #4]
  1359              	.LVL104:
  670:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           break;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 42
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 42
 
 
  1360              		.loc 1 670 70 view .LVU484
@@ -2518,7 +2518,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1401 0180 07D1     		bne	.L124
  704:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
  705:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* Check if I2S clock selection is External clock mapped on the I2S_CKIN pin used as I2S cl
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 43
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 43
 
 
  706:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         case RCC_I2SAPB1CLKSOURCE_EXT:
@@ -2578,7 +2578,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1402              		.loc 1 759 11 is_stmt 1 view .LVU499
  1403              		.loc 1 759 19 is_stmt 0 view .LVU500
  1404 0182 524B     		ldr	r3, .L126
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 44
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 44
 
 
  1405              	.LVL111:
@@ -2638,7 +2638,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1439 01a6 02F03F02 		and	r2, r2, #63
  720:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  1440              		.loc 1 720 22 view .LVU514
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 45
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 45
 
 
  1441 01aa 4B4B     		ldr	r3, .L126+12
@@ -2698,7 +2698,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  739:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
  1481              		.loc 1 739 19 is_stmt 0 view .LVU529
  1482 01de 3B4B     		ldr	r3, .L126
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 46
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 46
 
 
  1483              	.LVL124:
@@ -2758,7 +2758,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1522              	.L104:
  747:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  1523              		.loc 1 747 13 view .LVU545
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 47
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 47
 
 
  747:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
@@ -2818,7 +2818,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  790:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
  791:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* Check if I2S clock selection is PLLI2S VCO output clock divided by PLLI2SR used as I2S c
  792:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         case RCC_I2SAPB2CLKSOURCE_PLLI2S:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 48
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 48
 
 
  793:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
@@ -2878,7 +2878,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1566 024a 5BD0     		beq	.L120
  839:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
  840:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             frequency = HSE_VALUE;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 49
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 49
 
 
  1567              		.loc 1 840 23 view .LVU559
@@ -2938,7 +2938,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1601              		.loc 1 808 11 is_stmt 1 view .LVU571
  808:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           /* I2S_CLK = PLLI2S_VCO Output/PLLI2SR */
  1602              		.loc 1 808 51 is_stmt 0 view .LVU572
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 50
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 50
 
 
  1603 026e 174A     		ldr	r2, .L126
@@ -2998,7 +2998,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1642              		.loc 1 818 14 view .LVU587
  1643 02a0 13F4800F 		tst	r3, #4194304
  1644 02a4 1AD0     		beq	.L112
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 51
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 51
 
 
  821:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
@@ -3058,7 +3058,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  826:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  1686              		.loc 1 826 13 view .LVU601
  826:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 52
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 52
 
 
  1687              		.loc 1 826 61 is_stmt 0 view .LVU602
@@ -3118,7 +3118,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1729              		.loc 1 765 23 view .LVU614
  1730 02fe 7047     		bx	lr
  1731              	.LVL165:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 53
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 53
 
 
  1732              	.L119:
@@ -3178,7 +3178,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  873:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
  874:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   Care must be taken when HAL_RCCEx_PeriphCLKConfig() is used to select
  875:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         the RTC clock source; in this case the Backup domain will be reset in
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 54
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 54
 
 
  876:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         order to modify the RTC Clock source, as consequence RTC registers (including
@@ -3238,7 +3238,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  930:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     while (__HAL_RCC_GET_FLAG(RCC_FLAG_PLLI2SRDY)  != RESET)
  931:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  932:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       if ((HAL_GetTick() - tickstart) > PLLI2S_TIMEOUT_VALUE)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 55
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 55
 
 
  933:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
@@ -3298,7 +3298,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  987:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     tickstart = HAL_GetTick();
  988:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Wait till PLLI2S is ready */
  989:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     while (__HAL_RCC_GET_FLAG(RCC_FLAG_PLLI2SRDY)  == RESET)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 56
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 56
 
 
  990:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
@@ -3358,7 +3358,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1044:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
 1045:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 1046:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /*---------------------------- LTDC configuration ------------------------*/
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 57
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 57
 
 
 1047:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     if (((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_LTDC) == (RCC_PERIPHCLK_LTDC))
@@ -3418,7 +3418,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1101:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Check for RTC Parameters used to output RTCCLK */
 1102:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_RTCCLKSOURCE(PeriphClkInit->RTCClockSelection));
 1103:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 58
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 58
 
 
 1104:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Enable Power Clock*/
@@ -3478,7 +3478,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1158:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** }
 1159:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 1160:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** /**
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 59
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 59
 
 
 1161:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @brief  Configures the RCC_PeriphCLKInitTypeDef according to the internal
@@ -3538,7 +3538,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1215:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @retval Frequency in KHz
 1216:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   */
 1217:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 60
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 60
 
 
 1218:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** {
@@ -3598,7 +3598,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     default:
 1273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
 1274:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       break;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 61
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 61
 
 
 1275:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
@@ -3658,7 +3658,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1329:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 1330:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Configure I2S Clock source */
 1331:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_I2S_APB2_CONFIG(PeriphClkInit->I2sApb2ClockSelection);
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 62
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 62
 
 
 1332:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Enable the PLLI2S when it's used as clock source for I2S */
@@ -3718,7 +3718,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1386:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       __HAL_RCC_PLL_PLLSAICLKDIVR_CONFIG(PeriphClkInit->PLLDivR);
 1387:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
 1388:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 63
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 63
 
 
 1389:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*--------------------------------------------------------------------------*/
@@ -3778,7 +3778,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1443:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
 1444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*--------------------------------------------------------------------------*/
 1445:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 64
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 64
 
 
 1446:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*------------------------------------ TIM configuration -------------------*/
@@ -3838,7 +3838,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1500:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Get tick */
 1501:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     tickstart = HAL_GetTick();
 1502:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Wait till PLLI2S is disabled */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 65
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 65
 
 
 1503:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     while (__HAL_RCC_GET_FLAG(RCC_FLAG_PLLI2SRDY)  != RESET)
@@ -3898,7 +3898,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1557:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* SAI_CLK_x = SAI_CLK(first level)/PLLI2SDIVR */
 1558:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       __HAL_RCC_PLLI2S_PLLSAICLKDIVR_CONFIG(PeriphClkInit->PLLI2SDivR);
 1559:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 66
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 66
 
 
 1560:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* STM32F413xx || STM32F423xx */
@@ -3958,7 +3958,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1614:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #if defined(STM32F413xx) || defined(STM32F423xx)
 1615:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*-------------------- DFSDM2 clock source configuration -------------------*/
 1616:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   if (((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_DFSDM2) == RCC_PERIPHCLK_DFSDM2)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 67
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 67
 
 
 1617:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
@@ -4018,7 +4018,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1671:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****                                         RCC_PERIPHCLK_SAIA         | RCC_PERIPHCLK_SAIB;
 1672:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #else /* STM32F412Zx || STM32F412Vx || STM32F412Rx || STM32F412Cx */
 1673:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection = RCC_PERIPHCLK_I2S_APB1 | RCC_PERIPHCLK_I2S_APB2 | \
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 68
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 68
 
 
 1674:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****                                         RCC_PERIPHCLK_TIM      | RCC_PERIPHCLK_RTC      | \
@@ -4078,7 +4078,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1728:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the SAI1 Block Aclock configuration ---------------------------------*/
 1729:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->SaiAClockSelection = __HAL_RCC_GET_SAI_BLOCKA_SOURCE();
 1730:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 69
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 69
 
 
 1731:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the SAI1 Block B clock configuration --------------------------------*/
@@ -4138,7 +4138,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1785:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = (uint32_t)(EXTERNAL_CLOCK_VALUE / (uint32_t)(RCC->PLLI2SCFGR & RCC_PLLI2SCFG
 1786:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
 1787:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           else
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 70
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 70
 
 
 1788:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
@@ -4198,7 +4198,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1842:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
 1843:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* Clock not enabled for I2S*/
 1844:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         default:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 71
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 71
 
 
 1845:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
@@ -4258,7 +4258,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1899:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           if ((RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC) == RCC_PLLSOURCE_HSE)
 1900:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
 1901:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* Get the I2S source clock value */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 72
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 72
 
 
 1902:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = (uint32_t)(HSE_VALUE / (uint32_t)(RCC->PLLCFGR & RCC_PLLCFGR_PLLM));
@@ -4318,7 +4318,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 1956:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *        domain (RTC and RCC_BDCR register expect BKPSRAM) will be reset
 1957:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
 1958:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @retval HAL status
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 73
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 73
 
 
 1959:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   */
@@ -4378,7 +4378,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2013:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             return HAL_TIMEOUT;
 2014:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
 2015:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 74
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 74
 
 
 2016:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
@@ -4438,7 +4438,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2070:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** void HAL_RCCEx_GetPeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit)
 2071:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** {
 2072:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t tempreg;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 75
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 75
 
 
 2073:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -4498,7 +4498,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2127:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
 2128:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* Check if I2S clock selection is PLL VCO Output divided by PLLR used as I2S clock */
 2129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         case RCC_I2SAPBCLKSOURCE_PLLR:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 76
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 76
 
 
 2130:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
@@ -4558,7 +4558,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2184:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         parameters in the RCC_PeriphCLKInitTypeDef.
 2185:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @param  PeriphClkInit pointer to an RCC_PeriphCLKInitTypeDef structure that
 2186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         contains the configuration information for the Extended Peripherals
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 77
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 77
 
 
 2187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         clocks(I2S, SAI, LTDC RTC and TIM).
@@ -4618,7 +4618,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2241:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 2242:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /*---------------------------- SAI configuration -------------------------*/
 2243:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* In Case of SAI Clock Configuration through PLLI2S, PLLI2SQ and PLLI2S_DIVQ must
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 78
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 78
 
 
 2244:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****        be added only for SAI configuration */
@@ -4678,7 +4678,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_PLLSAIN_VALUE(PeriphClkInit->PLLSAI.PLLSAIN));
 2299:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 2300:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Disable PLLSAI Clock */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 79
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 79
 
 
 2301:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_PLLSAI_DISABLE();
@@ -4738,7 +4738,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2355:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
 2356:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* return in case of Timeout detected */
 2357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         return HAL_TIMEOUT;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 80
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 80
 
 
 2358:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
@@ -4798,7 +4798,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2412:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
 2413:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_RTC_CONFIG(PeriphClkInit->RTCClockSelection);
 2414:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 81
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 81
 
 
 2415:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*--------------------------------------------------------------------------*/
@@ -4858,7 +4858,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2469:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         This parameter can be one of the following values:
 2470:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *            @arg RCC_PERIPHCLK_I2S: I2S peripheral clock
 2471:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @retval Frequency in KHz
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 82
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 82
 
 
 2472:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   */
@@ -4918,7 +4918,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2526:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       break;
 2527:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
 2528:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     default:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 83
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 83
 
 
 2529:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
@@ -4978,7 +4978,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2583:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #if defined(STM32F411xE)
 2584:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Configure the PLLI2S division factors */
 2585:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* PLLI2S_VCO = f(VCO clock) = f(PLLI2S clock input) * (PLLI2SN/PLLI2SM) */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 84
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 84
 
 
 2586:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* I2SCLK = f(PLLI2S clock output) = f(VCO clock) / PLLI2SR */
@@ -5038,7 +5038,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2640:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       __HAL_RCC_BACKUPRESET_FORCE();
 2641:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       __HAL_RCC_BACKUPRESET_RELEASE();
 2642:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Restore the Content of BDCR register */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 85
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 85
 
 
 2643:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       RCC->BDCR = tmpreg1;
@@ -5098,7 +5098,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2697:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #if defined(STM32F401xC) || defined(STM32F401xE) || defined(STM32F411xE)
 2698:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the TIM Prescaler configuration -------------------------------------*/
 2699:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   if ((RCC->DCKCFGR & RCC_DCKCFGR_TIMPRE) == RESET)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 86
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 86
 
 
 2700:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
@@ -5158,7 +5158,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2754:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
 2755:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* Get the I2S source clock value */
 2756:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = (uint32_t)(HSI_VALUE / (uint32_t)(RCC->PLLI2SCFGR & RCC_PLLI2SCFGR_PLLI2SM))
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 87
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 87
 
 
 2757:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
@@ -5218,7 +5218,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1766              		.loc 1 2810 1 is_stmt 1 view -0
  1767              		.cfi_startproc
  1768              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 88
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 88
 
 
  1769              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -5278,7 +5278,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2828:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** @verbatim
 2829:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****  ===============================================================================
 2830:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****                 ##### Extended clock management functions  #####
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 89
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 89
 
 
 2831:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****  ===============================================================================
@@ -5338,7 +5338,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1827 0004 1B4B     		ldr	r3, .L147
  1828 0006 0022     		movs	r2, #0
  1829 0008 9A66     		str	r2, [r3, #104]
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 90
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 90
 
 
 2865:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -5398,7 +5398,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2891:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****                           PLLI2SInit->PLLI2SQ, PLLI2SInit->PLLI2SR);
 2892:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #elif defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx) || defined(STM32F439xx) 
 2893:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       defined(STM32F469xx) || defined(STM32F479xx)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 91
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 91
 
 
 2894:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* PLLI2S_VCO = f(VCO clock) = f(PLLI2S clock input) * PLLI2SN */
@@ -5458,7 +5458,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2912:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   while (__HAL_RCC_GET_FLAG(RCC_FLAG_PLLI2SRDY) == RESET)
  1880              		.loc 1 2912 3 view .LVU651
 2912:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   while (__HAL_RCC_GET_FLAG(RCC_FLAG_PLLI2SRDY) == RESET)
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 92
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 92
 
 
  1881              		.loc 1 2912 15 is_stmt 0 view .LVU652
@@ -5518,7 +5518,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  1927              	.LFB139:
 2924:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 2925:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** /**
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 93
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 93
 
 
 2926:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @brief  Disable PLLI2S.
@@ -5578,7 +5578,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 2942:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* return in case of Timeout detected */
 2943:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       return HAL_TIMEOUT;
  1966              		.loc 1 2943 14 view .LVU676
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 94
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 94
 
 
  1967 0022 0320     		movs	r0, #3
@@ -5638,7 +5638,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2006              		.cfi_offset 14, -4
  2007 0002 0546     		mov	r5, r0
 2961:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t tickstart;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 95
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 95
 
 
  2008              		.loc 1 2961 3 is_stmt 1 view .LVU682
@@ -5698,7 +5698,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2040 0020 0228     		cmp	r0, #2
  2041 0022 F5D9     		bls	.L159
 2984:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 96
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 96
 
 
 2985:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* return in case of Timeout detected */
@@ -5758,7 +5758,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2052 002c 43EA8213 		orr	r3, r3, r2, lsl #6
  2053 0030 AA68     		ldr	r2, [r5, #8]
  2054 0032 5208     		lsrs	r2, r2, #1
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 97
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 97
 
 
  2055 0034 013A     		subs	r2, r2, #1
@@ -5818,7 +5818,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2096              	.L170:
  2097 006e 00BF     		.align	2
  2098              	.L169:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 98
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 98
 
 
  2099 0070 00004742 		.word	1111949312
@@ -5878,7 +5878,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2140 0012 13F0005F 		tst	r3, #536870912
  2141 0016 06D0     		beq	.L177
 3043:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 99
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 99
 
 
 3044:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     if ((HAL_GetTick() - tickstart) > PLLSAI_TIMEOUT_VALUE)
@@ -5938,7 +5938,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3063:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
 3064:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   This function implementation is valid only for STM32F446xx devices.
 3065:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   This function add the PLL/PLLR System clock source
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 100
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 100
 
 
 3066:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
@@ -5998,7 +5998,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2195              		.loc 1 3103 14 is_stmt 0 view .LVU739
  2196 0002 604B     		ldr	r3, .L190
  2197 0004 9B68     		ldr	r3, [r3, #8]
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 101
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 101
 
 
  2198              		.loc 1 3103 21 view .LVU740
@@ -6058,7 +6058,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2232 0038 BCEB000C 		subs	ip, ip, r0
  2233 003c 6EEB0E0E 		sbc	lr, lr, lr
  2234 0040 4FEA8E13 		lsl	r3, lr, #6
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 102
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 102
 
 
  2235 0044 43EA9C63 		orr	r3, r3, ip, lsr #26
@@ -6118,7 +6118,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
 3145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       else
 3146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 103
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 103
 
 
 3147:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* HSI used as PLL clock source */
@@ -6178,7 +6178,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2301 00ce D1E7     		b	.L185
  2302              	.LVL201:
  2303              	.L182:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 104
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 104
 
 
 3139:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       if (__HAL_RCC_GET_PLL_OSCSOURCE() != RCC_PLLSOURCE_HSI)
@@ -6238,7 +6238,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3150:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  2346              		.loc 1 3150 19 is_stmt 0 view .LVU781
  2347 0128 164B     		ldr	r3, .L190
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 105
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 105
 
 
  2348 012a 5B68     		ldr	r3, [r3, #4]
@@ -6298,7 +6298,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2391              		.loc 1 3103 3 view .LVU792
  2392 0180 0248     		ldr	r0, .L190+8
  2393              	.LVL209:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 106
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 106
 
 
 3161:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** }
@@ -6358,7 +6358,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2423              		.cfi_offset 4, -12
  2424              		.cfi_offset 5, -8
  2425              		.cfi_offset 14, -4
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 107
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 107
 
 
 3188:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t tickstart;
@@ -6418,7 +6418,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3208:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get Start Tick */
 3209:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   tickstart = HAL_GetTick();
 3210:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 108
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 108
 
 
 3211:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Reset CFGR register */
@@ -6478,7 +6478,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3265:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       return HAL_TIMEOUT;
 3266:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
 3267:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 109
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 109
 
 
 3268:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* RCC_PLLI2S_SUPPORT */
@@ -6538,7 +6538,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3322:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 3323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #if defined(RCC_CIR_PLLSAIRDYIE)
 3324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   CLEAR_BIT(RCC->CIR, RCC_CIR_PLLSAIRDYIE);
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 110
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 110
 
 
 3325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* RCC_CIR_PLLSAIRDYIE */
@@ -6598,7 +6598,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2477 003c AB60     		str	r3, [r5, #8]
 3215:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
  2478              		.loc 1 3215 3 view .LVU814
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 111
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 111
 
 
  2479              	.LVL217:
@@ -6658,7 +6658,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2519 006c 1B68     		ldr	r3, [r3]
 3230:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
  2520              		.loc 1 3230 43 view .LVU829
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 112
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 112
 
 
  2521 006e 13F4003F 		tst	r3, #131072
@@ -6718,7 +6718,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  2561              		.loc 1 3247 24 discriminator 1 view .LVU844
  2562 00a0 001B     		subs	r0, r0, r4
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 113
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 113
 
 
 3247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
@@ -6778,7 +6778,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2603              	.L217:
 3272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  2604              		.loc 1 3272 3 is_stmt 1 view .LVU859
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 114
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 114
 
 
 3272:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -6838,7 +6838,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2644              		.loc 1 3300 19 is_stmt 0 view .LVU874
  2645 0100 C3F88420 		str	r2, [r3, #132]
 3313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* STM32F427xx || STM32F429xx || STM32F437xx || STM32F439xx || STM32F469xx || STM32F479xx */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 115
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 115
 
 
  2646              		.loc 1 3313 3 is_stmt 1 view .LVU875
@@ -6898,7 +6898,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
  2688              		.loc 1 3349 7 is_stmt 0 view .LVU888
  2689 0152 084B     		ldr	r3, .L219+16
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 116
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 116
 
 
  2690 0154 1868     		ldr	r0, [r3]
@@ -6958,7 +6958,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2723              		@ frame_needed = 0, uses_anonymous_args = 0
 3379:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t tickstart;
  2724              		.loc 1 3379 3 view .LVU892
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 117
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 117
 
 
 3380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t pll_config;
@@ -7018,7 +7018,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2758              		.loc 1 3399 11 view .LVU905
  2759 0020 974B     		ldr	r3, .L317
  2760 0022 9B68     		ldr	r3, [r3, #8]
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 118
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 118
 
 
  2761 0024 03F00C03 		and	r3, r3, #12
@@ -7078,7 +7078,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2794              		.loc 1 3418 7 view .LVU916
  2795              		.loc 1 3418 29 is_stmt 0 view .LVU917
  2796 0058 6368     		ldr	r3, [r4, #4]
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 119
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 119
 
 
  2797              		.loc 1 3418 10 view .LVU918
@@ -7138,7 +7138,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3407:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
  2838              		.loc 1 3407 12 is_stmt 0 view .LVU934
  2839 0086 7E4B     		ldr	r3, .L317
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 120
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 120
 
 
  2840 0088 1B68     		ldr	r3, [r3]
@@ -7198,7 +7198,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2862 00a2 9B68     		ldr	r3, [r3, #8]
  2863              		.loc 1 3457 8 view .LVU945
  2864 00a4 13F00C0F 		tst	r3, #12
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 121
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 121
 
 
  2865 00a8 4AD0     		beq	.L236
@@ -7258,7 +7258,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2889 00c8 6E4B     		ldr	r3, .L317+4
  2890 00ca 0122     		movs	r2, #1
  2891 00cc 1A60     		str	r2, [r3]
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 122
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 122
 
 
 3486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -7318,7 +7318,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2933 0100 1360     		str	r3, [r2]
  2934 0102 A9E7     		b	.L228
  2935              	.L304:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 123
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 123
 
 
 3415:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -7378,7 +7378,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  2975 0134 71E1     		b	.L222
  2976              	.LVL249:
  2977              	.L306:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 124
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 124
 
 
 3459:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         ((__HAL_RCC_GET_SYSCLK_SOURCE() == RCC_CFGR_SWS_PLLR) && ((RCC->PLLCFGR & RCC_PLLCFGR_PLLSR
@@ -7438,7 +7438,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3514:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
 3515:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             return HAL_TIMEOUT;
 3516:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 125
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 125
 
 
 3517:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
@@ -7498,7 +7498,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3539:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         if ((HAL_GetTick() - tickstart) > LSI_TIMEOUT_VALUE)
  3038              		.loc 1 3539 9 is_stmt 1 view .LVU1005
  3039              		.loc 1 3539 14 is_stmt 0 view .LVU1006
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 126
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 126
 
 
  3040 0188 FFF7FEFF 		bl	HAL_GetTick
@@ -7558,7 +7558,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3511:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
  3084              		.loc 1 3511 16 is_stmt 0 view .LVU1018
  3085 01c0 2F4B     		ldr	r3, .L317
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 127
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 127
 
 
  3086 01c2 1B68     		ldr	r3, [r3]
@@ -7618,7 +7618,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3121 01ea 13F0020F 		tst	r3, #2
  3122 01ee 06D0     		beq	.L245
 3555:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 128
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 128
 
 
 3556:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         if ((HAL_GetTick() - tickstart) > LSI_TIMEOUT_VALUE)
@@ -7678,7 +7678,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3157 0210 0023     		movs	r3, #0
  3158 0212 0193     		str	r3, [sp, #4]
  3159              		.loc 1 3575 7 view .LVU1047
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 129
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 129
 
 
  3160 0214 1A4B     		ldr	r3, .L317
@@ -7738,7 +7738,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3192              		.loc 1 3597 5 discriminator 2 view .LVU1058
  3193 023c 052B     		cmp	r3, #5
  3194 023e 3FD0     		beq	.L311
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 130
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 130
 
 
  3195              		.loc 1 3597 5 discriminator 4 view .LVU1059
@@ -7798,7 +7798,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3609:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           return HAL_TIMEOUT;
  3238              		.loc 1 3609 18 view .LVU1076
  3239 0276 0320     		movs	r0, #3
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 131
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 131
 
 
  3240 0278 CFE0     		b	.L222
@@ -7858,7 +7858,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3283 02b0 0320     		movs	r0, #3
  3284 02b2 B2E0     		b	.L222
  3285              	.LVL275:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 132
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 132
 
 
  3286              	.L310:
@@ -7918,7 +7918,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3324              	.LVL278:
  3325              		.loc 1 3621 28 discriminator 1 view .LVU1100
  3326 02e8 401B     		subs	r0, r0, r5
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 133
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 133
 
 
  3327              		.loc 1 3621 12 discriminator 1 view .LVU1101
@@ -7978,7 +7978,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3360 030e 17D0     		beq	.L313
 3643:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
 3644:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* Check the parameters */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 134
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 134
 
 
 3645:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         assert_param(IS_RCC_PLLSOURCE(RCC_OscInitStruct->PLL.PLLSource));
@@ -8038,7 +8038,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3695:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         tickstart = HAL_GetTick();
  3365              		.loc 1 3695 9 view .LVU1116
  3366              		.loc 1 3695 21 is_stmt 0 view .LVU1117
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 135
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 135
 
 
  3367 0316 FFF7FEFF 		bl	HAL_GetTick
@@ -8098,7 +8098,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3408              		.loc 1 3648 9 view .LVU1132
 3649:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         assert_param(IS_RCC_PLLR_VALUE(RCC_OscInitStruct->PLL.PLLR));
  3409              		.loc 1 3649 9 view .LVU1133
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 136
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 136
 
 
 3650:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -8158,7 +8158,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3450 0372 5208     		lsrs	r2, r2, #1
  3451 0374 013A     		subs	r2, r2, #1
  3452 0376 43EA0243 		orr	r3, r3, r2, lsl #16
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 137
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 137
 
 
  3453 037a E26A     		ldr	r2, [r4, #44]
@@ -8218,7 +8218,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3707:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     else
 3708:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
 3709:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Check if there is a request to disable the PLL used as System clock source */
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 138
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 138
 
 
 3710:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       if ((RCC_OscInitStruct->PLL.PLLState) == RCC_PLL_OFF)
@@ -8278,7 +8278,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3509              		.loc 1 3719 9 is_stmt 1 view .LVU1166
 3720:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             (READ_BIT(pll_config, RCC_PLLCFGR_PLLM) != (RCC_OscInitStruct->PLL.PLLM) << RCC_PLLCFGR
  3510              		.loc 1 3720 14 is_stmt 0 view .LVU1167
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 139
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 139
 
 
  3511 03be 03F48001 		and	r1, r3, #4194304
@@ -8338,7 +8338,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3549              		.loc 1 3725 14 view .LVU1183
  3550 03fc 03F0E043 		and	r3, r3, #1879048192
  3551              	.LVL293:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 140
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 140
 
 
 3725:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #else
@@ -8398,7 +8398,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3598              		.cfi_remember_state
  3599              		.cfi_def_cfa_offset 16
  3600              		@ sp needed
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 141
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 141
 
 
  3601 041c 70BD     		pop	{r4, r5, r6, pc}
@@ -8458,7 +8458,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3746:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @param  RCC_OscInitStruct pointer to an RCC_OscInitTypeDef structure that will be configured.
 3747:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
 3748:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   This function is only available in case of STM32F410xx/STM32F446xx/STM32F469xx/STM32F47
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 142
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 142
 
 
 3749:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   This function add the PLL/PLLR factor management
@@ -8518,7 +8518,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3678              		.loc 1 3774 5 is_stmt 1 view .LVU1208
  3679              		.loc 1 3774 33 is_stmt 0 view .LVU1209
  3680 001e 0123     		movs	r3, #1
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 143
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 143
 
 
  3681 0020 C360     		str	r3, [r0, #12]
@@ -8578,7 +8578,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3709              		.loc 1 3800 5 is_stmt 1 view .LVU1222
  3710              		.loc 1 3800 33 is_stmt 0 view .LVU1223
  3711 0042 0123     		movs	r3, #1
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 144
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 144
 
 
  3712 0044 4361     		str	r3, [r0, #20]
@@ -8638,7 +8638,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
 3819:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   RCC_OscInitStruct->PLL.PLLP = (uint32_t)((((RCC->PLLCFGR & RCC_PLLCFGR_PLLP) + RCC_PLLCFGR_PLLP_0
  3748              		.loc 1 3819 3 is_stmt 1 view .LVU1241
  3749              		.loc 1 3819 50 is_stmt 0 view .LVU1242
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 145
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 145
 
 
  3750 006e 5368     		ldr	r3, [r2, #4]
@@ -8698,7 +8698,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3794              	.L325:
 3778:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
  3795              		.loc 1 3778 5 is_stmt 1 view .LVU1263
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 146
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 146
 
 
 3778:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
@@ -8758,7 +8758,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3839              	.Letext0:
  3840              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
  3841              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 147
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 147
 
 
  3842              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
@@ -8768,53 +8768,53 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 1
  3846              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
  3847              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
  3848              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s 			page 148
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s 			page 148
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_rcc_ex.c
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:21     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:27     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:530    .text.HAL_RCCEx_PeriphCLKConfig:0000026c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:539    .text.HAL_RCCEx_PeriphCLKConfig:0000027c $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:893    .text.HAL_RCCEx_PeriphCLKConfig:00000470 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:899    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:905    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1094   .text.HAL_RCCEx_GetPeriphCLKConfig:00000104 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1099   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1105   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1680   .text.HAL_RCCEx_GetPeriphCLKFreq:000002cc $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1688   .text.HAL_RCCEx_GetPeriphCLKFreq:000002dc $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1749   .text.HAL_RCCEx_GetPeriphCLKFreq:00000308 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1757   .text.HAL_RCCEx_SelectLSEMode:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1763   .text.HAL_RCCEx_SelectLSEMode:00000000 HAL_RCCEx_SelectLSEMode
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1793   .text.HAL_RCCEx_SelectLSEMode:0000001c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1798   .text.HAL_RCCEx_EnablePLLI2S:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1804   .text.HAL_RCCEx_EnablePLLI2S:00000000 HAL_RCCEx_EnablePLLI2S
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1914   .text.HAL_RCCEx_EnablePLLI2S:00000074 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1920   .text.HAL_RCCEx_DisablePLLI2S:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1926   .text.HAL_RCCEx_DisablePLLI2S:00000000 HAL_RCCEx_DisablePLLI2S
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1980   .text.HAL_RCCEx_DisablePLLI2S:0000002c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1986   .text.HAL_RCCEx_EnablePLLSAI:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:1992   .text.HAL_RCCEx_EnablePLLSAI:00000000 HAL_RCCEx_EnablePLLSAI
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2099   .text.HAL_RCCEx_EnablePLLSAI:00000070 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2105   .text.HAL_RCCEx_DisablePLLSAI:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2111   .text.HAL_RCCEx_DisablePLLSAI:00000000 HAL_RCCEx_DisablePLLSAI
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2165   .text.HAL_RCCEx_DisablePLLSAI:0000002c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2171   .text.HAL_RCC_GetSysClockFreq:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2177   .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2400   .text.HAL_RCC_GetSysClockFreq:00000184 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2407   .text.HAL_RCC_DeInit:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2413   .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2702   .text.HAL_RCC_DeInit:00000164 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2711   .text.HAL_RCC_OscConfig:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:2717   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:3250   .text.HAL_RCC_OscConfig:00000280 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:3256   .text.HAL_RCC_OscConfig:0000028c $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:3634   .text.HAL_RCC_OscConfig:0000043c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:3641   .text.HAL_RCC_GetOscConfig:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:3647   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccZaXtu3.s:3834   .text.HAL_RCC_GetOscConfig:000000d0 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:21     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:27     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:530    .text.HAL_RCCEx_PeriphCLKConfig:0000026c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:539    .text.HAL_RCCEx_PeriphCLKConfig:0000027c $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:893    .text.HAL_RCCEx_PeriphCLKConfig:00000470 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:899    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:905    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1094   .text.HAL_RCCEx_GetPeriphCLKConfig:00000104 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1099   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1105   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1680   .text.HAL_RCCEx_GetPeriphCLKFreq:000002cc $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1688   .text.HAL_RCCEx_GetPeriphCLKFreq:000002dc $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1749   .text.HAL_RCCEx_GetPeriphCLKFreq:00000308 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1757   .text.HAL_RCCEx_SelectLSEMode:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1763   .text.HAL_RCCEx_SelectLSEMode:00000000 HAL_RCCEx_SelectLSEMode
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1793   .text.HAL_RCCEx_SelectLSEMode:0000001c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1798   .text.HAL_RCCEx_EnablePLLI2S:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1804   .text.HAL_RCCEx_EnablePLLI2S:00000000 HAL_RCCEx_EnablePLLI2S
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1914   .text.HAL_RCCEx_EnablePLLI2S:00000074 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1920   .text.HAL_RCCEx_DisablePLLI2S:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1926   .text.HAL_RCCEx_DisablePLLI2S:00000000 HAL_RCCEx_DisablePLLI2S
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1980   .text.HAL_RCCEx_DisablePLLI2S:0000002c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1986   .text.HAL_RCCEx_EnablePLLSAI:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:1992   .text.HAL_RCCEx_EnablePLLSAI:00000000 HAL_RCCEx_EnablePLLSAI
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2099   .text.HAL_RCCEx_EnablePLLSAI:00000070 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2105   .text.HAL_RCCEx_DisablePLLSAI:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2111   .text.HAL_RCCEx_DisablePLLSAI:00000000 HAL_RCCEx_DisablePLLSAI
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2165   .text.HAL_RCCEx_DisablePLLSAI:0000002c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2171   .text.HAL_RCC_GetSysClockFreq:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2177   .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2400   .text.HAL_RCC_GetSysClockFreq:00000184 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2407   .text.HAL_RCC_DeInit:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2413   .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2702   .text.HAL_RCC_DeInit:00000164 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2711   .text.HAL_RCC_OscConfig:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:2717   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:3250   .text.HAL_RCC_OscConfig:00000280 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:3256   .text.HAL_RCC_OscConfig:0000028c $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:3634   .text.HAL_RCC_OscConfig:0000043c $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:3641   .text.HAL_RCC_GetOscConfig:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:3647   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccjsULna.s:3834   .text.HAL_RCC_GetOscConfig:000000d0 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

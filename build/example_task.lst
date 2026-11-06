@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
   38              		.cfi_startproc
   39              		@ args = 0, pretend = 0, frame = 40
   40              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 2
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 2
 
 
   41              		.loc 1 16 1 is_stmt 0 view .LVU1
@@ -118,13 +118,13 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
   41:Core/Src/tasks/example_task.c ****     //         snprintf(buf, sizeof(buf), "%s%d", str, j++);
   42:Core/Src/tasks/example_task.c ****     //         monitor_write_line(i, buf);
   43:Core/Src/tasks/example_task.c ****     //         vTaskDelay(pdMS_TO_TICKS(100));
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 3
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 3
 
 
   44:Core/Src/tasks/example_task.c ****     //     }
   45:Core/Src/tasks/example_task.c ****     // }
   46:Core/Src/tasks/example_task.c **** 
-  47:Core/Src/tasks/example_task.c ****     const example_t *example = pvParameters;
+  47:Core/Src/tasks/example_task.c ****     const Example_t *example = pvParameters;
   71              		.loc 1 47 5 is_stmt 1 view .LVU9
   48:Core/Src/tasks/example_task.c **** 
   49:Core/Src/tasks/example_task.c ****     if (example == NULL ||
@@ -144,7 +144,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
   53:Core/Src/tasks/example_task.c ****         vTaskDelete(NULL);
   54:Core/Src/tasks/example_task.c ****     }
   55:Core/Src/tasks/example_task.c **** 
-  56:Core/Src/tasks/example_task.c ****     const int testId = example->taskId;
+  56:Core/Src/tasks/example_task.c ****     const int testId = example->task_id;
   81              		.loc 1 56 5 is_stmt 1 view .LVU14
   82              		.loc 1 56 15 is_stmt 0 view .LVU15
   83 0020 2D68     		ldr	r5, [r5]
@@ -160,11 +160,11 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
   89              		.loc 1 60 29 is_stmt 0 view .LVU18
   90 0022 FFF7FEFF 		bl	bmp_service_get_temperature
   91              	.LVL7:
-  61:Core/Src/tasks/example_task.c ****         gatekeeperQueueData_t data;
+  61:Core/Src/tasks/example_task.c ****         GatekeeperQueueData_t data;
   92              		.loc 1 61 9 is_stmt 1 view .LVU19
-  62:Core/Src/tasks/example_task.c ****         data.taskId = testId;
+  62:Core/Src/tasks/example_task.c ****         data.task_id = testId;
   93              		.loc 1 62 9 view .LVU20
-  94              		.loc 1 62 21 is_stmt 0 view .LVU21
+  94              		.loc 1 62 22 is_stmt 0 view .LVU21
   95 0026 0195     		str	r5, [sp, #4]
   63:Core/Src/tasks/example_task.c ****         snprintf(data.data, sizeof(data.data), "%.1d C", (int)temperature);
   96              		.loc 1 63 9 is_stmt 1 view .LVU22
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
   64:Core/Src/tasks/example_task.c ****         xQueueSendToBack(gatekeeper_queueHandle, &data, 100);
  104              		.loc 1 64 9 view .LVU23
  105 003a 0023     		movs	r3, #0
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 4
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 4
 
 
  106 003c 6422     		movs	r2, #100
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
  153 007c 08000000 		.word	.LC1
  154 0080 00000000 		.word	.LC0
  155              		.cfi_endproc
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 5
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 5
 
 
  156              	.LFE141:
@@ -255,15 +255,15 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 1
  168              		.file 10 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/stdio.h"
  169              		.file 11 "Core/Inc/services/bmp280_service.h"
  170              		.file 12 "Core/Inc/services/monitor_service.h"
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s 			page 6
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 example_task.c
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s:21     .rodata.example_task.str1.4:00000000 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s:28     .text.example_task:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s:34     .text.example_task:00000000 example_task
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc9si9GH.s:152    .text.example_task:00000078 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:21     .rodata.example_task.str1.4:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:28     .text.example_task:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:34     .text.example_task:00000000 example_task
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:152    .text.example_task:00000078 $d
 
 UNDEFINED SYMBOLS
 watchdog_add_task

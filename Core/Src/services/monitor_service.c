@@ -23,7 +23,9 @@ void monitor_write_line(uint8_t line, const char *str)
     ssd1306_SetCursor(0, line * monitorCHAR_H);
     ssd1306_WriteString(buf, monitorDEFAULT_FONT, monitorDEFAULT_COLOR);
 
-    i2c_mutex_take(pdMS_TO_TICKS(monitorMAX_MUTEX_TIMEOUT_MS)); // Mutex for i2c bus
-    ssd1306_UpdateScreen(s_hi2c);
-    i2c_mutex_give();
+    if (i2c_mutex_take(pdMS_TO_TICKS(monitorMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
+    { // Mutex for i2c bus
+        ssd1306_UpdateScreen(s_hi2c);
+        i2c_mutex_give();
+    }
 }
