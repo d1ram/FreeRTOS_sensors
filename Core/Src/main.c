@@ -22,13 +22,34 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+// FreeRTOS includes
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "semphr.h"
 
-#include "ssd1306.h"
-#include "fonts.h"
+// Handlers
+#include "btn_handler.h"
+
+// Services
+#include "monitor_service.h"
+#include "watchdog_service.h"
+#include "i2c_bus.h"
+#include "bmp280_service.h"
+#include "ui_state.h"
+
+// Tasks
+#include "watchdog_task.h"
+#include "example_task.h"
+#include "gatekeeper_task.h"
+#include "bmp_task.h"
+#include "page_task.h"
+#include "bmp_print_task.h"
+
+// STD
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 /* USER CODE END Includes */
 
@@ -60,6 +81,7 @@ const osThreadAttr_t defaultTask_attributes = {
     .priority = (osPriority_t)osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
+SemaphoreHandle_t hi2c_mutex;
 
 /* USER CODE END PV */
 
@@ -75,7 +97,6 @@ void StartDefaultTask(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 /* USER CODE END 0 */
 
 /**
@@ -110,6 +131,44 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+  // For jitter_testing we open PA6 and PA7 for GPIO_OUTPUT.
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  GPIO_InitTypeDef mark = {0};
+  mark.Pin = GPIO_PIN_6 | GPIO_PIN_7;
+  mark.Mode = GPIO_MODE_OUTPUT_PP;
+  mark.Pull = GPIO_NOPULL;
+  mark.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(GPIOA, &mark);
+
+  static BmpPrintTaskConfig_t data1 = {
+      .task_id = 0,
+      .function = bmp_service_get_temperature,
+      "C"};
+  static BmpPrintTaskConfig_t data2 = {
+      .task_id = 1,
+      .function = bmp_service_get_pressure,
+      "hPa"};
+  static BmpPrintTaskConfig_t data3 = {
+      .task_id = 2,
+      .function = bmp_service_get_altitude,
+      "m"};
+
+  static GatekeeperTaskConfig_t gdata = {
+      .task_names = {"Temp", "Pres", "Alti"}};
+
+  watchdog_init();
+  monitor_init(&hi2c1);
+  bmp_service_init(&hi2c1);
+
+  xTaskCreate(watchdog_task, "watchdogTASK", 96, NULL, 10, NULL);       // Watchdog task
+  xTaskCreate(bmp_task, "bmpTASK", 160, NULL, 6, NULL);                 // Refresh bmp-data
+  xTaskCreate(page_task, "pagehandlerTASK", 96, NULL, 1, NULL);         // Task-Handler for button
+  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 320, &gdata, 2, NULL); // Display gatekeeper
+
+  xTaskCreate(bmp_print_task, "bmpPrintTask", 224, &data1, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask", 224, &data2, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask", 224, &data3, 1, NULL);
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -120,7 +179,7 @@ int main(void)
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
-
+  i2c_mutex_init();
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
@@ -129,6 +188,7 @@ int main(void)
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
+  gatekeeper_init_queue();
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
@@ -229,7 +289,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.ClockSpeed = 400000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
