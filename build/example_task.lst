@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 1
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 1
   38              		.cfi_startproc
   39              		@ args = 0, pretend = 0, frame = 40
   40              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 2
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s 			page 2
 
 
   41              		.loc 1 16 1 is_stmt 0 view .LVU1
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 1
   41:Core/Src/tasks/example_task.c ****     //         snprintf(buf, sizeof(buf), "%s%d", str, j++);
   42:Core/Src/tasks/example_task.c ****     //         monitor_write_line(i, buf);
   43:Core/Src/tasks/example_task.c ****     //         vTaskDelay(pdMS_TO_TICKS(100));
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 3
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s 			page 3
 
 
   44:Core/Src/tasks/example_task.c ****     //     }
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 1
   64:Core/Src/tasks/example_task.c ****         xQueueSendToBack(gatekeeper_queueHandle, &data, 100);
  104              		.loc 1 64 9 view .LVU23
  105 003a 0023     		movs	r3, #0
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 4
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s 			page 4
 
 
  106 003c 6422     		movs	r2, #100
@@ -238,32 +238,32 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 1
  153 007c 08000000 		.word	.LC1
  154 0080 00000000 		.word	.LC0
  155              		.cfi_endproc
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 5
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s 			page 5
 
 
  156              	.LFE141:
  158              		.text
  159              	.Letext0:
- 160              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
- 161              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
- 162              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 163              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 164              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 165              		.file 7 "Core/Inc/tasks/example_task.h"
- 166              		.file 8 "Core/Inc/tasks/gatekeeper_task.h"
+ 160              		.file 2 "Core/Inc/tasks/example_task.h"
+ 161              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
+ 162              		.file 4 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
+ 163              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 164              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 165              		.file 7 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 166              		.file 8 "Core/Inc/services/ui_state.h"
  167              		.file 9 "Core/Inc/services/watchdog_service.h"
  168              		.file 10 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/stdio.h"
  169              		.file 11 "Core/Inc/services/bmp280_service.h"
  170              		.file 12 "Core/Inc/services/monitor_service.h"
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s 			page 6
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 example_task.c
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:21     .rodata.example_task.str1.4:00000000 $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:28     .text.example_task:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:34     .text.example_task:00000000 example_task
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccTPTWaX.s:152    .text.example_task:00000078 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s:21     .rodata.example_task.str1.4:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s:28     .text.example_task:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s:34     .text.example_task:00000000 example_task
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//ccntRcFo.s:152    .text.example_task:00000078 $d
 
 UNDEFINED SYMBOLS
 watchdog_add_task

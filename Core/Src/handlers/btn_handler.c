@@ -1,8 +1,11 @@
 #include "btn_handler.h"
+
 #include "stm32f4xx_hal.h"
+
+#include "ui_state.h" // For page_task_handle
+
 #include "FreeRTOS.h"
 #include "task.h"
-#include "page_task.h"
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {

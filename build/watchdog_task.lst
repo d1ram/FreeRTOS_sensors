@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 1
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -29,19 +29,24 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 1
   27              	watchdog_task:
   28              	.LFB4:
    1:Core/Src/tasks/watchdog_task.c **** #include "watchdog_task.h"
-   2:Core/Src/tasks/watchdog_task.c **** #include "watchdog_service.h"
-   3:Core/Src/tasks/watchdog_task.c **** #include "FreeRTOS.h"
-   4:Core/Src/tasks/watchdog_task.c **** #include "task.h"
-   5:Core/Src/tasks/watchdog_task.c **** #include <stdbool.h>
-   6:Core/Src/tasks/watchdog_task.c **** 
-   7:Core/Src/tasks/watchdog_task.c **** void watchdog_task(void *pvParameters)
-   8:Core/Src/tasks/watchdog_task.c **** {
-  29              		.loc 1 8 1 view -0
+   2:Core/Src/tasks/watchdog_task.c **** 
+   3:Core/Src/tasks/watchdog_task.c **** #include "watchdog_service.h"
+   4:Core/Src/tasks/watchdog_task.c **** 
+   5:Core/Src/tasks/watchdog_task.c **** #include "FreeRTOS.h"
+   6:Core/Src/tasks/watchdog_task.c **** #include "task.h"
+   7:Core/Src/tasks/watchdog_task.c **** 
+   8:Core/Src/tasks/watchdog_task.c **** #include "stack_size.h"
+   9:Core/Src/tasks/watchdog_task.c **** 
+  10:Core/Src/tasks/watchdog_task.c **** #include <stdbool.h>
+  11:Core/Src/tasks/watchdog_task.c **** 
+  12:Core/Src/tasks/watchdog_task.c **** void watchdog_task(void *pvParameters)
+  13:Core/Src/tasks/watchdog_task.c **** {
+  29              		.loc 1 13 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              	.LVL0:
-  34              		.loc 1 8 1 is_stmt 0 view .LVU1
+  34              		.loc 1 13 1 is_stmt 0 view .LVU1
   35 0000 70B5     		push	{r4, r5, r6, lr}
   36              	.LCFI0:
   37              		.cfi_def_cfa_offset 16
@@ -49,225 +54,237 @@ ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 1
   39              		.cfi_offset 5, -12
   40              		.cfi_offset 6, -8
   41              		.cfi_offset 14, -4
-  42 0002 1AE0     		b	.L7
+  42 0002 21E0     		b	.L8
   43              	.LVL1:
   44              	.L3:
   45              	.LBB2:
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s 			page 2
+
+
   46              	.LBB3:
-   9:Core/Src/tasks/watchdog_task.c ****     const uint32_t timer = pdMS_TO_TICKS(watchdogTIMER_MS);
-  10:Core/Src/tasks/watchdog_task.c **** 
-  11:Core/Src/tasks/watchdog_task.c ****     static bool fault_occured = false; // If even once fault occured - never refreshing timer again
-  12:Core/Src/tasks/watchdog_task.c ****     uint32_t task_count;
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 2
-
-
-  13:Core/Src/tasks/watchdog_task.c ****     for (;;)
-  14:Core/Src/tasks/watchdog_task.c ****     {
-  15:Core/Src/tasks/watchdog_task.c ****         vTaskDelay(timer);
-  16:Core/Src/tasks/watchdog_task.c **** 
-  17:Core/Src/tasks/watchdog_task.c ****         task_count = watchdog_get_counter();
-  18:Core/Src/tasks/watchdog_task.c ****         bool all_tasks_alive = true;
-  19:Core/Src/tasks/watchdog_task.c ****         uint32_t current_time = xTaskGetTickCount();
-  20:Core/Src/tasks/watchdog_task.c **** 
-  21:Core/Src/tasks/watchdog_task.c ****         for (uint32_t task_id = 0; task_id < task_count; task_id++)
-  47              		.loc 1 21 65 is_stmt 1 discriminator 2 view .LVU2
+  14:Core/Src/tasks/watchdog_task.c ****     const uint32_t timer = pdMS_TO_TICKS(watchdogTIMER_MS);
+  15:Core/Src/tasks/watchdog_task.c **** 
+  16:Core/Src/tasks/watchdog_task.c ****     static bool fault_occured = false; // If even once fault occured - never refreshing timer again
+  17:Core/Src/tasks/watchdog_task.c ****     uint32_t task_count;
+  18:Core/Src/tasks/watchdog_task.c ****     for (;;)
+  19:Core/Src/tasks/watchdog_task.c ****     {
+  20:Core/Src/tasks/watchdog_task.c ****         vTaskDelay(timer);
+  21:Core/Src/tasks/watchdog_task.c **** 
+  22:Core/Src/tasks/watchdog_task.c ****         task_count = watchdog_get_counter();
+  23:Core/Src/tasks/watchdog_task.c ****         bool all_tasks_alive = true;
+  24:Core/Src/tasks/watchdog_task.c ****         uint32_t current_time = xTaskGetTickCount();
+  25:Core/Src/tasks/watchdog_task.c **** 
+  26:Core/Src/tasks/watchdog_task.c ****         for (uint32_t task_id = 0; task_id < task_count; task_id++)
+  47              		.loc 1 26 65 is_stmt 1 discriminator 2 view .LVU2
   48 0004 0134     		adds	r4, r4, #1
   49              	.LVL2:
   50              	.L2:
-  51              		.loc 1 21 44 discriminator 1 view .LVU3
+  51              		.loc 1 26 44 discriminator 1 view .LVU3
   52 0006 AC42     		cmp	r4, r5
   53 0008 0FD2     		bcs	.L11
   54              	.LBB4:
-  22:Core/Src/tasks/watchdog_task.c ****         {
-  23:Core/Src/tasks/watchdog_task.c ****             const WatchdogTask_t *task = watchdog_get_task(task_id);
-  55              		.loc 1 23 13 view .LVU4
-  56              		.loc 1 23 42 is_stmt 0 view .LVU5
+  27:Core/Src/tasks/watchdog_task.c ****         {
+  28:Core/Src/tasks/watchdog_task.c ****             const WatchdogTask_t *task = watchdog_get_task(task_id);
+  55              		.loc 1 28 13 view .LVU4
+  56              		.loc 1 28 42 is_stmt 0 view .LVU5
   57 000a 2046     		mov	r0, r4
   58 000c FFF7FEFF 		bl	watchdog_get_task
   59              	.LVL3:
-  24:Core/Src/tasks/watchdog_task.c **** 
-  25:Core/Src/tasks/watchdog_task.c ****             if (task != NULL)
-  60              		.loc 1 25 13 is_stmt 1 view .LVU6
-  61              		.loc 1 25 16 is_stmt 0 view .LVU7
+  29:Core/Src/tasks/watchdog_task.c **** 
+  30:Core/Src/tasks/watchdog_task.c ****             if (task != NULL)
+  60              		.loc 1 30 13 is_stmt 1 view .LVU6
+  61              		.loc 1 30 16 is_stmt 0 view .LVU7
   62 0010 0028     		cmp	r0, #0
   63 0012 F7D0     		beq	.L3
   64              	.LBB5:
-  26:Core/Src/tasks/watchdog_task.c ****             {
-  27:Core/Src/tasks/watchdog_task.c ****                 uint32_t elapsed = current_time - task->last_ping;
-  65              		.loc 1 27 17 is_stmt 1 view .LVU8
-  66              		.loc 1 27 55 is_stmt 0 view .LVU9
+  31:Core/Src/tasks/watchdog_task.c ****             {
+  32:Core/Src/tasks/watchdog_task.c ****                 uint32_t elapsed = current_time - task->last_ping;
+  65              		.loc 1 32 17 is_stmt 1 view .LVU8
+  66              		.loc 1 32 55 is_stmt 0 view .LVU9
   67 0014 C268     		ldr	r2, [r0, #12]
-  68              		.loc 1 27 26 view .LVU10
+  68              		.loc 1 32 26 view .LVU10
   69 0016 B21A     		subs	r2, r6, r2
   70              	.LVL4:
-  28:Core/Src/tasks/watchdog_task.c ****                 if (elapsed > task->max_time || !task->is_active)
-  71              		.loc 1 28 17 is_stmt 1 view .LVU11
-  72              		.loc 1 28 35 is_stmt 0 view .LVU12
+  33:Core/Src/tasks/watchdog_task.c ****                 if (elapsed > task->max_time || !task->is_active)
+  71              		.loc 1 33 17 is_stmt 1 view .LVU11
+  72              		.loc 1 33 35 is_stmt 0 view .LVU12
   73 0018 8168     		ldr	r1, [r0, #8]
-  74              		.loc 1 28 20 view .LVU13
+  74              		.loc 1 33 20 view .LVU13
   75 001a 9142     		cmp	r1, r2
-  76 001c 18D3     		bcc	.L9
-  77              		.loc 1 28 54 discriminator 1 view .LVU14
+  76 001c 1FD3     		bcc	.L9
+  77              		.loc 1 33 54 discriminator 1 view .LVU14
   78 001e 437C     		ldrb	r3, [r0, #17]	@ zero_extendqisi2
-  79              		.loc 1 28 46 discriminator 1 view .LVU15
+  79              		.loc 1 33 46 discriminator 1 view .LVU15
   80 0020 03F0FF02 		and	r2, r3, #255
   81              	.LVL5:
-  82              		.loc 1 28 46 discriminator 1 view .LVU16
+  82              		.loc 1 33 46 discriminator 1 view .LVU16
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s 			page 3
+
+
   83 0024 002B     		cmp	r3, #0
   84 0026 EDD1     		bne	.L3
   85 0028 00E0     		b	.L4
   86              	.LVL6:
   87              	.L11:
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 3
-
-
-  88              		.loc 1 28 46 discriminator 1 view .LVU17
+  88              		.loc 1 33 46 discriminator 1 view .LVU17
   89              	.LBE5:
   90              	.LBE4:
   91              	.LBE3:
-  18:Core/Src/tasks/watchdog_task.c ****         uint32_t current_time = xTaskGetTickCount();
-  92              		.loc 1 18 14 view .LVU18
+  23:Core/Src/tasks/watchdog_task.c ****         uint32_t current_time = xTaskGetTickCount();
+  92              		.loc 1 23 14 view .LVU18
   93 002a 0122     		movs	r2, #1
   94              	.L4:
   95              	.LVL7:
-  29:Core/Src/tasks/watchdog_task.c ****                 {
-  30:Core/Src/tasks/watchdog_task.c ****                     all_tasks_alive = false;
-  31:Core/Src/tasks/watchdog_task.c ****                     break;
-  32:Core/Src/tasks/watchdog_task.c ****                 }
-  33:Core/Src/tasks/watchdog_task.c ****             }
-  34:Core/Src/tasks/watchdog_task.c ****         }
-  35:Core/Src/tasks/watchdog_task.c **** 
-  36:Core/Src/tasks/watchdog_task.c ****         if (!all_tasks_alive)
-  96              		.loc 1 36 9 is_stmt 1 view .LVU19
-  97              		.loc 1 36 12 is_stmt 0 view .LVU20
-  98 002c 12B9     		cbnz	r2, .L6
-  37:Core/Src/tasks/watchdog_task.c ****         {
-  38:Core/Src/tasks/watchdog_task.c ****             fault_occured = true;
-  99              		.loc 1 38 13 is_stmt 1 view .LVU21
- 100              		.loc 1 38 27 is_stmt 0 view .LVU22
- 101 002e 0B4B     		ldr	r3, .L13
- 102 0030 0122     		movs	r2, #1
- 103              	.LVL8:
- 104              		.loc 1 38 27 view .LVU23
- 105 0032 1A70     		strb	r2, [r3]
- 106              	.L6:
+  34:Core/Src/tasks/watchdog_task.c ****                 {
+  35:Core/Src/tasks/watchdog_task.c ****                     all_tasks_alive = false;
+  36:Core/Src/tasks/watchdog_task.c ****                     break;
+  37:Core/Src/tasks/watchdog_task.c ****                 }
+  38:Core/Src/tasks/watchdog_task.c ****             }
   39:Core/Src/tasks/watchdog_task.c ****         }
   40:Core/Src/tasks/watchdog_task.c **** 
-  41:Core/Src/tasks/watchdog_task.c ****         if (!fault_occured)
- 107              		.loc 1 41 9 is_stmt 1 view .LVU24
- 108              		.loc 1 41 13 is_stmt 0 view .LVU25
- 109 0034 094B     		ldr	r3, .L13
- 110 0036 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 111              		.loc 1 41 12 view .LVU26
- 112 0038 63B1     		cbz	r3, .L12
- 113              	.LVL9:
- 114              	.L7:
- 115              		.loc 1 41 12 view .LVU27
- 116              	.LBE2:
-  11:Core/Src/tasks/watchdog_task.c ****     uint32_t task_count;
- 117              		.loc 1 11 5 is_stmt 1 view .LVU28
-  12:Core/Src/tasks/watchdog_task.c ****     for (;;)
- 118              		.loc 1 12 5 view .LVU29
-  13:Core/Src/tasks/watchdog_task.c ****     {
- 119              		.loc 1 13 5 view .LVU30
- 120              	.LBB9:
-  15:Core/Src/tasks/watchdog_task.c **** 
- 121              		.loc 1 15 9 view .LVU31
- 122 003a 6420     		movs	r0, #100
- 123 003c FFF7FEFF 		bl	vTaskDelay
- 124              	.LVL10:
-  17:Core/Src/tasks/watchdog_task.c ****         bool all_tasks_alive = true;
- 125              		.loc 1 17 9 view .LVU32
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 4
-
-
-  17:Core/Src/tasks/watchdog_task.c ****         bool all_tasks_alive = true;
- 126              		.loc 1 17 22 is_stmt 0 view .LVU33
- 127 0040 FFF7FEFF 		bl	watchdog_get_counter
- 128              	.LVL11:
- 129 0044 0546     		mov	r5, r0
- 130              	.LVL12:
-  18:Core/Src/tasks/watchdog_task.c ****         uint32_t current_time = xTaskGetTickCount();
- 131              		.loc 1 18 9 is_stmt 1 view .LVU34
-  19:Core/Src/tasks/watchdog_task.c **** 
- 132              		.loc 1 19 9 view .LVU35
-  19:Core/Src/tasks/watchdog_task.c **** 
- 133              		.loc 1 19 33 is_stmt 0 view .LVU36
- 134 0046 FFF7FEFF 		bl	xTaskGetTickCount
- 135              	.LVL13:
-  19:Core/Src/tasks/watchdog_task.c **** 
- 136              		.loc 1 19 33 view .LVU37
- 137 004a 0646     		mov	r6, r0
- 138              	.LVL14:
-  21:Core/Src/tasks/watchdog_task.c ****         {
- 139              		.loc 1 21 9 is_stmt 1 view .LVU38
- 140              	.LBB8:
-  21:Core/Src/tasks/watchdog_task.c ****         {
- 141              		.loc 1 21 14 view .LVU39
-  21:Core/Src/tasks/watchdog_task.c ****         {
- 142              		.loc 1 21 23 is_stmt 0 view .LVU40
- 143 004c 0024     		movs	r4, #0
-  21:Core/Src/tasks/watchdog_task.c ****         {
- 144              		.loc 1 21 9 view .LVU41
- 145 004e DAE7     		b	.L2
- 146              	.LVL15:
- 147              	.L9:
- 148              	.LBB7:
- 149              	.LBB6:
-  30:Core/Src/tasks/watchdog_task.c ****                     break;
- 150              		.loc 1 30 37 view .LVU42
- 151 0050 0022     		movs	r2, #0
- 152              	.LVL16:
-  30:Core/Src/tasks/watchdog_task.c ****                     break;
- 153              		.loc 1 30 37 view .LVU43
- 154 0052 EBE7     		b	.L4
- 155              	.LVL17:
- 156              	.L12:
-  30:Core/Src/tasks/watchdog_task.c ****                     break;
- 157              		.loc 1 30 37 view .LVU44
- 158              	.LBE6:
- 159              	.LBE7:
- 160              	.LBE8:
+  41:Core/Src/tasks/watchdog_task.c ****         if (!all_tasks_alive)
+  96              		.loc 1 41 9 is_stmt 1 view .LVU19
+  97              		.loc 1 41 12 is_stmt 0 view .LVU20
+  98 002c 12B9     		cbnz	r2, .L6
   42:Core/Src/tasks/watchdog_task.c ****         {
-  43:Core/Src/tasks/watchdog_task.c ****             watchdog_refresh_timer();
- 161              		.loc 1 43 13 is_stmt 1 view .LVU45
- 162 0054 FFF7FEFF 		bl	watchdog_refresh_timer
- 163              	.LVL18:
- 164 0058 EFE7     		b	.L7
- 165              	.L14:
- 166 005a 00BF     		.align	2
+  43:Core/Src/tasks/watchdog_task.c ****             fault_occured = true;
+  99              		.loc 1 43 13 is_stmt 1 view .LVU21
+ 100              		.loc 1 43 27 is_stmt 0 view .LVU22
+ 101 002e 0D4B     		ldr	r3, .L12
+ 102 0030 0122     		movs	r2, #1
+ 103              	.LVL8:
+ 104              		.loc 1 43 27 view .LVU23
+ 105 0032 1A70     		strb	r2, [r3]
+ 106              	.L6:
+  44:Core/Src/tasks/watchdog_task.c ****         }
+  45:Core/Src/tasks/watchdog_task.c **** 
+  46:Core/Src/tasks/watchdog_task.c ****         if (!fault_occured)
+ 107              		.loc 1 46 9 is_stmt 1 view .LVU24
+ 108              		.loc 1 46 13 is_stmt 0 view .LVU25
+ 109 0034 0B4B     		ldr	r3, .L12
+ 110 0036 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 111              		.loc 1 46 12 view .LVU26
+ 112 0038 0BB9     		cbnz	r3, .L7
+  47:Core/Src/tasks/watchdog_task.c ****         {
+  48:Core/Src/tasks/watchdog_task.c ****             watchdog_refresh_timer();
+ 113              		.loc 1 48 13 is_stmt 1 view .LVU27
+ 114 003a FFF7FEFF 		bl	watchdog_refresh_timer
+ 115              	.LVL9:
+ 116              	.L7:
+  49:Core/Src/tasks/watchdog_task.c ****         }
+  50:Core/Src/tasks/watchdog_task.c **** 
+  51:Core/Src/tasks/watchdog_task.c ****         g_stack_free[6] = uxTaskGetStackHighWaterMark(NULL);
+ 117              		.loc 1 51 9 view .LVU28
+ 118              		.loc 1 51 27 is_stmt 0 view .LVU29
+ 119 003e 0020     		movs	r0, #0
+ 120 0040 FFF7FEFF 		bl	uxTaskGetStackHighWaterMark
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s 			page 4
+
+
+ 121              	.LVL10:
+ 122              		.loc 1 51 25 discriminator 1 view .LVU30
+ 123 0044 084B     		ldr	r3, .L12+4
+ 124 0046 9861     		str	r0, [r3, #24]
+ 125              	.LBE2:
+  18:Core/Src/tasks/watchdog_task.c ****     {
+ 126              		.loc 1 18 5 is_stmt 1 view .LVU31
+ 127              	.LVL11:
+ 128              	.L8:
+  16:Core/Src/tasks/watchdog_task.c ****     uint32_t task_count;
+ 129              		.loc 1 16 5 view .LVU32
+  17:Core/Src/tasks/watchdog_task.c ****     for (;;)
+ 130              		.loc 1 17 5 view .LVU33
+  18:Core/Src/tasks/watchdog_task.c ****     {
+ 131              		.loc 1 18 5 view .LVU34
+ 132              	.LBB9:
+  20:Core/Src/tasks/watchdog_task.c **** 
+ 133              		.loc 1 20 9 view .LVU35
+ 134 0048 6420     		movs	r0, #100
+ 135 004a FFF7FEFF 		bl	vTaskDelay
+ 136              	.LVL12:
+  22:Core/Src/tasks/watchdog_task.c ****         bool all_tasks_alive = true;
+ 137              		.loc 1 22 9 view .LVU36
+  22:Core/Src/tasks/watchdog_task.c ****         bool all_tasks_alive = true;
+ 138              		.loc 1 22 22 is_stmt 0 view .LVU37
+ 139 004e FFF7FEFF 		bl	watchdog_get_counter
+ 140              	.LVL13:
+ 141 0052 0546     		mov	r5, r0
+ 142              	.LVL14:
+  23:Core/Src/tasks/watchdog_task.c ****         uint32_t current_time = xTaskGetTickCount();
+ 143              		.loc 1 23 9 is_stmt 1 view .LVU38
+  24:Core/Src/tasks/watchdog_task.c **** 
+ 144              		.loc 1 24 9 view .LVU39
+  24:Core/Src/tasks/watchdog_task.c **** 
+ 145              		.loc 1 24 33 is_stmt 0 view .LVU40
+ 146 0054 FFF7FEFF 		bl	xTaskGetTickCount
+ 147              	.LVL15:
+  24:Core/Src/tasks/watchdog_task.c **** 
+ 148              		.loc 1 24 33 view .LVU41
+ 149 0058 0646     		mov	r6, r0
+ 150              	.LVL16:
+  26:Core/Src/tasks/watchdog_task.c ****         {
+ 151              		.loc 1 26 9 is_stmt 1 view .LVU42
+ 152              	.LBB8:
+  26:Core/Src/tasks/watchdog_task.c ****         {
+ 153              		.loc 1 26 14 view .LVU43
+  26:Core/Src/tasks/watchdog_task.c ****         {
+ 154              		.loc 1 26 23 is_stmt 0 view .LVU44
+ 155 005a 0024     		movs	r4, #0
+  26:Core/Src/tasks/watchdog_task.c ****         {
+ 156              		.loc 1 26 9 view .LVU45
+ 157 005c D3E7     		b	.L2
+ 158              	.LVL17:
+ 159              	.L9:
+ 160              	.LBB7:
+ 161              	.LBB6:
+  35:Core/Src/tasks/watchdog_task.c ****                     break;
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s 			page 5
+
+
+ 162              		.loc 1 35 37 view .LVU46
+ 163 005e 0022     		movs	r2, #0
+ 164              	.LVL18:
+  35:Core/Src/tasks/watchdog_task.c ****                     break;
+ 165              		.loc 1 35 37 view .LVU47
+ 166 0060 E4E7     		b	.L4
  167              	.L13:
- 168 005c 00000000 		.word	fault_occured.0
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 5
-
-
- 169              	.LBE9:
- 170              		.cfi_endproc
- 171              	.LFE4:
- 173              		.section	.bss.fault_occured.0,"aw",%nobits
- 176              	fault_occured.0:
- 177 0000 00       		.space	1
- 178              		.text
- 179              	.Letext0:
- 180              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
- 181              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
- 182              		.file 4 "Core/Inc/services/watchdog_service.h"
- 183              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 184              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
-ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s 			page 6
+ 168 0062 00BF     		.align	2
+ 169              	.L12:
+ 170 0064 00000000 		.word	fault_occured.0
+ 171 0068 00000000 		.word	g_stack_free
+ 172              	.LBE6:
+ 173              	.LBE7:
+ 174              	.LBE8:
+ 175              	.LBE9:
+ 176              		.cfi_endproc
+ 177              	.LFE4:
+ 179              		.section	.bss.fault_occured.0,"aw",%nobits
+ 182              	fault_occured.0:
+ 183 0000 00       		.space	1
+ 184              		.text
+ 185              	.Letext0:
+ 186              		.file 2 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/machine/_defa
+ 187              		.file 3 "/Applications/ArmGNUToolchain/15.3.rel2/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h
+ 188              		.file 4 "Core/Inc/services/watchdog_service.h"
+ 189              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 190              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 191              		.file 7 "Core/Inc/testing/stack_size.h"
+ARM GAS  /var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 watchdog_task.c
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s:21     .text.watchdog_task:00000000 $t
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s:27     .text.watchdog_task:00000000 watchdog_task
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s:168    .text.watchdog_task:0000005c $d
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s:176    .bss.fault_occured.0:00000000 fault_occured.0
-/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cct0A428.s:177    .bss.fault_occured.0:00000000 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s:21     .text.watchdog_task:00000000 $t
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s:27     .text.watchdog_task:00000000 watchdog_task
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s:170    .text.watchdog_task:00000064 $d
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s:182    .bss.fault_occured.0:00000000 fault_occured.0
+/var/folders/zc/rht22tf500d98dp8th78t_yh0000gn/T//cc0HOdA8.s:183    .bss.fault_occured.0:00000000 $d
 
 UNDEFINED SYMBOLS
 watchdog_get_task
+watchdog_refresh_timer
+uxTaskGetStackHighWaterMark
 vTaskDelay
 watchdog_get_counter
 xTaskGetTickCount
-watchdog_refresh_timer
+g_stack_free

@@ -1,11 +1,10 @@
+#ifndef __BMP280_SERVICE_H
 #define __BMP280_SERVICE_H
-#ifdef __BMP280_SERVICE_H
-#include "FreeRTOS.h"
 #include "BMP280.h"
 
 #define bmpADDRESS 0x77
 #define bmpMAX_MUTEX_TIMEOUT_MS 100
-#define bmpDEFAULT_SEA_LEVEL 1000
+#define bmpDEFAULT_SEA_LEVEL 1000 // For altitude.
 
 void bmp_service_init(I2C_HandleTypeDef *bus);
 

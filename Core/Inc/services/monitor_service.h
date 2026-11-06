@@ -1,10 +1,8 @@
 // Abstract layer for independence of gatekeeper task-writing into the monitor
+#ifndef __MONITOR_SERVICE_H
+#define __MONITOR_SERVICE_H
 #include "ssd1306.h"
 #include "fonts.h"
-#include <stdio.h>
-
-#define __MONITOR_SERVICE_H
-#ifdef __MONITOR_SERVICE_H
 
 // For 128x64.
 #define monitorDEFAULT_FONT (Font_7x10)

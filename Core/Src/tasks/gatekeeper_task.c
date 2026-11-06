@@ -1,6 +1,6 @@
 #include "gatekeeper_task.h"
-#include "page_task.h"
 
+#include "ui_state.h"
 #include "watchdog_service.h"
 #include "monitor_service.h"
 
@@ -9,10 +9,12 @@
 #include "fonts.h"
 #include "task.h"
 
+#include "stack_size.h"
+
 #include <stdio.h>
 #include <string.h>
 
-QueueHandle_t gatekeeper_queueHandle = NULL;
+QueueHandle_t gatekeeper_queueHandle = NULL; // From ui_state.h
 void gatekeeper_init_queue()
 {
     gatekeeper_queueHandle = xQueueCreate(gatekeeperQUEUE_LENGHT, sizeof(GatekeeperQueueData_t));
@@ -36,7 +38,7 @@ void gatekeeper_task(void *pvParameters)
 
     const char (*task_names)[gatekeeperTASK_NAME_MAX_LENGHT] = config->task_names;
     char task_data[gatekeeperMAX_TASK][gatekeeperTASK_DATA_MAX_LENGHT] = {0}; // '\0'
-    int last_page = 0;
+    int last_page = -1;                                                       // So at the first iteration fullscreen will be drawn.
 
     for (;;)
     {
@@ -87,6 +89,7 @@ void gatekeeper_task(void *pvParameters)
             }
         }
 
+        g_stack_free[4] = uxTaskGetStackHighWaterMark(NULL);
         watchdog_ping(watchdog_task_id, xTaskGetTickCount()); // Ping for watchdog
     }
 }

@@ -1,17 +1,6 @@
 build/example_task.o: Core/Src/tasks/example_task.c \
- Core/Inc/tasks/example_task.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- Core/Inc/FreeRTOSConfig.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
- Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Core/Inc/services/watchdog_service.h Core/Inc/services/bmp280_service.h \
- Drivers/BMP280/Inc/BMP280.h \
+ Core/Inc/tasks/example_task.h Core/Inc/services/watchdog_service.h \
+ Core/Inc/services/bmp280_service.h Drivers/BMP280/Inc/BMP280.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Core/Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -39,21 +28,21 @@ build/example_task.o: Core/Src/tasks/example_task.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ Core/Inc/FreeRTOSConfig.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  Core/Inc/services/monitor_service.h Drivers/SSD1306/Inc/ssd1306.h \
  Drivers/SSD1306/Inc/fonts.h Drivers/SSD1306/Inc/fonts.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Core/Inc/tasks/gatekeeper_task.h Core/Inc/services/ui_state.h
 Core/Inc/tasks/example_task.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
-Core/Inc/FreeRTOSConfig.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
-Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 Core/Inc/services/watchdog_service.h:
 Core/Inc/services/bmp280_service.h:
 Drivers/BMP280/Inc/BMP280.h:
@@ -86,10 +75,20 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+Core/Inc/FreeRTOSConfig.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 Core/Inc/services/monitor_service.h:
 Drivers/SSD1306/Inc/ssd1306.h:
 Drivers/SSD1306/Inc/fonts.h:
 Drivers/SSD1306/Inc/fonts.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 Core/Inc/tasks/gatekeeper_task.h:
 Core/Inc/services/ui_state.h:

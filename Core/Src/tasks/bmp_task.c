@@ -1,8 +1,13 @@
 #include "bmp_task.h"
-#include "FreeRTOS.h"
-#include "task.h"
+
 #include "bmp280_service.h"
 #include "watchdog_service.h"
+
+#include "FreeRTOS.h"
+#include "task.h"
+
+#include "jitter_test.h"
+#include "stack_size.h"
 
 void bmp_task(void *pvParameters)
 {
@@ -21,6 +26,10 @@ void bmp_task(void *pvParameters)
     {
         bmp_service_read_data();
         watchdog_ping(watchdog_task_id, xTaskGetTickCount());
+
+        MARK_BMP_LOW();
+        g_stack_free[3] = uxTaskGetStackHighWaterMark(NULL);
         vTaskDelayUntil(&wake_timeTICKS, pdMS_TO_TICKS(bmp_taskREFRESH_RATE_MS));
+        MARK_BMP_HIGH();
     }
 }

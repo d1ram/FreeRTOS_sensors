@@ -85,7 +85,8 @@ Core/Src/tasks/watchdog_task.c \
 Core/Src/tasks/bmp_task.c \
 Core/Src/tasks/page_task.c \
 Core/Src/tasks/bmp_print_task.c \
-Core/Src/tasks/gatekeeper_task.c
+Core/Src/tasks/gatekeeper_task.c \
+Core/Src/testing/stack_size.c 
 
 # ASM sources
 ASM_SOURCES =  \
@@ -169,6 +170,7 @@ C_INCLUDES =  \
 -IDrivers/BMP280/Inc \
 -ICore/Inc/handlers \
 -ICore/Inc/tasks \
+-ICore/Inc/testing \
 -ICore/Inc/services
 
 # compile gcc flags

@@ -1,7 +1,10 @@
 #include "bmp280_service.h"
-#include "FreeRTOS.h"
+
 #include "i2c_bus.h"
+
 #include "BMP280.h"
+
+#include "FreeRTOS.h"
 
 static float temperature = 0.0f;
 static float pressure = 0.0f;

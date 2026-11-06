@@ -1,23 +1,23 @@
 // Watchdog service that provides task with every needed.
-#include <stdint.h>
-#include <stdbool.h>
-
 #ifndef __WATCHDOG_SERVICE_H
 #define __WATCHDOG_SERVICE_H
 
-#define watchdogKEY_START 0xCCCC
-#define watchdogKEY_REFRESH 0xAAAA
-#define watchdogKEY_PR_RLP_ACCESS 0x5555
+#include <stdint.h>
+#include <stdbool.h>
 
-#define watchdogMAX_TASKS 16
+#define watchdogKEY_START 0xCCCC         // Start timer
+#define watchdogKEY_REFRESH 0xAAAA       // Refresh timer
+#define watchdogKEY_PR_RLP_ACCESS 0x5555 // Access to PR / RLP
+
+#define watchdogMAX_TASKS 16 // Max amount of tasks that watchdog can process.
 
 struct
 {
     uint32_t task_id;
-    uint32_t min_time;
+    uint32_t min_time; // Protection from spam.
     uint32_t max_time;
     volatile uint32_t last_ping;
-    volatile bool has_pinged;
+    volatile bool has_pinged; // If ever pinged (protection from born and never pinged).
     volatile bool is_active;
 } typedef WatchdogTask_t;
 

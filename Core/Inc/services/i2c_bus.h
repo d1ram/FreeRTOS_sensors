@@ -1,6 +1,7 @@
 // Mutex for I2C bus.
+#ifndef __I2C_BUS_H
 #define __I2C_BUS_H
-#ifdef __I2C_BUS_H
+
 #include "FreeRTOS.h"
 #include "semphr.h"
 

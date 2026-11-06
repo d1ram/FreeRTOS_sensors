@@ -1,5 +1,5 @@
 build/gatekeeper_task.o: Core/Src/tasks/gatekeeper_task.c \
- Core/Inc/tasks/gatekeeper_task.h \
+ Core/Inc/tasks/gatekeeper_task.h Core/Inc/services/ui_state.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Core/Inc/FreeRTOSConfig.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
@@ -7,10 +7,9 @@ build/gatekeeper_task.o: Core/Src/tasks/gatekeeper_task.c \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
  Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Core/Inc/services/ui_state.h Core/Inc/tasks/page_task.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Core/Inc/services/watchdog_service.h Core/Inc/services/monitor_service.h \
  Drivers/SSD1306/Inc/ssd1306.h \
@@ -41,8 +40,10 @@ build/gatekeeper_task.o: Core/Src/tasks/gatekeeper_task.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- Drivers/SSD1306/Inc/fonts.h Drivers/SSD1306/Inc/fonts.h
+ Drivers/SSD1306/Inc/fonts.h Drivers/SSD1306/Inc/fonts.h \
+ Core/Inc/testing/stack_size.h
 Core/Inc/tasks/gatekeeper_task.h:
+Core/Inc/services/ui_state.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 Core/Inc/FreeRTOSConfig.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -50,11 +51,9 @@ Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-Core/Inc/services/ui_state.h:
-Core/Inc/tasks/page_task.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 Core/Inc/services/watchdog_service.h:
 Core/Inc/services/monitor_service.h:
@@ -90,3 +89,4 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 Drivers/SSD1306/Inc/fonts.h:
 Drivers/SSD1306/Inc/fonts.h:
+Core/Inc/testing/stack_size.h:

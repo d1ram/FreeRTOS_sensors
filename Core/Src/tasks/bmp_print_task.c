@@ -1,8 +1,13 @@
 #include "bmp_print_task.h"
+
+#include "watchdog_service.h"
+#include "ui_state.h" // For queue
+
 #include "FreeRTOS.h"
 #include "task.h"
-#include "watchdog_service.h"
-#include "gatekeeper_task.h"
+
+#include "stack_size.h"
+#include "jitter_test.h"
 
 #include <stdio.h>
 
@@ -42,6 +47,8 @@ void bmp_print_task(void *pvParameters)
         xQueueSendToBack(gatekeeper_queueHandle, &data, pdMS_TO_TICKS(bmp_print_taskQUEUE_WAITING_MS));
 
         watchdog_ping(watchdog_task_id, xTaskGetTickCount());
+
+        g_stack_free[taskId] = uxTaskGetStackHighWaterMark(NULL);
 
         vTaskDelay(pdMS_TO_TICKS(bmp_print_taskREFRESH_MS));
     }

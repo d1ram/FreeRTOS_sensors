@@ -1,7 +1,12 @@
 #include "watchdog_task.h"
+
 #include "watchdog_service.h"
+
 #include "FreeRTOS.h"
 #include "task.h"
+
+#include "stack_size.h"
+
 #include <stdbool.h>
 
 void watchdog_task(void *pvParameters)
@@ -42,5 +47,7 @@ void watchdog_task(void *pvParameters)
         {
             watchdog_refresh_timer();
         }
+
+        g_stack_free[6] = uxTaskGetStackHighWaterMark(NULL);
     }
 }

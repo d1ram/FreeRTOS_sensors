@@ -1,6 +1,4 @@
-#include "FreeRTOS.h"
-#include "queue.h"
-#include <stdio.h>
+// Not needed for work, only for testing.
 #ifndef __EXAMPLE_TASK_H
 #define __EXAMPLE_TASK_H
 

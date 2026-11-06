@@ -8,7 +8,8 @@ build/watchdog_task.o: Core/Src/tasks/watchdog_task.c \
  Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+ Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ Core/Inc/testing/stack_size.h
 Core/Inc/tasks/watchdog_task.h:
 Core/Inc/services/watchdog_service.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
@@ -20,3 +21,4 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+Core/Inc/testing/stack_size.h:

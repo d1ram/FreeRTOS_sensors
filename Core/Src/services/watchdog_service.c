@@ -1,5 +1,7 @@
 #include "watchdog_service.h"
+
 #include "stm32f4xx.h"
+
 #include <stddef.h>
 
 static WatchdogTask_t g_tasks[watchdogMAX_TASKS];
