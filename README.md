@@ -12,6 +12,7 @@ The main objective of the project is to build a reliable telemetry and UI pipeli
 - **Low Interrupt Latency:** Used **Deferred Interrupt Processing** to hand off hardware events from ISRs to RTOS tasks safely.
 - **Deterministic Timing:** Measured and optimized task jitter on I2C bus speeds (100 kHz & 400 kHz) using a Saleae Logic Analyzer.
 - **Memory Optimization:** Task stack allocation verified in real time via `uxTaskGetStackHighWaterMark` with a strict +30% safety margin.
+- **Fault-Tolerant Watchdog Supervision:** Implemented a robust Independent Watchdog (IWDG) safety mechanism. If any task misses its heartbeat, a global fault flag locks out timer refreshments, guaranteeing a safe hardware reset.
 
 ## Run
 
@@ -74,6 +75,13 @@ This topic is dedicated to the problems i encountered while developing this syst
 4. `Pages`. With new sensors arrived (coming soon), new problem occured - OLED-display is only `128x64` and can contain on it only 5 rows of data. Since `BMP` itself already takes 3 rows, only 2 rows were left for everything else. Solution: `Pages` system, that now can be switched with the help of the blue button.
 
 5. `gatekeeper_watchdogMIN_TIME`. After adding `Pages`, new problem occured. Inside of `Gatekeeper_task`, if data that comes inside is located on another page, it saves, but not prints on the screen. Because of that execution of this `if-else branch` were taking less than `1ms` and watchdog thought that `Gatekeeper_task` broke and spamming. Solution: `Gatekeeper_task` now has `gatekeeper_watchdogMIN_TIME` == 0. With that, we are sure that `Gatekeeper_task` will never be spamming.
+
+## Reliability & Fault Tolerance
+
+To ensure high availability in unattended operation, the system uses the STM32 Independent Watchdog (IWDG) combined with a strict task health-monitoring pattern:
+
+- **Heartbeat Pings:** Every periodic task must report its status within a strict timeframe.
+- **Latch-on Failure:** Unlike naive implementations that can pass by sheer luck if they recover in the final ticks, our `watchdog_task` sets a permanent `fault_occured = true` flag upon the first missed deadline. Once triggered, the IWDG refresh sequence is permanently aborted, forcing a clean microcontroller reboot.
 
 ## Stack size
 
