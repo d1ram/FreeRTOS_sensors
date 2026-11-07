@@ -37,6 +37,9 @@ void gatekeeper_task(void *pvParameters)
     char task_data[gatekeeperMAX_TASK][gatekeeperTASK_DATA_MAX_LENGHT] = {0}; // '\0'
     int last_page = -1;                                                       // So at the first iteration fullscreen will be drawn.
 
+    // STATUS_NAMES
+    const int bmp_status_id = gatekeeperMAX_TASK_PER_PAGE * 2;
+    snprintf(task_names[bmp_status_id], gatekeeperTASK_NAME_MAX_LENGHT, "BMP_S");
     // FAULT_DIAG
     const SystemResetInfo_t *reset_info = fault_get_info();
     const int cause_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 2; // 3 page, line 2;
@@ -65,6 +68,7 @@ void gatekeeper_task(void *pvParameters)
 
     for (;;)
     {
+        HAL_StatusTypeDef status = HAL_OK;
         if (current_page_g != last_page)
         {
             last_page = current_page_g;
@@ -82,7 +86,7 @@ void gatekeeper_task(void *pvParameters)
                 {
                     snprintf(buf, sizeof(buf), "%s: ---", task_names[i]);
                 }
-                monitor_write_line(current_line, buf);
+                status = monitor_write_line(current_line, buf);
                 current_line++;
             }
         }
@@ -106,13 +110,25 @@ void gatekeeper_task(void *pvParameters)
                     {
                         int task_page_id = data.task_id - (task_page * gatekeeperMAX_TASK_PER_PAGE);
                         snprintf(buf, sizeof(buf), "%s: %s", task_names[data.task_id], data.data);
-                        monitor_write_line(task_page_id, buf);
+                        status = monitor_write_line(task_page_id, buf);
                     }
                 }
             }
         }
 
         // g_stack_free[4] = uxTaskGetStackHighWaterMark(NULL);
-        watchdog_ping(watchdog_task_id, xTaskGetTickCount()); // Ping for watchdog
+
+        if (status == HAL_OK || status == HAL_BUSY)
+        {
+            watchdog_ping(watchdog_task_id, xTaskGetTickCount(), OK);
+        }
+        else if (status == HAL_TIMEOUT)
+        {
+            watchdog_ping(watchdog_task_id, xTaskGetTickCount(), BUS_ERROR);
+        }
+        else
+        {
+            watchdog_ping(watchdog_task_id, xTaskGetTickCount(), SENSOR_ERROR);
+        }
     }
 }

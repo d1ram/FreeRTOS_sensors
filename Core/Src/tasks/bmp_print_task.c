@@ -36,7 +36,7 @@ void bmp_print_task(void *pvParameters)
 
         xQueueSendToBack(gatekeeper_queueHandle, &data, pdMS_TO_TICKS(bmp_print_taskQUEUE_WAITING_MS));
 
-        watchdog_ping(watchdog_task_id, xTaskGetTickCount());
+        watchdog_ping(watchdog_task_id, xTaskGetTickCount(), OK);
 
         // g_stack_free[taskId] = uxTaskGetStackHighWaterMark(NULL);
 

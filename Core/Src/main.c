@@ -143,24 +143,27 @@ int main(void)
 
   // BMP_PRINT_TASK INIT (data)
   int32_t bmp_p_1 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask1");
+  uint32_t bmp_p_g_1 = 0;
   static BmpPrintTaskConfig_t data1 = {
-      .task_id_gatekeeper = 0,
       .function = bmp_service_get_temperature,
       "C"};
+  data1.task_id_gatekeeper = bmp_p_g_1;
   data1.watchdog_id = bmp_p_1;
 
   int32_t bmp_p_2 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask2");
+  uint32_t bmp_p_g_2 = 1;
   static BmpPrintTaskConfig_t data2 = {
-      .task_id_gatekeeper = 1,
       .function = bmp_service_get_pressure,
       "hPa"};
+  data2.task_id_gatekeeper = bmp_p_g_2;
   data2.watchdog_id = bmp_p_2;
 
   int32_t bmp_p_3 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask3");
+  uint32_t bmp_p_g_3 = 2;
   static BmpPrintTaskConfig_t data3 = {
-      .task_id_gatekeeper = 2,
       .function = bmp_service_get_altitude,
       "m"};
+  data3.task_id_gatekeeper = bmp_p_g_3;
   data3.watchdog_id = bmp_p_3;
 
   // GATEKEEPER_TASK INIT
@@ -174,6 +177,11 @@ int main(void)
   static BmpTaskConfig_t bdata;
   bdata.watchdog_id = bmp_id;
 
+  // WATCHDOG_TASK INIT
+  static WatchdogConfig_t wdata;
+  wdata.bmp_task_watchdog_id = bmp_id;
+  wdata.bmp_task_gatekeeper_id = (gatekeeperMAX_TASK_PER_PAGE * 2);
+
   // SERVICES INIT
   watchdog_init();
   fault_diag_init();
@@ -181,7 +189,7 @@ int main(void)
   bmp_service_init(&hi2c1);
 
   // TASK CREATION
-  xTaskCreate(watchdog_task, "watchdogTASK", 96, NULL, 10, NULL);       // Watchdog task
+  xTaskCreate(watchdog_task, "watchdogTASK", 96, &wdata, 10, NULL);     // Watchdog task
   xTaskCreate(bmp_task, "bmpTASK", 160, &bdata, 6, NULL);               // Refresh bmp-data
   xTaskCreate(page_task, "pagehandlerTASK", 96, NULL, 1, NULL);         // Task-Handler for button
   xTaskCreate(gatekeeper_task, "gatekeeperTASK", 320, &gdata, 2, NULL); // Display gatekeeper

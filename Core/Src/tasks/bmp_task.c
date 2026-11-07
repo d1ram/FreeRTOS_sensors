@@ -16,8 +16,19 @@ void bmp_task(void *pvParameters)
     TickType_t wake_timeTICKS = xTaskGetTickCount();
     for (;;)
     {
-        bmp_service_read_data();
-        watchdog_ping(watchdog_task_id, xTaskGetTickCount());
+        HAL_StatusTypeDef status = bmp_service_read_data();
+        if (status == HAL_OK || status == HAL_BUSY)
+        {
+            watchdog_ping(watchdog_task_id, xTaskGetTickCount(), OK);
+        }
+        else if (status == HAL_TIMEOUT)
+        {
+            watchdog_ping(watchdog_task_id, xTaskGetTickCount(), BUS_ERROR);
+        }
+        else
+        {
+            watchdog_ping(watchdog_task_id, xTaskGetTickCount(), SENSOR_ERROR);
+        }
 
         // MARK_BMP_LOW();
         // g_stack_free[3] = uxTaskGetStackHighWaterMark(NULL);

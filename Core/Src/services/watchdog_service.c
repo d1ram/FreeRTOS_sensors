@@ -33,10 +33,11 @@ int32_t watchdog_add_task(uint32_t minTime, uint32_t maxTime, char *task_name) /
     g_tasks[id].has_pinged = false;
     g_tasks[id].is_active = true;
     g_tasks[id].task_name = task_name;
+    g_tasks[id].status = OK;
 
     return id;
 }
-void watchdog_ping(uint32_t task_id, uint32_t pingTime) // Ping watchdog that task is alive.
+void watchdog_ping(uint32_t task_id, uint32_t pingTime, WatchdogTaskStatus_t status) // Ping watchdog that task is alive.
 {
     if (task_id < watchdogMAX_TASKS && // in bounds of maxTasks and active.
         g_tasks[task_id].is_active)
@@ -46,6 +47,7 @@ void watchdog_ping(uint32_t task_id, uint32_t pingTime) // Ping watchdog that ta
         {
             g_tasks[task_id].last_ping = pingTime; // refresh pingTime.
             g_tasks[task_id].has_pinged = true;
+            g_tasks[task_id].status = status;
         }
         else
         { // fatal crash (spam)
