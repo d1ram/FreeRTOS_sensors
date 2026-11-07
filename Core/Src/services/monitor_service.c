@@ -17,21 +17,25 @@ void monitor_init(I2C_HandleTypeDef *bus)
     ssd1306_Init(s_hi2c);
 }
 
-HAL_StatusTypeDef monitor_write_line(uint8_t line, const char *str)
+static char buf[monitorCOLS + 1];
+void monitor_set_line(uint8_t line, const char *str)
+{
+    if (i2c_mutex == NULL || s_hi2c == NULL)
+        return;
+
+    snprintf(buf, sizeof(buf), "%-*.*s", monitorCOLS, monitorCOLS, str);
+    ssd1306_SetCursor(0, line * monitorCHAR_H);
+    ssd1306_WriteString(buf, monitorDEFAULT_FONT, monitorDEFAULT_COLOR);
+}
+HAL_StatusTypeDef monitor_flush(void)
 {
     if (i2c_mutex == NULL || s_hi2c == NULL)
         return HAL_ERROR;
-
-    char buf[monitorCOLS + 1];
-    snprintf(buf, sizeof(buf), "%-*.*s", monitorCOLS, monitorCOLS, str);
 
     HAL_StatusTypeDef status = HAL_OK;
 
     if (i2c_mutex_take(pdMS_TO_TICKS(monitorMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
     { // Mutex for i2c bus
-        ssd1306_SetCursor(0, line * monitorCHAR_H);
-        ssd1306_WriteString(buf, monitorDEFAULT_FONT, monitorDEFAULT_COLOR);
-
         // MARK_BUS_HIGH();
         status = ssd1306_UpdateScreen(s_hi2c);
         // MARK_BUS_LOW();

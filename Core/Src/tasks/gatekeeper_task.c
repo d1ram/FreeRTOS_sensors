@@ -27,7 +27,8 @@ void gatekeeper_task(void *pvParameters)
 
     if (config == NULL || gatekeeper_queueHandle == NULL)
     {
-        monitor_write_line(2, "DELETED");
+        monitor_set_line(2, "DELETED");
+        monitor_flush();
         vTaskDelete(NULL);
     }
 
@@ -86,9 +87,10 @@ void gatekeeper_task(void *pvParameters)
                 {
                     snprintf(buf, sizeof(buf), "%s: ---", task_names[i]);
                 }
-                status = monitor_write_line(current_line, buf);
+                monitor_set_line(current_line, buf);
                 current_line++;
             }
+            status = monitor_flush();
         }
         /* Why else? Because if in the same iteration we will update whole monitor and also read from queue, watchdog
         might think that task died. Otherwise we could make max_time for watchdog bigger.  */
@@ -110,7 +112,8 @@ void gatekeeper_task(void *pvParameters)
                     {
                         int task_page_id = data.task_id - (task_page * gatekeeperMAX_TASK_PER_PAGE);
                         snprintf(buf, sizeof(buf), "%s: %s", task_names[data.task_id], data.data);
-                        status = monitor_write_line(task_page_id, buf);
+                        monitor_set_line(task_page_id, buf);
+                        status = monitor_flush();
                     }
                 }
             }
