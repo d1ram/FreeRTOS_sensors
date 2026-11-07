@@ -3,6 +3,7 @@
 #include "ui_state.h"
 #include "watchdog_service.h"
 #include "monitor_service.h"
+#include "fault_diag.h"
 
 #include "FreeRTOS.h"
 #include "ssd1306.h"
@@ -22,12 +23,6 @@ void gatekeeper_init_queue()
 
 void gatekeeper_task(void *pvParameters)
 {
-    const uint32_t watchdog_task_id = watchdog_add_task(gatekeeper_watchdogMIN_TIME, gatekeeper_watchdogMAX_TIME);
-    if (watchdog_task_id == -1)
-    {
-        vTaskDelete(NULL);
-    }
-
     const GatekeeperTaskConfig_t *config = (GatekeeperTaskConfig_t *)pvParameters;
 
     if (config == NULL || gatekeeper_queueHandle == NULL)
@@ -36,9 +31,37 @@ void gatekeeper_task(void *pvParameters)
         vTaskDelete(NULL);
     }
 
-    const char (*task_names)[gatekeeperTASK_NAME_MAX_LENGHT] = config->task_names;
+    char (*task_names)[gatekeeperTASK_NAME_MAX_LENGHT] = config->task_names;
+    const uint32_t watchdog_task_id = config->watchdog_id;
+
     char task_data[gatekeeperMAX_TASK][gatekeeperTASK_DATA_MAX_LENGHT] = {0}; // '\0'
     int last_page = -1;                                                       // So at the first iteration fullscreen will be drawn.
+
+    // FAULT_DIAG
+    const SystemResetInfo_t *reset_info = fault_get_info();
+    const int cause_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 2; // 3 page, line 2;
+
+    snprintf(task_names[cause_id], gatekeeperTASK_NAME_MAX_LENGHT, "RC");
+    if (reset_info->cause == RESET_CAUSE_IWDG)
+    {
+        const int cause_task_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 3; // 3 page, line 3;
+        snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "IWDG");
+
+        snprintf(task_names[cause_task_id], gatekeeperTASK_NAME_MAX_LENGHT, "TASK");
+        snprintf(task_data[cause_task_id], gatekeeperTASK_DATA_MAX_LENGHT, "%s", reset_info->faulty_task);
+    }
+    else if (reset_info->cause == RESET_CAUSE_PIN)
+    {
+        snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "PIN");
+    }
+    else if (reset_info->cause == RESET_CAUSE_POWER_ON)
+    {
+        snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "PO");
+    }
+    else
+    {
+        snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "UN");
+    }
 
     for (;;)
     {
@@ -89,7 +112,7 @@ void gatekeeper_task(void *pvParameters)
             }
         }
 
-        g_stack_free[4] = uxTaskGetStackHighWaterMark(NULL);
+        // g_stack_free[4] = uxTaskGetStackHighWaterMark(NULL);
         watchdog_ping(watchdog_task_id, xTaskGetTickCount()); // Ping for watchdog
     }
 }

@@ -182,6 +182,15 @@ SECTIONS
     __bss_end__ = _ebss;
   } >RAM
 
+  /* Non-initialized data section for surviving watchdog resets */
+  .noinit (NOLOAD) :
+  {
+    . = ALIGN(4);
+    *(.noinit)
+    *(.noinit.*)
+    . = ALIGN(4);
+  } >RAM
+
   /* User_heap_stack section, used to check that there is enough RAM left */
   ._user_heap_stack :
   {

@@ -7,6 +7,11 @@
 
 #define bmp_taskREFRESH_RATE_MS 300 // Once in bmp_taskREFRESH_RATE_MS bmp_task will update data
 
+typedef struct
+{
+    int watchdog_id;
+} BmpTaskConfig_t;
+
 void bmp_task(void *pvParameters);
 
 #endif

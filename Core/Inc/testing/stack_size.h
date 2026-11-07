@@ -1,5 +1,4 @@
-#ifndef __STACK_SIZE_H
-#define __STACK_SIZE_H
+#ifdef DIAG
 
 #include "FreeRTOS.h"
 

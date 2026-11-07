@@ -10,9 +10,10 @@ typedef float (*BMP_Task_Function)(void);
 
 typedef struct
 {
-    int task_id;
+    int task_id_gatekeeper;
     BMP_Task_Function function;
     char *d_unit;
+    int watchdog_id;
 } BmpPrintTaskConfig_t;
 
 void bmp_print_task(void *pvParameters);

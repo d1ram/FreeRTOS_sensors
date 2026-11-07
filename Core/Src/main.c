@@ -38,6 +38,7 @@
 #include "i2c_bus.h"
 #include "bmp280_service.h"
 #include "ui_state.h"
+#include "fault_diag.h"
 
 // Tasks
 #include "watchdog_task.h"
@@ -132,42 +133,62 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // For jitter_testing we open PA6 and PA7 for GPIO_OUTPUT.
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-  GPIO_InitTypeDef mark = {0};
-  mark.Pin = GPIO_PIN_6 | GPIO_PIN_7;
-  mark.Mode = GPIO_MODE_OUTPUT_PP;
-  mark.Pull = GPIO_NOPULL;
-  mark.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  HAL_GPIO_Init(GPIOA, &mark);
+  // __HAL_RCC_GPIOA_CLK_ENABLE();
+  // GPIO_InitTypeDef mark = {0};
+  // mark.Pin = GPIO_PIN_6 | GPIO_PIN_7;
+  // mark.Mode = GPIO_MODE_OUTPUT_PP;
+  // mark.Pull = GPIO_NOPULL;
+  // mark.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  // HAL_GPIO_Init(GPIOA, &mark);
 
+  // BMP_PRINT_TASK INIT (data)
+  int32_t bmp_p_1 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask1");
   static BmpPrintTaskConfig_t data1 = {
-      .task_id = 0,
+      .task_id_gatekeeper = 0,
       .function = bmp_service_get_temperature,
       "C"};
+  data1.watchdog_id = bmp_p_1;
+
+  int32_t bmp_p_2 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask2");
   static BmpPrintTaskConfig_t data2 = {
-      .task_id = 1,
+      .task_id_gatekeeper = 1,
       .function = bmp_service_get_pressure,
       "hPa"};
+  data2.watchdog_id = bmp_p_2;
+
+  int32_t bmp_p_3 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask3");
   static BmpPrintTaskConfig_t data3 = {
-      .task_id = 2,
+      .task_id_gatekeeper = 2,
       .function = bmp_service_get_altitude,
       "m"};
+  data3.watchdog_id = bmp_p_3;
 
+  // GATEKEEPER_TASK INIT
+  int32_t gtk_id = watchdog_add_task(gatekeeper_watchdogMIN_TIME, gatekeeper_watchdogMAX_TIME, "gatekeeperTASK");
   static GatekeeperTaskConfig_t gdata = {
       .task_names = {"Temp", "Pres", "Alti"}};
+  gdata.watchdog_id = gtk_id;
 
+  // BMP_TASK INIT
+  int32_t bmp_id = watchdog_add_task(bmp_task_watchdogMIN_TIME_MS, bmp_task_watchdogMAX_TIME_MS, "bmpTASK");
+  static BmpTaskConfig_t bdata;
+  bdata.watchdog_id = bmp_id;
+
+  // SERVICES INIT
   watchdog_init();
+  fault_diag_init();
   monitor_init(&hi2c1);
   bmp_service_init(&hi2c1);
 
+  // TASK CREATION
   xTaskCreate(watchdog_task, "watchdogTASK", 96, NULL, 10, NULL);       // Watchdog task
-  xTaskCreate(bmp_task, "bmpTASK", 160, NULL, 6, NULL);                 // Refresh bmp-data
+  xTaskCreate(bmp_task, "bmpTASK", 160, &bdata, 6, NULL);               // Refresh bmp-data
   xTaskCreate(page_task, "pagehandlerTASK", 96, NULL, 1, NULL);         // Task-Handler for button
   xTaskCreate(gatekeeper_task, "gatekeeperTASK", 320, &gdata, 2, NULL); // Display gatekeeper
 
-  xTaskCreate(bmp_print_task, "bmpPrintTask", 224, &data1, 1, NULL);
-  xTaskCreate(bmp_print_task, "bmpPrintTask", 224, &data2, 1, NULL);
-  xTaskCreate(bmp_print_task, "bmpPrintTask", 224, &data3, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask1", 224, &data1, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask2", 224, &data2, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask3", 224, &data3, 1, NULL);
 
   /* USER CODE END 2 */
 

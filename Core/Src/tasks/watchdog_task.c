@@ -1,6 +1,7 @@
 #include "watchdog_task.h"
 
 #include "watchdog_service.h"
+#include "fault_diag.h"
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -8,6 +9,7 @@
 #include "stack_size.h"
 
 #include <stdbool.h>
+#include <stdio.h>
 
 void watchdog_task(void *pvParameters)
 {
@@ -33,6 +35,7 @@ void watchdog_task(void *pvParameters)
                 if (elapsed > task->max_time || !task->is_active)
                 {
                     all_tasks_alive = false;
+                    snprintf(fault_task_name, sizeof(fault_task_name), "%s", task->task_name); // Write into fault_task_name (fault_diag.c) task that caused reset.
                     break;
                 }
             }
@@ -48,6 +51,6 @@ void watchdog_task(void *pvParameters)
             watchdog_refresh_timer();
         }
 
-        g_stack_free[6] = uxTaskGetStackHighWaterMark(NULL);
+        // g_stack_free[6] = uxTaskGetStackHighWaterMark(NULL);
     }
 }

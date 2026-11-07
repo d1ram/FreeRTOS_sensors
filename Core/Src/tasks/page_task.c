@@ -17,6 +17,6 @@ void page_task(void *pvParameters)
     {
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Always in blocked state until notified from ISR.
         current_page_g = (current_page_g + 1) % pageMAX_PAGES;
-        g_stack_free[5] = uxTaskGetStackHighWaterMark(NULL);
+        // g_stack_free[5] = uxTaskGetStackHighWaterMark(NULL);
     }
 }

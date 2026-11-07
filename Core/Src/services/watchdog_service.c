@@ -3,6 +3,7 @@
 #include "stm32f4xx.h"
 
 #include <stddef.h>
+#include <stdio.h>
 
 static WatchdogTask_t g_tasks[watchdogMAX_TASKS];
 static uint32_t g_task_counter = 0;
@@ -17,8 +18,7 @@ void watchdog_init(void) // Initialization of watchdog registers.
     {
     }
 }
-uint32_t watchdog_add_task(uint32_t minTime, uint32_t maxTime) // Returns task_id of watchdog structure of task, otherwise -1.
-
+int32_t watchdog_add_task(uint32_t minTime, uint32_t maxTime, char *task_name) // Returns task_id of watchdog structure of task, otherwise -1.
 {
     if (g_task_counter >= watchdogMAX_TASKS)
     {
@@ -32,6 +32,7 @@ uint32_t watchdog_add_task(uint32_t minTime, uint32_t maxTime) // Returns task_i
     g_tasks[id].max_time = maxTime;
     g_tasks[id].has_pinged = false;
     g_tasks[id].is_active = true;
+    g_tasks[id].task_name = task_name;
 
     return id;
 }

@@ -30,9 +30,9 @@ void monitor_write_line(uint8_t line, const char *str)
 
     if (i2c_mutex_take(pdMS_TO_TICKS(monitorMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
     { // Mutex for i2c bus
-        MARK_BUS_HIGH();
+        // MARK_BUS_HIGH();
         ssd1306_UpdateScreen(s_hi2c);
-        MARK_BUS_LOW();
+        // MARK_BUS_LOW();
         i2c_mutex_give();
     }
 }

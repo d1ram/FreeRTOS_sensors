@@ -1,5 +1,4 @@
-#ifndef __JITTER_TEST_H
-#define __JITTER_TEST_H
+#ifdef DIAG
 
 #define MARK_BMP_HIGH() (GPIOA->BSRR = GPIO_PIN_6)
 #define MARK_BMP_LOW() (GPIOA->BSRR = (uint32_t)GPIO_PIN_6 << 16)

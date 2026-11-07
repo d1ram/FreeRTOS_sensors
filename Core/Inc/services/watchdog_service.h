@@ -10,6 +10,7 @@
 #define watchdogKEY_PR_RLP_ACCESS 0x5555 // Access to PR / RLP
 
 #define watchdogMAX_TASKS 16 // Max amount of tasks that watchdog can process.
+#define watchdogFAULT_TASK_MAX_NAME 32
 
 struct
 {
@@ -19,10 +20,11 @@ struct
     volatile uint32_t last_ping;
     volatile bool has_pinged; // If ever pinged (protection from born and never pinged).
     volatile bool is_active;
+    char *task_name;
 } typedef WatchdogTask_t;
 
 void watchdog_init(void);
-uint32_t watchdog_add_task(uint32_t min_time, uint32_t max_time);
+int32_t watchdog_add_task(uint32_t min_time, uint32_t max_time, char *task_name);
 void watchdog_ping(uint32_t task_id, uint32_t ping_time);
 
 const WatchdogTask_t *watchdog_get_task(uint32_t task_id);
