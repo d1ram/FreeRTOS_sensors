@@ -7,7 +7,6 @@
 #include "task.h"
 
 #include "stack_size.h"
-#include "jitter_test.h"
 
 #include <stdio.h>
 
