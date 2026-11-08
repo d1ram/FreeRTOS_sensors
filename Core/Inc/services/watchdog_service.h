@@ -31,6 +31,12 @@ struct
     WatchdogTaskStatus_t status;
 } typedef WatchdogTask_t;
 
+typedef struct
+{
+    int32_t task_watchdog_id;
+    int32_t task_gatekeeper_id;
+} WatchdogTaskNotify_t;
+
 void watchdog_init(void);
 int32_t watchdog_add_task(uint32_t min_time, uint32_t max_time, char *task_name);
 void watchdog_ping(uint32_t task_id, uint32_t ping_time, WatchdogTaskStatus_t status);

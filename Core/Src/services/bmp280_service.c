@@ -14,7 +14,7 @@ static float altitude = 0.0f;
 bmp280_t bmp;
 static I2C_HandleTypeDef *s_hi2c = NULL;
 
-void bmp_service_init(I2C_HandleTypeDef *bus)
+HAL_StatusTypeDef bmp_service_init(I2C_HandleTypeDef *bus)
 {
     bmp.hi2c = bus;
     s_hi2c = bus;
@@ -22,7 +22,10 @@ void bmp_service_init(I2C_HandleTypeDef *bus)
     bmp.comm_mode = BMP280_MODE_I2C;
     bmp.address = bmpADDRESS;
 
-    bmp280_init(&bmp);
+    HAL_StatusTypeDef status;
+
+    status = bmp280_init(&bmp);
+    return status;
 }
 
 HAL_StatusTypeDef bmp_service_read_data(void)
@@ -30,7 +33,7 @@ HAL_StatusTypeDef bmp_service_read_data(void)
     int32_t temp_raw, press_raw;
     HAL_StatusTypeDef status = HAL_TIMEOUT;
 
-    if (i2c_mutex_take(bmpMAX_MUTEX_TIMEOUT_MS) == pdTRUE)
+    if (i2c_mutex_take(pdMS_TO_TICKS(bmpMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
     {
         MARK_BMP_HIGH();
         status = bmp280_read_raw(&bmp, &temp_raw, &press_raw); // HAL_OK / HAL_BUSY / HAL_ERROR

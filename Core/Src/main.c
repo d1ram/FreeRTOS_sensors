@@ -47,6 +47,8 @@
 #include "bmp_task.h"
 #include "page_task.h"
 #include "bmp_print_task.h"
+#include "gyro_print_task.h"
+#include "gyro_task.h"
 
 // STD
 #include <stdio.h>
@@ -144,32 +146,54 @@ int main(void)
   // BMP_PRINT_TASK INIT (data)
   int32_t bmp_p_1 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask1");
   uint32_t bmp_p_g_1 = 0;
-  static BmpPrintTaskConfig_t data1 = {
+  static BmpPrintTaskConfig_t bmp_p_data1 = {
       .function = bmp_service_get_temperature,
       "C"};
-  data1.task_id_gatekeeper = bmp_p_g_1;
-  data1.watchdog_id = bmp_p_1;
+  bmp_p_data1.task_id_gatekeeper = bmp_p_g_1;
+  bmp_p_data1.watchdog_id = bmp_p_1;
 
   int32_t bmp_p_2 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask2");
   uint32_t bmp_p_g_2 = 1;
-  static BmpPrintTaskConfig_t data2 = {
+  static BmpPrintTaskConfig_t bmp_p_data2 = {
       .function = bmp_service_get_pressure,
       "hPa"};
-  data2.task_id_gatekeeper = bmp_p_g_2;
-  data2.watchdog_id = bmp_p_2;
+  bmp_p_data2.task_id_gatekeeper = bmp_p_g_2;
+  bmp_p_data2.watchdog_id = bmp_p_2;
 
   int32_t bmp_p_3 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask3");
   uint32_t bmp_p_g_3 = 2;
-  static BmpPrintTaskConfig_t data3 = {
+  static BmpPrintTaskConfig_t bmp_p_data3 = {
       .function = bmp_service_get_altitude,
       "m"};
-  data3.task_id_gatekeeper = bmp_p_g_3;
-  data3.watchdog_id = bmp_p_3;
+  bmp_p_data3.task_id_gatekeeper = bmp_p_g_3;
+  bmp_p_data3.watchdog_id = bmp_p_3;
+
+  // GYRO_PRINT_TASK INIT (data)
+  int32_t gyro_p_1 = watchdog_add_task(gyro_print_task_watchdogMIN_TIME_MS, gyro_print_task_watchdogMAX_TIME_MS, "gyroPrintTask1");
+  uint32_t gyro_p_g_1 = gatekeeperMAX_TASK_PER_PAGE; // 2nd page
+  static GyroPrintTaskConfig_t gyro_p_data1;
+  gyro_p_data1.watchdog_id = gyro_p_1;
+  gyro_p_data1.task_id_gatekeeper = gyro_p_g_1;
+  gyro_p_data1.data_axis = X;
+
+  int32_t gyro_p_2 = watchdog_add_task(gyro_print_task_watchdogMIN_TIME_MS, gyro_print_task_watchdogMAX_TIME_MS, "gyroPrintTask2");
+  uint32_t gyro_p_g_2 = gatekeeperMAX_TASK_PER_PAGE + 1;
+  static GyroPrintTaskConfig_t gyro_p_data2;
+  gyro_p_data2.watchdog_id = gyro_p_2;
+  gyro_p_data2.task_id_gatekeeper = gyro_p_g_2;
+  gyro_p_data2.data_axis = Y;
+
+  int32_t gyro_p_3 = watchdog_add_task(gyro_print_task_watchdogMIN_TIME_MS, gyro_print_task_watchdogMAX_TIME_MS, "gyroPrintTask3");
+  uint32_t gyro_p_g_3 = gatekeeperMAX_TASK_PER_PAGE + 2;
+  static GyroPrintTaskConfig_t gyro_p_data3;
+  gyro_p_data3.watchdog_id = gyro_p_3;
+  gyro_p_data3.task_id_gatekeeper = gyro_p_g_3;
+  gyro_p_data3.data_axis = Z;
 
   // GATEKEEPER_TASK INIT
   int32_t gtk_id = watchdog_add_task(gatekeeper_watchdogMIN_TIME, gatekeeper_watchdogMAX_TIME, "gatekeeperTASK");
   static GatekeeperTaskConfig_t gdata = {
-      .task_names = {"Temp", "Pres", "Alti"}};
+      .task_names = {"Temp", "Pres", "Alti", "\0", "\0", "X", "Y", "Z"}};
   gdata.watchdog_id = gtk_id;
 
   // BMP_TASK INIT
@@ -177,26 +201,45 @@ int main(void)
   static BmpTaskConfig_t bdata;
   bdata.watchdog_id = bmp_id;
 
+  // GYRO_TASK INIT
+  int32_t gyro_id = watchdog_add_task(gyro_task_watchdogMIN_TIME_MS, gyro_task_watchdogMAX_TIME_MS, "gyroTASK");
+  static GyroTaskConfig_t gyro_data;
+  gyro_data.watchdog_id = gyro_id;
+
   // WATCHDOG_TASK INIT
+  static WatchdogTaskMapping_t temp_tasks[watchdogMAX_MONITORED_TASKS];
   static WatchdogConfig_t wdata;
-  wdata.bmp_task_watchdog_id = bmp_id;
-  wdata.bmp_task_gatekeeper_id = (gatekeeperMAX_TASK_PER_PAGE * 2);
+
+  temp_tasks[0].task_watchdog_id = bmp_id;
+  temp_tasks[0].task_gatekeeper_id = gatekeeperMAX_TASK_PER_PAGE * 2;
+
+  temp_tasks[1].task_watchdog_id = gyro_id;
+  temp_tasks[1].task_gatekeeper_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 1;
+
+  memcpy(wdata.mon_tasks, temp_tasks, sizeof(temp_tasks));
+  wdata.task_count = 2;
 
   // SERVICES INIT
   watchdog_init();
   fault_diag_init();
   monitor_init(&hi2c1);
   bmp_service_init(&hi2c1);
+  gyro_service_init(&hi2c1);
 
   // TASK CREATION
   xTaskCreate(watchdog_task, "watchdogTASK", 96, &wdata, 10, NULL);     // Watchdog task
   xTaskCreate(bmp_task, "bmpTASK", 160, &bdata, 6, NULL);               // Refresh bmp-data
   xTaskCreate(page_task, "pagehandlerTASK", 96, NULL, 1, NULL);         // Task-Handler for button
+  xTaskCreate(gyro_task, "gyroTASK", 96, &gyro_data, 1, NULL);          // Refresh gyro-data
   xTaskCreate(gatekeeper_task, "gatekeeperTASK", 320, &gdata, 2, NULL); // Display gatekeeper
 
-  xTaskCreate(bmp_print_task, "bmpPrintTask1", 224, &data1, 1, NULL);
-  xTaskCreate(bmp_print_task, "bmpPrintTask2", 224, &data2, 1, NULL);
-  xTaskCreate(bmp_print_task, "bmpPrintTask3", 224, &data3, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask1", 224, &bmp_p_data1, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask2", 224, &bmp_p_data2, 1, NULL);
+  xTaskCreate(bmp_print_task, "bmpPrintTask3", 224, &bmp_p_data3, 1, NULL);
+
+  xTaskCreate(gyro_print_task, "gyroPrintTask1", 224, &gyro_p_data1, 1, NULL);
+  xTaskCreate(gyro_print_task, "gyroPrintTask2", 224, &gyro_p_data2, 1, NULL);
+  xTaskCreate(gyro_print_task, "gyroPrintTask3", 224, &gyro_p_data3, 1, NULL);
 
   // xTaskCreate(example_task, "exampleTASK", 128, NULL, 1, NULL);
 

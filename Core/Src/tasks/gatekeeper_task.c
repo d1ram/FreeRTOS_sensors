@@ -41,7 +41,9 @@ void gatekeeper_task(void *pvParameters)
 
     // STATUS_NAMES
     const int bmp_status_id = gatekeeperMAX_TASK_PER_PAGE * 2;
+    const int gyro_status_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 1;
     snprintf(task_names[bmp_status_id], gatekeeperTASK_NAME_MAX_LENGHT, "BMP_S");
+    snprintf(task_names[gyro_status_id], gatekeeperTASK_NAME_MAX_LENGHT, "GYRO_S");
     // FAULT_DIAG
     const SystemResetInfo_t *reset_info = fault_get_info();
     const int cause_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 2; // 3 page, line 2;
