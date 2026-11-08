@@ -1,4 +1,4 @@
-#ifdef DIAG
+#ifdef DIAG_2
 
 #include "FreeRTOS.h"
 

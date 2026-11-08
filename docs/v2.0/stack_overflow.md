@@ -1,7 +1,5 @@
 ## configCHECK_FOR_STACK_OVERFLOW 1
 
-Somehow with `configCHECK_FOR_STACK_OVERFLOW 2` it was not working.
-
 ### Overview
 
 `fault_hooks.c` now contains `void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)`, which is a hook for stack overflow. Main idea: if stack is too low for a task, this hook will call `NVIC_SystemReset()` and save `fault_task_name`.

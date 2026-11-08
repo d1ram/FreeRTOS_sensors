@@ -133,13 +133,13 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // For jitter_testing we open PA6 and PA7 for GPIO_OUTPUT.
-  // __HAL_RCC_GPIOA_CLK_ENABLE();
-  // GPIO_InitTypeDef mark = {0};
-  // mark.Pin = GPIO_PIN_6 | GPIO_PIN_7;
-  // mark.Mode = GPIO_MODE_OUTPUT_PP;
-  // mark.Pull = GPIO_NOPULL;
-  // mark.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  // HAL_GPIO_Init(GPIOA, &mark);
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  GPIO_InitTypeDef mark = {0};
+  mark.Pin = GPIO_PIN_6 | GPIO_PIN_7;
+  mark.Mode = GPIO_MODE_OUTPUT_PP;
+  mark.Pull = GPIO_NOPULL;
+  mark.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(GPIOA, &mark);
 
   // BMP_PRINT_TASK INIT (data)
   int32_t bmp_p_1 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask1");

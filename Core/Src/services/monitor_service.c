@@ -36,9 +36,9 @@ HAL_StatusTypeDef monitor_flush(void)
 
     if (i2c_mutex_take(pdMS_TO_TICKS(monitorMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
     { // Mutex for i2c bus
-        // MARK_BUS_HIGH();
+        MARK_BUS_HIGH();
         status = ssd1306_UpdateScreen(s_hi2c);
-        // MARK_BUS_LOW();
+        MARK_BUS_LOW();
 
         if (status == HAL_ERROR)
         {
