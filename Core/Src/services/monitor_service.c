@@ -40,21 +40,25 @@ HAL_StatusTypeDef monitor_flush(void)
         status = ssd1306_UpdateScreen(s_hi2c);
         // MARK_BUS_LOW();
 
+        if (status == HAL_ERROR)
+        {
+            uint32_t err_code = HAL_I2C_GetError(s_hi2c);
+
+            if (err_code & HAL_I2C_ERROR_TIMEOUT)
+            {
+                status = HAL_TIMEOUT;
+            }
+        }
+
+        if (status == HAL_TIMEOUT)
+        {
+            i2c_bus_recover(s_hi2c);
+        }
         i2c_mutex_give();
     }
     else
     {
-        return HAL_TIMEOUT;
-    }
-
-    if (status == HAL_ERROR)
-    {
-        uint32_t err_code = HAL_I2C_GetError(s_hi2c);
-
-        if (err_code & HAL_I2C_ERROR_TIMEOUT)
-        {
-            status = HAL_TIMEOUT;
-        }
+        status = HAL_TIMEOUT;
     }
 
     return status;

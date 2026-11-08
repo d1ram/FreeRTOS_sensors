@@ -80,6 +80,7 @@ Core/Src/services/watchdog_service.c \
 Core/Src/services/monitor_service.c \
 Core/Src/services/bmp280_service.c \
 Core/Src/services/fault_diag.c \
+Core/Src/services/fault_hooks.c \
 Core/Src/services/i2c_bus.c \
 Core/Src/tasks/example_task.c \
 Core/Src/tasks/watchdog_task.c \

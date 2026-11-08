@@ -14,7 +14,17 @@ void fault_diag_init(void)
 3. If RCC flag == IWDG (watchdog timer) -> fault_task_name into info (fault_task_name written in watchdog_task).
 */
 {
-    if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST))
+    info_g.faulty_task[0] = '\0';
+    if (__HAL_RCC_GET_FLAG(RCC_FLAG_SFTRST))
+    {
+        info_g.cause = RESET_CAUSE_SOFTWARE;
+
+        if (fault_task_name[0] != '\0') // Might be StackOverflow.
+        {
+            snprintf(info_g.faulty_task, sizeof(info_g.faulty_task), "%s", fault_task_name);
+        }
+    }
+    else if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST))
     {
         info_g.cause = RESET_CAUSE_IWDG;
 
@@ -23,13 +33,13 @@ void fault_diag_init(void)
             snprintf(info_g.faulty_task, sizeof(info_g.faulty_task), "%s", fault_task_name);
         }
     }
-    else if (__HAL_RCC_GET_FLAG(RCC_FLAG_PINRST))
-    {
-        info_g.cause = RESET_CAUSE_PIN;
-    }
     else if (__HAL_RCC_GET_FLAG(RCC_FLAG_PORRST))
     {
         info_g.cause = RESET_CAUSE_POWER_ON;
+    }
+    else if (__HAL_RCC_GET_FLAG(RCC_FLAG_PINRST))
+    {
+        info_g.cause = RESET_CAUSE_PIN;
     }
     else
     {

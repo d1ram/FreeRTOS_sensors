@@ -9,7 +9,8 @@ typedef enum
     RESET_CAUSE_UNKNOWN = 0,
     RESET_CAUSE_IWDG,
     RESET_CAUSE_PIN,
-    RESET_CAUSE_POWER_ON
+    RESET_CAUSE_POWER_ON,
+    RESET_CAUSE_SOFTWARE // NVIC_SystemReset()
 } ResetCause_t;
 
 typedef struct

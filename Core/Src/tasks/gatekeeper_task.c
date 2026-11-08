@@ -19,6 +19,7 @@ QueueHandle_t gatekeeper_queueHandle = NULL; // From ui_state.h
 void gatekeeper_init_queue()
 {
     gatekeeper_queueHandle = xQueueCreate(gatekeeperQUEUE_LENGHT, sizeof(GatekeeperQueueData_t));
+    configASSERT(gatekeeper_queueHandle != NULL);
 }
 
 void gatekeeper_task(void *pvParameters)
@@ -48,11 +49,14 @@ void gatekeeper_task(void *pvParameters)
     snprintf(task_names[cause_id], gatekeeperTASK_NAME_MAX_LENGHT, "RC");
     if (reset_info->cause == RESET_CAUSE_IWDG)
     {
-        const int cause_task_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 3; // 3 page, line 3;
-        snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "IWDG");
+        if (reset_info->faulty_task[0] != '\0')
+        {
+            const int cause_task_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 3; // 3 page, line 3;
+            snprintf(task_names[cause_task_id], gatekeeperTASK_NAME_MAX_LENGHT, "TASK");
+            snprintf(task_data[cause_task_id], gatekeeperTASK_DATA_MAX_LENGHT, "%s", reset_info->faulty_task);
+        }
 
-        snprintf(task_names[cause_task_id], gatekeeperTASK_NAME_MAX_LENGHT, "TASK");
-        snprintf(task_data[cause_task_id], gatekeeperTASK_DATA_MAX_LENGHT, "%s", reset_info->faulty_task);
+        snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "IWDG");
     }
     else if (reset_info->cause == RESET_CAUSE_PIN)
     {
@@ -61,6 +65,17 @@ void gatekeeper_task(void *pvParameters)
     else if (reset_info->cause == RESET_CAUSE_POWER_ON)
     {
         snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "PO");
+    }
+    else if (reset_info->cause == RESET_CAUSE_SOFTWARE)
+    {
+        if (reset_info->faulty_task[0] != '\0') // If StackOverflow
+        {
+            const int cause_task_id = (gatekeeperMAX_TASK_PER_PAGE * 2) + 3;
+            snprintf(task_names[cause_task_id], gatekeeperTASK_NAME_MAX_LENGHT, "TASK");
+            snprintf(task_data[cause_task_id], gatekeeperTASK_DATA_MAX_LENGHT, "%s", reset_info->faulty_task);
+        }
+
+        snprintf(task_data[cause_id], gatekeeperTASK_DATA_MAX_LENGHT, "SO");
     }
     else
     {

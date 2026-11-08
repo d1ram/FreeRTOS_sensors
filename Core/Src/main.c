@@ -198,6 +198,8 @@ int main(void)
   xTaskCreate(bmp_print_task, "bmpPrintTask2", 224, &data2, 1, NULL);
   xTaskCreate(bmp_print_task, "bmpPrintTask3", 224, &data3, 1, NULL);
 
+  // xTaskCreate(example_task, "exampleTASK", 128, NULL, 1, NULL);
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
