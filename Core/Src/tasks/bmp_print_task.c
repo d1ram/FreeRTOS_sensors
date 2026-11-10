@@ -7,22 +7,11 @@
 #include "task.h"
 
 #include "stack_size.h"
-#include "jitter_test.h"
 
 #include <stdio.h>
 
 void bmp_print_task(void *pvParameters)
 {
-    uint32_t minTime = pdMS_TO_TICKS(bmp_print_task_watchdogMIN_TIME_MS);
-    uint32_t maxTime = pdMS_TO_TICKS(bmp_print_task_watchdogMAX_TIME_MS);
-
-    uint32_t watchdog_task_id = watchdog_add_task(minTime, maxTime);
-
-    if (watchdog_task_id == -1)
-    {
-        vTaskDelete(NULL);
-    }
-
     BmpPrintTaskConfig_t *config = (BmpPrintTaskConfig_t *)pvParameters;
 
     if (config == NULL ||
@@ -31,9 +20,10 @@ void bmp_print_task(void *pvParameters)
         vTaskDelete(NULL);
     }
 
-    int taskId = config->task_id;
+    int taskId = config->task_id_gatekeeper;
     BMP_Task_Function bmp_get = config->function;
     char *d_unit = config->d_unit;
+    const uint32_t watchdog_task_id = config->watchdog_id;
 
     for (;;)
     {
@@ -46,9 +36,11 @@ void bmp_print_task(void *pvParameters)
 
         xQueueSendToBack(gatekeeper_queueHandle, &data, pdMS_TO_TICKS(bmp_print_taskQUEUE_WAITING_MS));
 
-        watchdog_ping(watchdog_task_id, xTaskGetTickCount());
+        watchdog_ping(watchdog_task_id, xTaskGetTickCount(), OK);
 
+#ifdef DIAG
         g_stack_free[taskId] = uxTaskGetStackHighWaterMark(NULL);
+#endif
 
         vTaskDelay(pdMS_TO_TICKS(bmp_print_taskREFRESH_MS));
     }

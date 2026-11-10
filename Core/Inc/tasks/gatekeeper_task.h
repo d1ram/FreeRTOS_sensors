@@ -14,7 +14,8 @@
 
 typedef struct
 {
-    const char task_names[gatekeeperMAX_TASK][gatekeeperTASK_NAME_MAX_LENGHT];
+    char task_names[gatekeeperMAX_TASK][gatekeeperTASK_NAME_MAX_LENGHT];
+    int watchdog_id;
 } GatekeeperTaskConfig_t;
 
 void gatekeeper_init_queue();

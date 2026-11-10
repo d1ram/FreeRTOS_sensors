@@ -44,6 +44,9 @@
  *----------------------------------------------------------*/
 
 /* USER CODE BEGIN Includes */
+#if defined(__GNUC__) && !defined(__ASSEMBLER__)
+extern void vAssertCalled(const char *file, int line);
+#endif
 /* Section where include file can be added */
 /* USER CODE END Includes */
 
@@ -151,13 +154,12 @@ See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
 /* Normal assert() semantics without relying on the provision of an assert.h
 header file. */
 /* USER CODE BEGIN 1 */
-#define configASSERT(x)       \
-  if ((x) == 0)               \
-  {                           \
-    taskDISABLE_INTERRUPTS(); \
-    for (;;)                  \
-      ;                       \
-  }
+#define configASSERT(x)                  \
+  do                                     \
+  {                                      \
+    if ((x) == 0)                        \
+      vAssertCalled(__FILE__, __LINE__); \
+  } while (0)
 /* USER CODE END 1 */
 
 /* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
@@ -170,6 +172,8 @@ standard names. */
 #define USE_CUSTOM_SYSTICK_HANDLER_IMPLEMENTATION 0
 
 /* USER CODE BEGIN Defines */
+#define configCHECK_FOR_STACK_OVERFLOW 1
+#define configUSE_MALLOC_FAILED_HOOK 1
 /* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */
 /* USER CODE END Defines */
 

@@ -15,5 +15,6 @@
 #define monitorMAX_MUTEX_TIMEOUT_MS 80
 
 void monitor_init(I2C_HandleTypeDef *bus);
-void monitor_write_line(uint8_t line, const char *str);
+void monitor_set_line(uint8_t line, const char *str);
+HAL_StatusTypeDef monitor_flush(void);
 #endif

@@ -5,7 +5,7 @@
 #include "task.h"
 #include "queue.h"
 
-#define pageMAX_PAGES 2                   // Max num of pages on monitor
+#define pageMAX_PAGES 3                   // Max num of pages on monitor
 #define gatekeeperTASK_DATA_MAX_LENGHT 32 // Max lenght of char* that was refered into queue
 
 extern volatile int current_page_g;

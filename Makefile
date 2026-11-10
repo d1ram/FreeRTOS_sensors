@@ -75,16 +75,21 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c \
 Drivers/SSD1306/Src/ssd1306.c \
 Drivers/SSD1306/Src/fonts.c \
 Drivers/BMP280/Src/BMP280.c \
+Drivers/MPU6050/Src/MPU6050.c \
 Core/Src/handlers/btn_handler.c \
 Core/Src/services/watchdog_service.c \
 Core/Src/services/monitor_service.c \
 Core/Src/services/bmp280_service.c \
+Core/Src/services/gyro_service.c \
+Core/Src/services/fault_diag.c \
+Core/Src/services/fault_hooks.c \
 Core/Src/services/i2c_bus.c \
-Core/Src/tasks/example_task.c \
 Core/Src/tasks/watchdog_task.c \
 Core/Src/tasks/bmp_task.c \
-Core/Src/tasks/page_task.c \
 Core/Src/tasks/bmp_print_task.c \
+Core/Src/tasks/gyro_task.c \
+Core/Src/tasks/gyro_print_task.c \
+Core/Src/tasks/page_task.c \
 Core/Src/tasks/gatekeeper_task.c \
 Core/Src/testing/stack_size.c 
 
@@ -140,8 +145,7 @@ AS_DEFS =
 C_DEFS =  \
 -DUSE_NUCLEO_64 \
 -DUSE_HAL_DRIVER \
--DSTM32F446xx
-
+-DSTM32F446xx 
 
 # AS includes
 AS_INCLUDES =  \
@@ -168,6 +172,7 @@ C_INCLUDES =  \
 -IDrivers/CMSIS/Include \
 -IDrivers/SSD1306/Inc \
 -IDrivers/BMP280/Inc \
+-IDrivers/MPU6050/Inc \
 -ICore/Inc/handlers \
 -ICore/Inc/tasks \
 -ICore/Inc/testing \
