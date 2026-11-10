@@ -30,9 +30,9 @@ void bmp_task(void *pvParameters)
             watchdog_ping(watchdog_task_id, xTaskGetTickCount(), SENSOR_ERROR);
         }
 
-        // MARK_BMP_LOW();
-        // g_stack_free[3] = uxTaskGetStackHighWaterMark(NULL);
+#ifdef DIAG
+        g_stack_free[8] = uxTaskGetStackHighWaterMark(NULL);
+#endif
         vTaskDelayUntil(&wake_timeTICKS, pdMS_TO_TICKS(bmp_taskREFRESH_RATE_MS));
-        // MARK_BMP_HIGH();
     }
 }

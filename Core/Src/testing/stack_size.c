@@ -1,3 +1,6 @@
 #include "stack_size.h"
+#include "FreeRTOS.h"
 
-// volatile UBaseType_t g_stack_free[8];
+#ifdef DIAG
+volatile UBaseType_t g_stack_free[12];
+#endif

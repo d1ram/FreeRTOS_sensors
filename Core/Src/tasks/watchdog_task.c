@@ -83,6 +83,8 @@ void watchdog_task(void *pvParameters)
             watchdog_refresh_timer();
         }
 
-        // g_stack_free[6] = uxTaskGetStackHighWaterMark(NULL);
+#ifdef DIAG
+        g_stack_free[4] = uxTaskGetStackHighWaterMark(NULL);
+#endif
     }
 }

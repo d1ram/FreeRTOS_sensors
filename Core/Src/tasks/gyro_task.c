@@ -30,9 +30,10 @@ void gyro_task(void *pvParameters)
             watchdog_ping(watchdog_task_id, xTaskGetTickCount(), SENSOR_ERROR);
         }
 
-        // MARK_BMP_LOW();
-        // g_stack_free[3] = uxTaskGetStackHighWaterMark(NULL);
+#ifdef DIAG
+        g_stack_free[9] = uxTaskGetStackHighWaterMark(NULL);
+#endif
+
         vTaskDelayUntil(&wake_timeTICKS, pdMS_TO_TICKS(gyro_taskREFRESH_RATE_MS));
-        // MARK_BMP_HIGH();
     }
 }

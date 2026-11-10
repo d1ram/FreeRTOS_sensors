@@ -35,9 +35,13 @@ HAL_StatusTypeDef bmp_service_read_data(void)
 
     if (i2c_mutex_take(pdMS_TO_TICKS(bmpMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
     {
+#ifdef DIAG
         MARK_BMP_HIGH();
+#endif
         status = bmp280_read_raw(&bmp, &temp_raw, &press_raw); // HAL_OK / HAL_BUSY / HAL_ERROR
+#ifdef DIAG
         MARK_BMP_LOW();
+#endif
         if (status == HAL_TIMEOUT)
         {
             i2c_bus_recover(s_hi2c);

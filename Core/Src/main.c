@@ -42,7 +42,6 @@
 
 // Tasks
 #include "watchdog_task.h"
-#include "example_task.h"
 #include "gatekeeper_task.h"
 #include "bmp_task.h"
 #include "page_task.h"
@@ -132,16 +131,18 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
-  /* USER CODE BEGIN 2 */
+/* USER CODE BEGIN 2 */
 
-  // For jitter_testing we open PA6 and PA7 for GPIO_OUTPUT.
+// For jitter_testing we open PA6 and PA7 for GPIO_OUTPUT.
+#ifdef DIAG
   __HAL_RCC_GPIOA_CLK_ENABLE();
   GPIO_InitTypeDef mark = {0};
-  mark.Pin = GPIO_PIN_6 | GPIO_PIN_7;
+  mark.Pin = GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_8;
   mark.Mode = GPIO_MODE_OUTPUT_PP;
   mark.Pull = GPIO_NOPULL;
   mark.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOA, &mark);
+#endif
 
   // BMP_PRINT_TASK INIT (data)
   int32_t bmp_p_1 = watchdog_add_task(bmp_print_task_watchdogMIN_TIME_MS, bmp_print_task_watchdogMAX_TIME_MS, "bmpPrintTask1");
@@ -230,8 +231,8 @@ int main(void)
   xTaskCreate(watchdog_task, "watchdogTASK", 96, &wdata, 10, NULL);     // Watchdog task
   xTaskCreate(bmp_task, "bmpTASK", 160, &bdata, 6, NULL);               // Refresh bmp-data
   xTaskCreate(page_task, "pagehandlerTASK", 96, NULL, 1, NULL);         // Task-Handler for button
-  xTaskCreate(gyro_task, "gyroTASK", 96, &gyro_data, 1, NULL);          // Refresh gyro-data
-  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 320, &gdata, 2, NULL); // Display gatekeeper
+  xTaskCreate(gyro_task, "gyroTASK", 160, &gyro_data, 6, NULL);         // Refresh gyro-data
+  xTaskCreate(gatekeeper_task, "gatekeeperTASK", 360, &gdata, 2, NULL); // Display gatekeeper
 
   xTaskCreate(bmp_print_task, "bmpPrintTask1", 224, &bmp_p_data1, 1, NULL);
   xTaskCreate(bmp_print_task, "bmpPrintTask2", 224, &bmp_p_data2, 1, NULL);
@@ -240,8 +241,6 @@ int main(void)
   xTaskCreate(gyro_print_task, "gyroPrintTask1", 224, &gyro_p_data1, 1, NULL);
   xTaskCreate(gyro_print_task, "gyroPrintTask2", 224, &gyro_p_data2, 1, NULL);
   xTaskCreate(gyro_print_task, "gyroPrintTask3", 224, &gyro_p_data3, 1, NULL);
-
-  // xTaskCreate(example_task, "exampleTASK", 128, NULL, 1, NULL);
 
   /* USER CODE END 2 */
 

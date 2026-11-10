@@ -3,6 +3,7 @@
 #include "MPU6050.h"
 
 #include "i2c_bus.h"
+#include "jitter_test.h"
 
 static float ax, ay, az;
 static float gx, gy, gz;
@@ -23,11 +24,17 @@ HAL_StatusTypeDef gyro_read_data(void)
 
     if (i2c_mutex_take(pdMS_TO_TICKS(gyroMAX_MUTEX_TIMEOUT_MS)) == pdTRUE)
     {
+#ifdef DIAG
+        MARK_GYRO_HIGH();
+#endif
         status = MPU6050_Read_Accel(&ax, &ay, &az);
         if (status == HAL_OK)
         {
             status = MPU6050_Read_Gyro(&gx, &gy, &gz);
         }
+#ifdef DIAG
+        MARK_GYRO_LOW();
+#endif
 
         if (status == HAL_TIMEOUT)
         {

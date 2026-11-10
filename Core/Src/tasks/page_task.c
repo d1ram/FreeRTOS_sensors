@@ -30,6 +30,9 @@ void page_task(void *pvParameters)
             vTaskDelay(pdMS_TO_TICKS(page_taskDEBOUNCE_TIME_MS)); // Jitter on getting off the btn
         }
         ulTaskNotifyTake(pdTRUE, 0);
-        // g_stack_free[5] = uxTaskGetStackHighWaterMark(NULL);
+
+#ifdef DIAG
+        g_stack_free[10] = uxTaskGetStackHighWaterMark(NULL);
+#endif
     }
 }

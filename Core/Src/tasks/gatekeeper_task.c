@@ -24,7 +24,7 @@ void gatekeeper_init_queue()
 
 void gatekeeper_task(void *pvParameters)
 {
-    const GatekeeperTaskConfig_t *config = (GatekeeperTaskConfig_t *)pvParameters;
+    GatekeeperTaskConfig_t *config = (GatekeeperTaskConfig_t *)pvParameters;
 
     if (config == NULL || gatekeeper_queueHandle == NULL)
     {
@@ -121,22 +121,27 @@ void gatekeeper_task(void *pvParameters)
                 char buf[gatekeeperTASK_NAME_MAX_LENGHT + gatekeeperTASK_DATA_MAX_LENGHT + 2]; // buf for "<taskName>: <taskData>"
                 if (data.task_id >= 0 && data.task_id < gatekeeperMAX_TASK)
                 {
-                    strncpy(task_data[data.task_id], data.data, gatekeeperTASK_DATA_MAX_LENGHT);
-                    task_data[data.task_id][gatekeeperTASK_DATA_MAX_LENGHT - 1] = '\0';
-
-                    int task_page = data.task_id / gatekeeperMAX_TASK_PER_PAGE;
-                    if ((data.task_id / gatekeeperMAX_TASK_PER_PAGE) == current_page_g) // If on exact page of it
+                    if (strcmp(task_data[data.task_id], data.data) != 0)
                     {
-                        int task_page_id = data.task_id - (task_page * gatekeeperMAX_TASK_PER_PAGE);
-                        snprintf(buf, sizeof(buf), "%s: %s", task_names[data.task_id], data.data);
-                        monitor_set_line(task_page_id, buf);
-                        status = monitor_flush();
+                        strncpy(task_data[data.task_id], data.data, gatekeeperTASK_DATA_MAX_LENGHT);
+                        task_data[data.task_id][gatekeeperTASK_DATA_MAX_LENGHT - 1] = '\0';
+
+                        int task_page = data.task_id / gatekeeperMAX_TASK_PER_PAGE;
+                        if ((data.task_id / gatekeeperMAX_TASK_PER_PAGE) == current_page_g) // If on exact page of it
+                        {
+                            int task_page_id = data.task_id - (task_page * gatekeeperMAX_TASK_PER_PAGE);
+                            snprintf(buf, sizeof(buf), "%s: %s", task_names[data.task_id], data.data);
+                            monitor_set_line(task_page_id, buf);
+                            status = monitor_flush();
+                        }
                     }
                 }
             }
         }
 
-        // g_stack_free[4] = uxTaskGetStackHighWaterMark(NULL);
+#ifdef DIAG
+        g_stack_free[3] = uxTaskGetStackHighWaterMark(NULL);
+#endif
 
         if (status == HAL_OK || status == HAL_BUSY)
         {

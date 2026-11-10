@@ -38,7 +38,9 @@ void gyro_print_task(void *pvParameters)
 
         watchdog_ping(watchdog_task_id, xTaskGetTickCount(), OK);
 
-        // g_stack_free[taskId] = uxTaskGetStackHighWaterMark(NULL);
+#ifdef DIAG
+        g_stack_free[taskId] = uxTaskGetStackHighWaterMark(NULL);
+#endif
 
         vTaskDelay(pdMS_TO_TICKS(gyro_print_taskREFRESH_MS));
     }

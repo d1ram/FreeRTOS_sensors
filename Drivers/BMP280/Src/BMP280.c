@@ -38,14 +38,11 @@ static HAL_StatusTypeDef bmp280_write_register(bmp280_t *bmp, uint8_t reg, uint8
 
 static HAL_StatusTypeDef bmp280_read_registers(bmp280_t *bmp, uint8_t reg, uint8_t *buffer, uint16_t length)
 {
-    if (bmp->comm_mode == BMP280_MODE_I2C)
-    {
-        // Write register address
-        if (HAL_I2C_Master_Transmit(bmp->hi2c, bmp->address << 1, &reg, 1, HAL_MAX_DELAY) != HAL_OK)
-            return HAL_ERROR;
-        // Read data
-        return HAL_I2C_Master_Receive(bmp->hi2c, bmp->address << 1, buffer, length, HAL_MAX_DELAY);
-    }
+    // Write register address
+    if (HAL_I2C_Master_Transmit(bmp->hi2c, bmp->address << 1, &reg, 1, HAL_MAX_DELAY) != HAL_OK)
+        return HAL_ERROR;
+    // Read data
+    return HAL_I2C_Master_Receive(bmp->hi2c, bmp->address << 1, buffer, length, HAL_MAX_DELAY);
 }
 
 // Calibration Data Reading
@@ -60,11 +57,8 @@ static HAL_StatusTypeDef bmp280_read_calibration_data(bmp280_t *bmp)
 
     // BMP280 has calibration registers from 0x88 to 0xA1
     // Read all calibration data
-    if (bmp->comm_mode == BMP280_MODE_I2C)
-    {
-        if (HAL_I2C_Mem_Read(bmp->hi2c, bmp->address << 1, 0x88, I2C_MEMADD_SIZE_8BIT, calib_data, 24, HAL_MAX_DELAY) != HAL_OK)
-            return HAL_ERROR;
-    }
+    if (HAL_I2C_Mem_Read(bmp->hi2c, bmp->address << 1, 0x88, I2C_MEMADD_SIZE_8BIT, calib_data, 24, HAL_MAX_DELAY) != HAL_OK)
+        return HAL_ERROR;
 
     // Parse calibration data
     bmp->dig_T1 = (uint16_t)(calib_data[1] << 8 | calib_data[0]);
@@ -90,7 +84,7 @@ HAL_StatusTypeDef bmp280_init(bmp280_t *bmp)
     HAL_StatusTypeDef status;
 
     // Verify communication mode
-    if (bmp->comm_mode == BMP280_MODE_I2C && bmp->hi2c == NULL)
+    if (bmp->hi2c == NULL)
     {
         return HAL_ERROR;
     }

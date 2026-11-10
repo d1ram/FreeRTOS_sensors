@@ -84,7 +84,6 @@ Core/Src/services/gyro_service.c \
 Core/Src/services/fault_diag.c \
 Core/Src/services/fault_hooks.c \
 Core/Src/services/i2c_bus.c \
-Core/Src/tasks/example_task.c \
 Core/Src/tasks/watchdog_task.c \
 Core/Src/tasks/bmp_task.c \
 Core/Src/tasks/bmp_print_task.c \
@@ -146,9 +145,7 @@ AS_DEFS =
 C_DEFS =  \
 -DUSE_NUCLEO_64 \
 -DUSE_HAL_DRIVER \
--DSTM32F446xx \
--DDIAG
-
+-DSTM32F446xx 
 
 # AS includes
 AS_INCLUDES =  \
